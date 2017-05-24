@@ -1,0 +1,28 @@
+platform :ios, '10.0'
+use_frameworks!
+workspace 'RxLeanCloudSwift.xcworkspace'
+
+target 'RxLeanCloudSwift' do
+    pod 'RxSwift',    '~> 3.0'
+    pod 'RxCocoa',    '~> 3.0'
+    pod 'RxAlamofire'
+    pod 'Alamofire', '> 4.4'
+    pod 'SwiftyJSON'
+end
+
+target 'RxLeanCloudSwiftTests' do
+    pod 'RxSwift', ‘~> 3.0'
+    pod 'RxCocoa', ‘~> 3.0'
+    pod 'RxBlocking', '> 3.0'
+    pod 'RxTest', '> 3.0'
+    pod 'SwiftyJSON'
+end
+
+target ‘RxLeanCloudDemo’ do
+    xcodeproj 'RxLeanCloudDemo/RxLeanCloudDemo.xcodeproj'
+    pod 'RxSwift',    '~> 3.0'
+    pod 'RxCocoa',    '~> 3.0'
+    pod 'RxAlamofire'
+    pod 'Alamofire', '> 4.4'
+    pod 'SwiftyJSON'
+end

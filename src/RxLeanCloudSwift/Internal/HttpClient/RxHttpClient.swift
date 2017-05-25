@@ -16,11 +16,11 @@ public class RxHttpClient: IRxHttpClient {
     public func execute(httpRequest: HttpRequest) -> Observable<HttpResponse> {
         let manager = self.getAlamofireManager()
         let method = self.getAlamofireMethod(httpRequest: httpRequest)
-        
+
         return manager.rx.responseJSON(method, httpRequest.url, parameters: httpRequest.data, encoding: JSONEncoding.default, headers: httpRequest.headers).map { (response, data) -> HttpResponse in
             let body = data as? [String: Any]
-            print("body", body!)
             let httpResponse = HttpResponse(statusCode: response.statusCode, body: body)
+            RxAVClient.sharedInstance.httpLog(request: httpRequest, response: httpResponse)
             return httpResponse
         }
     }

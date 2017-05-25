@@ -31,9 +31,7 @@ public class ObjectController: IObjectController {
         let realtiveUrl = mutableState.objectId == nil ? "/classes/\(state.className)" : "/classes/\(state.className)/\(state.objectId!)"
         let url = mutableState.app!.getUrl(relativeUrl: realtiveUrl)
         let headers = mutableState.app!.getHeaders()
-        let cmd = AVCommand(method: mutableState.objectId == nil ? "POST" : "PUT", url: url, headers: headers, data: mutableEncoded)
-
-        print(cmd.url, cmd.headers, cmd.method, cmd.data)
+        let cmd = AVCommand(method: mutableState.objectId == nil ? "POST" : "PUT", url: url, headers: headers, data: mutableEncoded)        
 
         return self.commandRunner.runRxCommand(command: cmd).map({ (avResponse) -> IObjectState in
             var serverState = RxAVCorePlugins.sharedInstance.objectDecoder.decode(serverResult: avResponse.body!, decoder: RxAVCorePlugins.sharedInstance.avDecoder)

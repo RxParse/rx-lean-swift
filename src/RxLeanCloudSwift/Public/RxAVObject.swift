@@ -189,6 +189,14 @@ public class RxAVObject: IRxAVObject {
             try RxAVObject.recursionCollectDirtyChildren(root: child, warehouse: warehouse, seen: seen, seenNew: scopedSeenNew);
             warehouse.append(child)
         }
-
+    }
+    func setProperty(key: String, value: Any) -> Void {
+        self._state.serverData[key] = value
+    }
+    func getProperty(key: String) -> Any? {
+        if self._state.containsKey(key: key) {
+            return self._state.serverData[key]
+        }
+        return nil
     }
 }

@@ -23,6 +23,7 @@ public class RxAVApp {
     var stats: String = GlobalConst.api_public_cn
     var push: String = GlobalConst.api_public_cn
     var pushRouter: String = GlobalConst.push_router_public_cn
+    var wss: String?
     var shortName: String = "default"
 
     public init(appId: String, appKey: String, shortName: String? = "default", secure: Bool? = true) {
@@ -50,5 +51,9 @@ public class RxAVApp {
             return "\(schema)\(push)\(apiVersion)\(relativeUrl)"
         }
         return "\(schema)\(api)\(apiVersion)\(relativeUrl)"
+    }
+
+    public func getPushRouterUrl() -> String {
+        return "https://\(self.pushRouter)/v1/route?appId=\(self.appId)&secure=1"
     }
 }

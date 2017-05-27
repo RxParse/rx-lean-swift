@@ -1,7 +1,7 @@
 # RxLeanCloudSwift
 使用 Swift 语言重新编写的基于 RxSwift 的 SDK for iOS/macOS/tvOS/watchOS
 
-## 开发进度
+## 开发进度
 - [ ] RxAVObject
   - [x] save
   - [x] update
@@ -26,7 +26,7 @@
 - [ ] RxAVRealtime
   - [x] connect
   - [x] connectWithUser
-  - [ ] createConversation
+  - [ ] createConversation
   - [ ] send
   - [ ] onMessage
   - [ ] onEvent

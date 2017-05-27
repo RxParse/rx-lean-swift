@@ -9,8 +9,8 @@
 import Foundation
 
 public class HttpResponse {
-    var satusCode: Int = 200
-    var body : [String:Any]?
+    var satusCode: Int = -1
+    var body : Any?
     
     init(statusCode:Int, body: [String:Any]?) {
         self.satusCode = statusCode

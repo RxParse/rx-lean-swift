@@ -11,7 +11,7 @@ import Foundation
 public class AVDecoder: IAVDecoder {
 
     public func decode(value: Any) -> Any {
-        
+
         if value is [String: Any] {
             var dataMap = value as! [String: Any]
             if dataMap["__type"] == nil {
@@ -27,6 +27,9 @@ public class AVDecoder: IAVDecoder {
                     let dateString = dataMap["iso"] as! String
                     return formatter.date(from: dateString) as Any
                 } else if typeString == "Pointer" {
+                    let className = dataMap["className"] as! String
+                    let objectId = dataMap["objectId"] as! String
+                    return self.decodePotinter(className: className, objectId: objectId)
                 }
             }
         }
@@ -34,8 +37,8 @@ public class AVDecoder: IAVDecoder {
         return value
     }
 
-    public func decodePotinter(className: String, objectId: String) {
-
+    public func decodePotinter(className: String, objectId: String) -> RxAVObject {
+        return RxAVObject.createWithoutData(classnName: className, objectId: objectId);
     }
 
     public func clone(dictionary: [String: Any]) -> [String: Any] {

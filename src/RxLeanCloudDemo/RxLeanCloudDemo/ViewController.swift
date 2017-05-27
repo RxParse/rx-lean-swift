@@ -23,16 +23,35 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showMessage() {
-        let alertController = UIAlertController(title: "Welcome to My First App", message: "Hello World", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
-
+//        let alertController = UIAlertController(title: "Welcome to My First App", message: "Hello World", preferredStyle: UIAlertControllerStyle.alert)
+//        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+//        self.present(alertController, animated: true, completion: nil)
+//
         let todo = RxAVObject(className: "SwiftTodo")
         todo["foo"] = "bar"
+        todo["birth"] = Date()
+
+        let folder = RxAVObject(className: "SwiftTodoFolder")
+        todo["folder"] = folder
 
         todo.save().map { (avObject) -> String in
-            return avObject.objectId
+            return avObject.objectId!
         }.observeOn(MainScheduler.instance).subscribe({ print($0) })
+
+
+    }
+    @IBAction func doQuery() {
+//        let alertController = UIAlertController(title: "Welcome to My First App", message: "Hello World", preferredStyle: UIAlertControllerStyle.alert)
+//        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+//        self.present(alertController, animated: true, completion: nil)
+        let query = RxAVQuery(className: "SwiftTodo").equalTo(key: "foo", value: "bar")
+        query.find().map { (list) -> Array<String> in
+            return list.map({ (obj) -> String in
+                return obj.objectId!
+            })
+        }.subscribe (onNext: {
+            print($0) }
+        )
     }
 
 

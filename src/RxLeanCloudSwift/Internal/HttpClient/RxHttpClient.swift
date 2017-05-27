@@ -16,12 +16,33 @@ public class RxHttpClient: IRxHttpClient {
     public func execute(httpRequest: HttpRequest) -> Observable<HttpResponse> {
         let manager = self.getAlamofireManager()
         let method = self.getAlamofireMethod(httpRequest: httpRequest)
-
-        return manager.rx.responseJSON(method, httpRequest.url, parameters: httpRequest.data, encoding: JSONEncoding.default, headers: httpRequest.headers).map { (response, data) -> HttpResponse in
-            let body = data as? [String: Any]
+        let urlEncoding = self.getAlamofireUrlEncoding(httpRequest: httpRequest)
+        let escapedString = httpRequest.url.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
+        return manager.rx.responseJSON(method, escapedString!, parameters: httpRequest.data, encoding: urlEncoding, headers: httpRequest.headers).map { (response, data) -> HttpResponse in
+            var body: [String: Any] = ["results": ""]
+            if data is [String: Any] {
+                body = (data as? [String: Any])!
+            } else if data is Array<[String: Any]> {
+                let dataArray = data as! Array<[String: Any]>
+                body = ["results": dataArray]
+            }
             let httpResponse = HttpResponse(statusCode: response.statusCode, body: body)
             RxAVClient.sharedInstance.httpLog(request: httpRequest, response: httpResponse)
             return httpResponse
+        }
+    }
+    
+    func getAlamofireUrlEncoding(httpRequest: HttpRequest) -> ParameterEncoding {
+        let methodLowerCase = httpRequest.method.uppercased()
+        switch methodLowerCase {
+        case "GET":
+            return URLEncoding.default
+        case "POST":
+            return JSONEncoding.default
+        case "PUT":
+            return JSONEncoding.default
+        default:
+            return JSONEncoding.default
         }
     }
 

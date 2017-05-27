@@ -38,7 +38,7 @@ public class RxAVClient {
             print("Url: ", request.url)
             print("Method: ", request.method)
             print("Headers: ", request.headers)
-            print("RequestBody: ", request.data)
+            print("RequestBody: ", request.data ?? ["no":"result"])
             print("===Request-END===")
             print("===Response-START===")
             print("StatusCode: ", response.satusCode)

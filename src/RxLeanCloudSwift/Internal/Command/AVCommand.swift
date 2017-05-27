@@ -9,5 +9,17 @@
 import Foundation
 
 public class AVCommand: HttpRequest {
-    
+    var realtiveUrl: String = ""
+
+    func takeUrl(app: RxAVApp) -> String {
+        self.url = app.getUrl(relativeUrl: self.realtiveUrl)
+        return self.url
+    }
+
+    init(relativeUrl: String, method: String, data: Dictionary<String, Any>?, app: RxAVApp) {
+        let url = app.getUrl(relativeUrl: relativeUrl)
+        let headers = app.getHeaders()
+        self.realtiveUrl = relativeUrl
+        super.init(method: method, url: url, headers: headers, data: data)
+    }
 }

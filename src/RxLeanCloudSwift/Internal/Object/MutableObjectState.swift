@@ -32,14 +32,13 @@ public class MutableObjectState: IObjectState {
         self.app = state.app
         self.objectId = state.objectId
         self.isNew = state.isNew
-        self.className = state.className
         self.updatedAt = state.updatedAt
         self.createdAt = state.createdAt
         self.serverData = state.serverData
     }
 
     public func containsKey(key: String) -> Bool {
-        return serverData[key] != nil
+        return serverData.containsKey(key: key)
     }
 
     public func mutatedClone(_ hook: (IObjectState) -> Void) -> IObjectState {
@@ -50,6 +49,7 @@ public class MutableObjectState: IObjectState {
 
     public func mutableClone() -> IObjectState {
         let state = MutableObjectState()
+        
         state.objectId = self.objectId
         state.isNew = self.isNew
         state.className = self.className
@@ -59,28 +59,5 @@ public class MutableObjectState: IObjectState {
         state.serverData = self.serverData
 
         return state
-    }
-
-    public func removeReadOnlyFields() -> Void {
-        if self.containsKey(key: "objectId") {
-            serverData.removeValue(forKey: "objectId")
-        } else if self.containsKey(key: "createdAt") {
-            serverData.removeValue(forKey: "createdAt")
-        } else if self.containsKey(key: "updatedAt") {
-            serverData.removeValue(forKey: "updatedAt")
-        }
-    }
-
-    public func removeRelationFields() -> Void {
-        for (key, value) in serverData {
-            if value is [String: Any] {
-                var vMap = value as! [String: Any]
-                if vMap["__type"] != nil {
-                    if (vMap["__type"] as! String) == "Relation" {
-                        serverData.removeValue(forKey: key)
-                    }
-                }
-            }
-        }
     }
 }

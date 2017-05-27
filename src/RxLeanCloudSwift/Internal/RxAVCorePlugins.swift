@@ -58,6 +58,16 @@ public class RxAVCorePlugins {
             return _objectController!
         }
     }
+    
+    private var _queryController: IQueryController? = nil
+    var queryController: IQueryController {
+        get {
+            if _queryController == nil {
+                _queryController = QueryController(commandRunner: self.commandRunner) as IQueryController
+            }
+            return _queryController!
+        }
+    }
 
 
     static var dateFormatter: DateFormatter {

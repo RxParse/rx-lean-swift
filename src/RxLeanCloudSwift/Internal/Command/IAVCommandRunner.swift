@@ -11,4 +11,5 @@ import RxSwift
 
 public protocol IAVCommandRunner {
     func runRxCommand(command: AVCommand) -> Observable<AVCommandResponse>
+    func runBatchRxCommands(commands: [AVCommand], app: RxAVApp) -> Observable<[AVCommandResponse]>
 }

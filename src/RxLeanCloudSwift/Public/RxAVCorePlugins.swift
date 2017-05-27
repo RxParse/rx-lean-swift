@@ -28,6 +28,16 @@ public class RxAVCorePlugins {
         }
     }
 
+    private var _webSocketClient: IRxWebSokcetClient? = nil
+    var webSocketClient: IRxWebSokcetClient {
+        get {
+            if _webSocketClient == nil {
+                _webSocketClient = RxWebSocketClient()
+            }
+            return self._webSocketClient!
+        }
+    }
+
     private var _avEncoder: IAVEncoder = AVEncoder() as IAVEncoder
     var avEncoder: IAVEncoder {
         get {
@@ -58,7 +68,7 @@ public class RxAVCorePlugins {
             return _objectController!
         }
     }
-    
+
     private var _queryController: IQueryController? = nil
     var queryController: IQueryController {
         get {
@@ -68,7 +78,6 @@ public class RxAVCorePlugins {
             return _queryController!
         }
     }
-
 
     static var dateFormatter: DateFormatter {
         get {

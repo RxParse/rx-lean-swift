@@ -22,4 +22,8 @@ public class AVCommand: HttpRequest {
         self.realtiveUrl = relativeUrl
         super.init(method: method, url: url, headers: headers, data: data)
     }
+    
+    public static func create(json: [String: Any], app: RxAVApp) -> AVCommand {
+        return AVCommand(relativeUrl: "", method: "POST", data: json, app: app)
+    }
 }

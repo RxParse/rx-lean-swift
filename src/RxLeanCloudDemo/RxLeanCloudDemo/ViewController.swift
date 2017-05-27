@@ -54,6 +54,15 @@ class ViewController: UIViewController {
         )
     }
 
+    @IBAction func openWebSocket() {
+
+        RxAVWebSocket.sharedInstance.open().flatMap({ (success) -> Observable<[String:Any]> in
+            return try RxAVRealtime.sharedInstance.connect(clientId: "junwu")
+        }).subscribe (onNext: {
+            print($0) }
+        )
+    }
+
 
 }
 

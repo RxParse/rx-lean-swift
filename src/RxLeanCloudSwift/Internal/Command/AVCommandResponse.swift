@@ -9,5 +9,13 @@
 import Foundation
 
 public class AVCommandResponse: HttpResponse {
-
+    public var jsonBody: [String: Any]? {
+        get {
+            let json = self.body as? [String: Any]
+            if json != nil {
+                return json
+            }
+            return nil
+        }
+    }
 }

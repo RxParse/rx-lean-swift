@@ -7,22 +7,22 @@ target 'RxLeanCloudSwift' do
     pod 'RxCocoa',    '~> 3.0'
     pod 'RxAlamofire'
     pod 'Alamofire', '> 4.4'
-    pod 'SwiftyJSON'
+    pod 'Starscream', '~> 2.0.3'
 end
 
 target 'RxLeanCloudSwiftTests' do
-    pod 'RxSwift', ‘~> 3.0'
-    pod 'RxCocoa', ‘~> 3.0'
+    pod 'RxSwift', '~> 3.0'
+    pod 'RxCocoa', '~> 3.0'
     pod 'RxBlocking', '> 3.0'
     pod 'RxTest', '> 3.0'
-    pod 'SwiftyJSON'
+    pod 'Starscream', '~> 2.0.3'
 end
 
-target ‘RxLeanCloudDemo’ do
-    xcodeproj 'RxLeanCloudDemo/RxLeanCloudDemo.xcodeproj'
+target 'RxLeanCloudDemo' do
+    project 'RxLeanCloudDemo/RxLeanCloudDemo.xcodeproj'
     pod 'RxSwift',    '~> 3.0'
     pod 'RxCocoa',    '~> 3.0'
     pod 'RxAlamofire'
     pod 'Alamofire', '> 4.4'
-    pod 'SwiftyJSON'
+    pod 'Starscream', '~> 2.0.3'
 end

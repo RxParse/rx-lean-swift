@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 public class RxAVClient {
 
@@ -31,14 +32,35 @@ public class RxAVClient {
         _enableLog = enable
     }
 
+    public func httpRequest(url: String, method: String?, headers: [String: String]?, data: [String: Any]?) -> Observable<HttpResponse> {
+        var method = method
+        if method == nil {
+            method = "GET"
+        }
+        let req = HttpRequest(method: method!, url: url, headers: headers, data: data)
+        return RxAVCorePlugins.sharedInstance.httpClient.execute(httpRequest: req)
+    }
+
+    public func websocketLog(cmd: AVCommand) -> Void {
+        if _enableLog {
+//            print("===Websocket-Command-START===")
+            print("=>", cmd.data!)
+//            print("===Websocket-Command-END===")
+//            print("===Websocket-Response-START===")
+//            print("<=", response.body!)
+//            print("===Websocket-Response-END===")
+//            print("===Websocket-Command-END===")
+        }
+    }
+
     public func httpLog(request: HttpRequest, response: HttpResponse) -> Void {
         if _enableLog {
             print("===HTTP-START===")
             print("===Request-START===")
             print("Url: ", request.url)
             print("Method: ", request.method)
-            print("Headers: ", request.headers)
-            print("RequestBody: ", request.data ?? ["no":"result"])
+            print("Headers: ", request.headers ?? ["no": "headers"])
+            print("RequestBody: ", request.data ?? ["no": "body"])
             print("===Request-END===")
             print("===Response-START===")
             print("StatusCode: ", response.satusCode)
@@ -46,5 +68,9 @@ public class RxAVClient {
             print("===Response-END===")
             print("===HTTP-END===")
         }
+    }
+
+    public func getSDKVersion() -> String {
+        return "0.1.0"
     }
 }

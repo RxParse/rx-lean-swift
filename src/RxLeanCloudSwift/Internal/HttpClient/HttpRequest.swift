@@ -9,14 +9,14 @@
 import Foundation
 
 public class HttpRequest {
-    var method : String
-    var url : String
-    var headers : Dictionary<String, String>
-    var data : Dictionary<String, Any>?
-    
-    init(method:String,url:String,headers:Dictionary<String, String>?,data : Dictionary<String, Any>?) {
+    var method: String
+    var url: String
+    var headers: Dictionary<String, String>?
+    var data: Dictionary<String, Any>?
+
+    init(method: String, url: String, headers: Dictionary<String, String>?, data: Dictionary<String, Any>?) {
         self.url = url
-        self.headers = headers!
+        self.headers = headers
         self.data = data
         self.method = method
     }

@@ -9,12 +9,14 @@
 import Foundation
 
 extension Dictionary {
+    
     func containsKey(key: Key) -> Bool{
         if self[key] != nil {
             return true
         }
         return false
     }
+    
     func JSONStringify(prettyPrinted: Bool = false) -> String {
         let options = prettyPrinted ? JSONSerialization.WritingOptions.prettyPrinted : JSONSerialization.WritingOptions(rawValue: 0)
         if JSONSerialization.isValidJSONObject(self) {
@@ -27,7 +29,6 @@ extension Dictionary {
                 print("error")
                 //Access error here
             }
-            
         }
         return ""
     }

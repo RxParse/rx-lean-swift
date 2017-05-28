@@ -15,19 +15,41 @@ public protocol IAVIMMessage {
     var id: String { get set }
     var timestamp: Double { get set }
     var from: String { get set }
-    func deserialize(raw: String) -> Void
+    mutating func deserialize(data: [String: Any]) -> Void
     func serialize() -> String
     func validate(raw: String) -> Bool
 }
 
-public struct AVIMTextMessage {
+public struct AVIMMessage: IAVIMMessage {
 
+    public func validate(raw: String) -> Bool {
+        return true
+    }
+
+    public func serialize() -> String {
+        return self.raw
+    }
+
+    public mutating func deserialize(data: [String: Any]) {
+        self.conversationId = data["cid"] as! String
+        self.from = data["fromPeerId"] as! String
+        self.raw = data["msg"] as! String
+        self.id = data["id"] as! String
+        self.timestamp = data["timestamp"] as! Double
+    }
+
+    public var from: String
+
+    public var timestamp: Double
+
+    public var id: String
+
+    public var raw: String
+
+    public var conversationId: String
 }
 
 public struct AVIMMessageSendOptions {
-    var clientId: String
-    var conversationId: String
-    var message: IAVIMMessage
     var transient: Bool
     var receipt: Bool
     var priority: Int
@@ -99,10 +121,15 @@ public struct AVIMConnectOptions {
 public class RxAVRealtime {
     public static let sharedInstance = RxAVRealtime(app: nil)
     public var onMessage: Observable<IAVIMMessage>?
+    public var clientId: String?
     var app: RxAVApp
     var idSeed: Int = -65535;
+    private let lock = DispatchSemaphore(value: 1)
     func cmdIdAutomation() -> Int {
-        return self.idSeed + 1
+        lock.wait()
+        defer { lock.signal() }
+        idSeed += 1
+        return idSeed
     }
     public init(app: RxAVApp? = nil) {
         self.app = RxAVClient.sharedInstance.getCurrentApp()
@@ -116,14 +143,11 @@ public class RxAVRealtime {
     }
 
     public func connectWithOptions(options: AVIMConnectOptions) throws -> Observable<[String:Any]> {
-        var cmdBody = [
-            "cmd": "session",
-            "op": "open",
-            "appId": self.app.appId,
-            "peerId": options.clientId,
-            "i": self.cmdIdAutomation(),
-            "ua": "rx-lean-swift/\(RxAVClient.sharedInstance.getSDKVersion())",
-        ] as [String: Any]
+        self.clientId = options.clientId
+        var cmdBody = self._makeCommand()
+        cmdBody["ua"] = "rx-lean-swift/\(RxAVClient.sharedInstance.getSDKVersion())"
+        cmdBody["cmd"] = "session"
+        cmdBody["op"] = "open"
 
         if options.tag != nil {
             cmdBody["tag"] = options.tag
@@ -145,16 +169,17 @@ public class RxAVRealtime {
 
     public func create(options: AVIMConversationCreateOptions) throws -> Observable<IAVIMConversation> {
         var options = options
-        var cmdBody = [
-            "cmd": "conv",
-            "op": "start",
-            "m": options.conversation.members,
-            "attr": options.conversation.attributes,
-            "appId": self.app.appId,
-            "peerId": options.conversation.creator,
-            "transient": options.conversation.transient,
-            "unique": options.conversation.unique
-        ] as [String: Any]
+        var cmdBody = self._makeCommand()
+        cmdBody["cmd"] = "conv"
+        cmdBody["op"] = "start"
+        cmdBody["m"] = options.conversation.members
+        if options.conversation.attributes.count > 0 {
+            cmdBody["attr"] = options.conversation.attributes
+        }
+
+        cmdBody["transient"] = options.conversation.transient
+        cmdBody["unique"] = options.conversation.unique
+
         if options.signature != nil {
             cmdBody["t"] = options.signature?.timestamp
             cmdBody["n"] = options.signature?.noce
@@ -167,22 +192,54 @@ public class RxAVRealtime {
         })
     }
 
-    public func send(options: AVIMMessageSendOptions) throws -> Observable<IAVIMMessage> {
-        var options = options
-        let cmdBody = [
-            "cmd": "direct",
-            "cid": options.conversationId,
-            "r": options.receipt,
-            "transient": options.transient,
-            "msg": options.message.serialize(),
-            "appId": self.app.appId,
-            "peerId": options.clientId,
-            "level": options.priority
-        ] as [String: Any]
+    public func send(conversationId: String, jsonData: [String: Any], options: AVIMMessageSendOptions? = nil) throws -> Observable<IAVIMMessage> {
+        var jsonData = jsonData
+        let type = jsonData["type"] as! String
+        switch type {
+        case "text":
+            jsonData = self._makeText(data: jsonData)
+            break
+        default: break
+        }
+        let optionx = options == nil ? AVIMMessageSendOptions(transient: false, receipt: true, priority: 3, pushData: ["alert": "您有一条消息"]) : options!
+        let avMessage = AVIMMessage(from: self.clientId!, timestamp: 0, id: "", raw: jsonData.JSONStringify(), conversationId: "")
+        return try self._send(conversationId: conversationId, message: avMessage, options: optionx)
+    }
+
+    func _send(conversationId: String, message: IAVIMMessage, options: AVIMMessageSendOptions) throws -> Observable<IAVIMMessage> {
+        var message = message
+        var cmdBody = self._makeCommand()
+        cmdBody["cmd"] = "direct"
+        cmdBody["cid"] = conversationId
+        cmdBody["r"] = options.receipt
+        cmdBody["transient"] = options.transient
+        cmdBody["level"] = options.priority
+        cmdBody["msg"] = message.serialize()
 
         return try RxAVWebSocket.sharedInstance.send(json: cmdBody).map({ (response) -> IAVIMMessage in
-            options.message.id = response["uid"] as! String
-            return options.message
+            message.id = response["uid"] as! String
+            message.timestamp = response["t"] as! Double
+            return message
         })
+    }
+
+    func _makeText(data: [String: Any]) -> [String: Any] {
+        let text = data["text"] as! String
+        let msg = [
+            "_lctype": -1,
+            "_lctext": text
+        ] as [String: Any]
+
+        return msg
+    }
+
+    func _makeCommand() -> [String: Any] {
+        var cmd = [String: Any]()
+        cmd["appId"] = self.app.appId
+        if self.clientId != nil {
+            cmd["peerId"] = self.clientId!
+        }
+        cmd["i"] = self.cmdIdAutomation()
+        return cmd
     }
 }

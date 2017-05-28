@@ -64,6 +64,17 @@ class ViewController: UIViewController {
         })
     }
 
+    @IBAction func sendMessage() {
+        try! RxAVRealtime.sharedInstance.connect(clientId: "junwu").flatMap { (connected) -> Observable<IAVIMConversation> in
+            let conversation = AVIMConversation(members: ["hey"], creator: "junwu")
+            return try RxAVRealtime.sharedInstance.create(options: AVIMConversationCreateOptions(conversation: conversation))
+        }.flatMap({ (conversation) -> Observable<IAVIMMessage> in
+            return try RxAVRealtime.sharedInstance.send(conversationId: conversation.conversationId, jsonData: ["type": "text", "text": "hello world"])
+        }).subscribe(onNext: { message in
+            print(message.id)
+        })
+    }
+
 
 }
 

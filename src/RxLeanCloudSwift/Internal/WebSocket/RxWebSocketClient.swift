@@ -87,7 +87,7 @@ public class RxWebSocketClient: IRxWebSokcetClient, WebSocketDelegate {
     }
 
     public func websocketDidReceiveMessage(socket: Starscream.WebSocket, text: String) {
-        print("<=", text.data(using: String.Encoding.utf8)!)
+        print("<=", text)
         guard let data = text.data(using: .utf8),
             let jsonData = try? JSONSerialization.jsonObject(with: data),
             let jsonDict = jsonData as? [String: Any]

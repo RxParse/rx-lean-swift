@@ -40,9 +40,17 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkx-UM-YbO">
                                 <rect key="frame" x="23" y="259" width="178" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="OpenWebSocket"/>
+                                <state key="normal" title="CreatConversation"/>
                                 <connections>
                                     <action selector="openWebSocket" destination="BYZ-38-t0r" eventType="touchUpInside" id="WaO-sG-uMS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orb-hb-Htp">
+                                <rect key="frame" x="23" y="346" width="178" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SendMessage"/>
+                                <connections>
+                                    <action selector="sendMessage" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wxe-F7-0Bw"/>
                                 </connections>
                             </button>
                         </subviews>

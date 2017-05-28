@@ -26,8 +26,8 @@
 - [ ] RxAVRealtime
   - [x] connect
   - [x] connectWithUser
-  - [ ] createConversation
-  - [ ] send
+  - [x] createConversation
+  - [x] send
   - [ ] onMessage
   - [ ] onEvent
 - [ ] RxLiveQuery

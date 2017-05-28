@@ -49,18 +49,19 @@ class ViewController: UIViewController {
             return list.map({ (obj) -> String in
                 return obj.objectId!
             })
-        }.subscribe (onNext: {
-            print($0) }
+        }.subscribe (onNext: { response in
+            print(response) }
         )
     }
 
     @IBAction func openWebSocket() {
 
-        RxAVWebSocket.sharedInstance.open().flatMap({ (success) -> Observable<[String:Any]> in
-            return try RxAVRealtime.sharedInstance.connect(clientId: "junwu")
-        }).subscribe (onNext: {
-            print($0) }
-        )
+        try! RxAVRealtime.sharedInstance.connect(clientId: "junwu").flatMap { (connected) -> Observable<IAVIMConversation> in
+            let conversation = AVIMConversation(members: ["hey"], creator: "junwu")
+            return try RxAVRealtime.sharedInstance.create(options: AVIMConversationCreateOptions(conversation: conversation))
+        }.subscribe(onNext: { conversation in
+            print(conversation.conversationId)
+        })
     }
 
 

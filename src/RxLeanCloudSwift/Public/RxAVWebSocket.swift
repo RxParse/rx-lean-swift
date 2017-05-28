@@ -26,7 +26,6 @@ public class RxAVWebSocket {
     }
 
     public func open() -> Observable<Bool> {
-        print(self.app!)
         if self.app?.wss != nil {
             return self.rxWebSocketClient.open(url: (app?.wss)!, subprotocol: nil)
         }

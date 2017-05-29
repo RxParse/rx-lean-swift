@@ -53,6 +53,14 @@
                                     <action selector="sendMessage" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wxe-F7-0Bw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZY-Q8-odP">
+                                <rect key="frame" x="23" y="483" width="178" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ReceiveMessage"/>
+                                <connections>
+                                    <action selector="receivedMessage" destination="BYZ-38-t0r" eventType="touchUpInside" id="ztS-CC-bjx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>

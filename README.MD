@@ -2,11 +2,11 @@
 使用 Swift 语言重新编写的基于 RxSwift 的 SDK for iOS/macOS/tvOS/watchOS
 
 ## 开发进度
-- [ ] RxAVObject
+- [ ] RxAVObject - [RxAVObject doc issue](https://github.com/RxLeanCloud/rx-lean-swift/issues/8)
   - [x] save
   - [x] update
   - [ ] delete
-- [ ] RxAVQuery
+- [ ] RxAVQuery - [RxAVQuery doc issue](https://github.com/RxLeanCloud/rx-lean-swift/issues/9)
   - [x] find
   - [ ] first
   - [ ] count
@@ -23,12 +23,12 @@
 - [ ] RxAVEngine
   - [ ] callCloudFunctions
   - [ ] rpcCloudFunctions
-- [ ] RxAVRealtime - [#5](https://github.com/RxLeanCloud/rx-lean-swift/issues/5)
+- [ ] RxAVRealtime - [RxAVRealtime doc issue](https://github.com/RxLeanCloud/rx-lean-swift/issues/5)
   - [x] connect
   - [x] connectWithUser
   - [x] createConversation
   - [x] send
-  - [ ] onMessage
+  - [x] onMessage
   - [ ] onEvent
 - [ ] RxLiveQuery
   - [ ] subscribe
@@ -42,8 +42,8 @@
 
 以下两篇是 [realm](https://realm.io/cn/) 公司出品的两篇文章，是由两位工程师做的公开分享里面的汇总，推荐阅读和仔细品读里面列举的代码示例
 
-## [使用 RxSwift 进行响应式编程](https://news.realm.io/cn/news/altconf-scott-gardner-reactive-programming-with-rxswift/)
-## [RxSwift 函数响应式编程](https://news.realm.io/cn/news/slug-max-alexander-functional-reactive-rxswift/)
+- [使用 RxSwift 进行响应式编程](https://news.realm.io/cn/news/altconf-scott-gardner-reactive-programming-with-rxswift/)
+- [RxSwift 函数响应式编程](https://news.realm.io/cn/news/slug-max-alexander-functional-reactive-rxswift/)
 
 
 ## 我们如何选择？

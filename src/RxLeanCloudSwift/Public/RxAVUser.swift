@@ -15,7 +15,6 @@ enum userError: Error {
 
 public class RxAVUser: RxAVObject {
 
-
     public var username: String {
         get {
             return self.getProperty(key: "username") as! String

@@ -145,7 +145,11 @@ public class RxAVRealtime {
         return idSeed
     }
     public init(app: RxAVApp? = nil) {
-        self.app = RxAVClient.sharedInstance.getCurrentApp()
+        if app != nil {
+            self.app = app!
+        } else {
+            self.app = RxAVClient.sharedInstance.getCurrentApp()
+        }
         messageSubject = PublishSubject<IAVIMMessage>()
         onMessage = messageSubject.asObservable()
         self._bindWebSokcet()
@@ -259,8 +263,16 @@ public class RxAVRealtime {
         return cmd
     }
 
+    func _sendAck(message: IAVIMMessage) throws -> Observable<[String:Any]> {
+        var cmdBody = self._makeCommand()
+        cmdBody["cmd"] = "ack"
+        cmdBody["cid"] = message.conversationId
+        cmdBody["mid"] = message.id
+        return try self.rxAVWebSocket.send(json: cmdBody)
+    }
+
     func _bindWebSokcet() {
-        self.rxAVWebSocket.rxWebSocketClient.onMessage.filter { (avResponse) -> Bool in
+        self.onMessage = self.rxAVWebSocket.rxWebSocketClient.onMessage.filter { (avResponse) -> Bool in
             let cmdName = avResponse.jsonBody?["cmd"] as! String
             return cmdName == "direct"
         }.map { (avResponse) -> IAVIMMessage in
@@ -272,15 +284,8 @@ public class RxAVRealtime {
             _ = avResponse.jsonBody?["transient"]
             _ = avResponse.jsonBody?["hasMore"]
             let avMessage = AVIMMessage(from: from, timestamp: timestamp, id: id, raw: msg, conversationId: convid)
+            _ = try self._sendAck(message: avMessage)
             return avMessage
-        }.subscribe(onNext: { (avMessage) in
-            self.messageSubject.onNext(avMessage)
-        }, onError: { (error) in
-            print(error)
-        }, onCompleted: {
-            
-        }) {
-
         }
     }
 }

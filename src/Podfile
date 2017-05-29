@@ -22,7 +22,7 @@ target 'RxLeanCloudDemo' do
     project 'RxLeanCloudDemo/RxLeanCloudDemo.xcodeproj'
     pod 'RxSwift',    '~> 3.0'
     pod 'RxCocoa',    '~> 3.0'
-    pod 'RxAlamofire' '~> 3.0.2'
+    pod 'RxAlamofire'
     pod 'Alamofire', '> 4.4'
     pod 'Starscream', '~> 2.0.3'
 end

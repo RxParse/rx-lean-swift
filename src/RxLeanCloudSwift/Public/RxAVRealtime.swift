@@ -120,7 +120,20 @@ public struct AVIMConnectOptions {
 
 public class RxAVRealtime {
     public static let sharedInstance = RxAVRealtime(app: nil)
-    public var onMessage: Observable<IAVIMMessage>?
+
+    var _rxAVWebsocket: RxAVWebSocket = RxAVWebSocket.sharedInstance
+    public var rxAVWebSocket: RxAVWebSocket {
+        get {
+            return self._rxAVWebsocket
+        }
+        set {
+            self._rxAVWebsocket = newValue
+            self._bindWebSokcet()
+        }
+    }
+
+    var messageSubject: PublishSubject<IAVIMMessage>
+    public var onMessage: Observable<IAVIMMessage>
     public var clientId: String?
     var app: RxAVApp
     var idSeed: Int = -65535;
@@ -133,10 +146,13 @@ public class RxAVRealtime {
     }
     public init(app: RxAVApp? = nil) {
         self.app = RxAVClient.sharedInstance.getCurrentApp()
+        messageSubject = PublishSubject<IAVIMMessage>()
+        onMessage = messageSubject.asObservable()
+        self._bindWebSokcet()
     }
 
     public func connect(clientId: String, signature: AVIMSignature? = nil) throws -> Observable<[String:Any]> {
-        return RxAVWebSocket.sharedInstance.open().flatMap { (success) -> Observable<[String:Any]> in
+        return self.rxAVWebSocket.open().flatMap { (success) -> Observable<[String:Any]> in
             let options = AVIMConnectOptions(clientId: clientId, deviceToken: nil, tag: nil, st: nil, lastUnreadNotifTime: nil, signature: signature)
             return try self.connectWithOptions(options: options)
         }
@@ -160,7 +176,7 @@ public class RxAVRealtime {
             cmdBody["n"] = options.signature?.noce
             cmdBody["s"] = options.signature?.signature
         }
-        return try RxAVWebSocket.sharedInstance.send(json: cmdBody)
+        return try self.rxAVWebSocket.send(json: cmdBody)
     }
 
     public func connectWithUser(user: RxAVUser) throws -> Observable<[String:Any]> {
@@ -186,7 +202,7 @@ public class RxAVRealtime {
             cmdBody["s"] = options.signature?.signature
         }
 
-        return try RxAVWebSocket.sharedInstance.send(json: cmdBody).map({ (response) -> IAVIMConversation in
+        return try self.rxAVWebSocket.send(json: cmdBody).map({ (response) -> IAVIMConversation in
             options.conversation.conversationId = response["cid"] as! String
             return options.conversation
         })
@@ -216,7 +232,7 @@ public class RxAVRealtime {
         cmdBody["level"] = options.priority
         cmdBody["msg"] = message.serialize()
 
-        return try RxAVWebSocket.sharedInstance.send(json: cmdBody).map({ (response) -> IAVIMMessage in
+        return try self.rxAVWebSocket.send(json: cmdBody).map({ (response) -> IAVIMMessage in
             message.id = response["uid"] as! String
             message.timestamp = response["t"] as! Double
             return message
@@ -241,5 +257,30 @@ public class RxAVRealtime {
         }
         cmd["i"] = self.cmdIdAutomation()
         return cmd
+    }
+
+    func _bindWebSokcet() {
+        self.rxAVWebSocket.rxWebSocketClient.onMessage.filter { (avResponse) -> Bool in
+            let cmdName = avResponse.jsonBody?["cmd"] as! String
+            return cmdName == "direct"
+        }.map { (avResponse) -> IAVIMMessage in
+            let from = avResponse.jsonBody?["fromPeerId"] as! String
+            let convid = avResponse.jsonBody?["cid"] as! String
+            let msg = avResponse.jsonBody?["msg"] as! String
+            let id = avResponse.jsonBody?["id"] as! String
+            let timestamp = avResponse.jsonBody?["timestamp"] as! Double
+            _ = avResponse.jsonBody?["transient"]
+            _ = avResponse.jsonBody?["hasMore"]
+            let avMessage = AVIMMessage(from: from, timestamp: timestamp, id: id, raw: msg, conversationId: convid)
+            return avMessage
+        }.subscribe(onNext: { (avMessage) in
+            self.messageSubject.onNext(avMessage)
+        }, onError: { (error) in
+            print(error)
+        }, onCompleted: {
+            
+        }) {
+
+        }
     }
 }

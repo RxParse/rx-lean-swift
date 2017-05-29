@@ -44,14 +44,14 @@ class ViewController: UIViewController {
 //        let alertController = UIAlertController(title: "Welcome to My First App", message: "Hello World", preferredStyle: UIAlertControllerStyle.alert)
 //        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
 //        self.present(alertController, animated: true, completion: nil)
-        let query = RxAVQuery(className: "SwiftTodo").equalTo(key: "foo", value: "bar")
-        query.find().map { (list) -> Array<String> in
-            return list.map({ (obj) -> String in
-                return obj.objectId!
-            })
-        }.subscribe (onNext: { response in
-            print(response) }
-        )
+let query = RxAVQuery(className: "SwiftTodo").equalTo(key: "foo", value: "bar")
+query.find().map { (list) -> Array<String> in
+    return list.map({ (obj) -> String in
+        return obj.objectId!
+    })
+}.subscribe (onNext: { response in
+    print(response) }
+)
     }
 
     @IBAction func openWebSocket() {
@@ -74,7 +74,13 @@ class ViewController: UIViewController {
             print(message.id)
         })
     }
-
+    @IBAction func receivedMessage() {
+        try! RxAVRealtime.sharedInstance.connect(clientId: "junwu").flatMap { (connected) -> Observable<IAVIMMessage> in
+            return RxAVRealtime.sharedInstance.onMessage
+        }.subscribe(onNext: { message in
+            print(message.id, message.raw)
+        })
+    }
 
 }
 

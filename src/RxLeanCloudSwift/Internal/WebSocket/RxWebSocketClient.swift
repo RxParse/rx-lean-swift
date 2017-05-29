@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import Starscream
 
-public class RxWebSocketClient: IRxWebSokcetClient, WebSocketDelegate {
+public class RxWebSocketClient: IRxWebSokcetClient, WebSocketDelegate, WebSocketPongDelegate {
 
     var socket: WebSocket?
     var messageSubject: PublishSubject<Any> = PublishSubject<Any>()
@@ -78,6 +78,7 @@ public class RxWebSocketClient: IRxWebSokcetClient, WebSocketDelegate {
 
     public func websocketDidConnect(socket: Starscream.WebSocket) {
         print("connected with ", socket.currentURL)
+        self.socket!.write(ping: Data())
         self.stateSubject.onNext(1)
     }
 
@@ -98,6 +99,11 @@ public class RxWebSocketClient: IRxWebSokcetClient, WebSocketDelegate {
     }
 
     public func websocketDidReceiveData(socket: Starscream.WebSocket, data: Data) {
-        
+
+    }
+    
+    public func websocketDidReceivePong(socket: WebSocket, data: Data?) {
+        print("pong<=", data!)
+        self.socket?.write(ping: Data())
     }
 }

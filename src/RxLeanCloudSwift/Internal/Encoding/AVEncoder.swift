@@ -25,7 +25,7 @@ public class AVEncoder: IAVEncoder {
             for pair in dic {
                 json[pair.key] = self.encode(value: pair.value)
             }
-            return json;
+            return json
         }
         return value
     }

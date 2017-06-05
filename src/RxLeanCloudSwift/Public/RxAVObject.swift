@@ -17,6 +17,10 @@ public protocol IRxAVObject {
     var updatedAt: Date? { get }
 }
 
+public protocol IRxRealmObject {
+    
+}
+
 public class RxAVObject: IRxAVObject {
 
     static var objectController: IObjectController {
@@ -24,6 +28,7 @@ public class RxAVObject: IRxAVObject {
             return RxAVCorePlugins.sharedInstance.objectController
         }
     }
+
     var _isNew: Bool = false
     var _isDirty: Bool = false
     var _state: MutableObjectState = MutableObjectState()
@@ -56,21 +61,25 @@ public class RxAVObject: IRxAVObject {
             self.estimatedData[key] = newValue
         }
     }
+
     public var createdAt: Date? {
         get {
             return self._state.createdAt
         }
     }
+
     public var updatedAt: Date? {
         get {
             return self._state.updatedAt
         }
     }
+
     public init(className: String) {
         self._state.className = className
         self._isDirty = true
         self._state.app = RxAVClient.sharedInstance.getCurrentApp()
     }
+
     public func save() -> Observable<RxAVObject> {
         var observableResult: Observable<RxAVObject> = Observable.from([self])
 
@@ -80,7 +89,7 @@ public class RxAVObject: IRxAVObject {
 
         try! RxAVObject.recursionCollectDirtyChildren(root: self, warehouse: [RxAVObject](), seen: [RxAVObject](), seenNew: [RxAVObject]())
 
-        let dirtyChildren = self.collectAllLeafNodes();
+        let dirtyChildren = self.collectAllLeafNodes()
 
         if dirtyChildren.count > 0 {
             observableResult = self.batchSave(objArray: dirtyChildren).flatMap({ (batchSuccess) -> Observable<RxAVObject> in
@@ -118,7 +127,7 @@ public class RxAVObject: IRxAVObject {
     }
 
     func handlerSaved(serverState: IObjectState) -> Void {
-        self._state.apply(state: serverState)
+        self._state.merge(state: serverState)
         self._isDirty = false
     }
 
@@ -129,7 +138,7 @@ public class RxAVObject: IRxAVObject {
         self.rebuildEstimatedData()
     }
     func rebuildEstimatedData() {
-        self.estimatedData = self._state.serverData;
+        self.estimatedData = self._state.serverData
     }
     func collectDirtyChildren() -> [RxAVObject] {
         var dirtyChildren: [RxAVObject] = [RxAVObject]()
@@ -145,31 +154,31 @@ public class RxAVObject: IRxAVObject {
     }
 
     func collectAllLeafNodes() -> [RxAVObject] {
-        var leafNodes: Array<RxAVObject> = [];
-        let dirtyChildren = self.collectDirtyChildren();
+        var leafNodes: Array<RxAVObject> = []
+        let dirtyChildren = self.collectDirtyChildren()
 
         dirtyChildren.forEach { (child) in
-            let childLeafNodes = child.collectAllLeafNodes();
+            let childLeafNodes = child.collectAllLeafNodes()
             if childLeafNodes.count == 0 {
                 if (child._isDirty) {
-                    leafNodes.append(child);
+                    leafNodes.append(child)
                 }
             } else {
-                leafNodes = leafNodes + childLeafNodes;
+                leafNodes = leafNodes + childLeafNodes
             }
         }
 
-        return leafNodes;
+        return leafNodes
     }
 
     static func recursionCollectDirtyChildren(root: RxAVObject, warehouse: Array<RxAVObject>, seen: Array<RxAVObject>, seenNew: Array<RxAVObject>) throws {
         var seen = seen
         var warehouse = warehouse
 
-        let dirtyChildren = root.collectDirtyChildren();
+        let dirtyChildren = root.collectDirtyChildren()
 
         try dirtyChildren.forEach { (child) in
-            var scopedSeenNew: Array<RxAVObject> = [RxAVObject]();
+            var scopedSeenNew: Array<RxAVObject> = [RxAVObject]()
             if seenNew.contains(where: { (item) -> Bool in
                 return item === child
             }) {
@@ -177,7 +186,7 @@ public class RxAVObject: IRxAVObject {
             }
 
             scopedSeenNew = scopedSeenNew + seenNew
-            scopedSeenNew.append(child);
+            scopedSeenNew.append(child)
 
             if seen.contains(where: { (item) -> Bool in
                 return item === child
@@ -186,7 +195,7 @@ public class RxAVObject: IRxAVObject {
             }
 
             seen.append(child)
-            try RxAVObject.recursionCollectDirtyChildren(root: child, warehouse: warehouse, seen: seen, seenNew: scopedSeenNew);
+            try RxAVObject.recursionCollectDirtyChildren(root: child, warehouse: warehouse, seen: seen, seenNew: scopedSeenNew)
             warehouse.append(child)
         }
     }

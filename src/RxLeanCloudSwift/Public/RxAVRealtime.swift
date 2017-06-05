@@ -136,7 +136,7 @@ public class RxAVRealtime {
     public var onMessage: Observable<IAVIMMessage>
     public var clientId: String?
     var app: RxAVApp
-    var idSeed: Int = -65535;
+    var idSeed: Int = -65535
     private let lock = DispatchSemaphore(value: 1)
     func cmdIdAutomation() -> Int {
         lock.wait()

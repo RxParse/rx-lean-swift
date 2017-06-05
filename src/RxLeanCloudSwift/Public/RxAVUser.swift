@@ -8,6 +8,8 @@
 
 import Foundation
 import RxSwift
+import RxRealm
+import RealmSwift
 
 enum userError: Error {
     case canNotResetUsername

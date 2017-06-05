@@ -38,7 +38,7 @@ public class QueryController: IQueryController {
         var queryString = ""
 
         for (key, value) in queryJson {
-            let qs = "\(key)=\(value)";
+            let qs = "\(key)=\(value)"
             queryArray.append(qs)
         }
         queryString = queryArray.joined(separator: "&")

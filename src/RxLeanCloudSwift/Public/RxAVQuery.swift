@@ -56,7 +56,7 @@ public class RxAVQuery: IRxAVQuery {
 
     public func equalTo(key: String, value: Any) -> RxAVQuery {
         self._where[key] = self._encode(value: value)
-        return self;
+        return self
     }
 
     public func notEqualTo(key: String, value: Any) -> RxAVQuery {
@@ -78,27 +78,35 @@ public class RxAVQuery: IRxAVQuery {
     public func greaterThanOrEqualTo(key: String, value: Any) -> RxAVQuery {
         return self._addCondition(key: key, condition: "$gte", value: value)
     }
+    
     public func containedIn(key: String, value: Any) -> RxAVQuery {
         return self._addCondition(key: key, condition: "$in", value: value)
     }
+    
     public func notContainedIn(key: String, value: Any) -> RxAVQuery {
         return self._addCondition(key: key, condition: "$nin", value: value)
     }
+    
     public func containsAll(key: String, value: Any) -> RxAVQuery {
         return self._addCondition(key: key, condition: "$all", value: value)
     }
+    
     public func exists(key: String) -> RxAVQuery {
         return self._addCondition(key: key, condition: "$exists", value: true)
     }
+    
     public func doesNotExist(key: String) -> RxAVQuery {
         return self._addCondition(key: key, condition: "$exists", value: false)
     }
+    
     public func contains(key: String, value: String) -> RxAVQuery {
         return self._addCondition(key: key, condition: "$regex", value: self.qoute(s: value))
     }
+    
     public func startsWith(key: String, value: String) -> RxAVQuery {
         return self._addCondition(key: key, condition: "$gt", value: self.qoute(s: value))
     }
+    
     public func endsWith(key: String, value: String) -> RxAVQuery {
         return self._addCondition(key: key, condition: "$gt", value: self.qoute(s: value))
     }
@@ -107,6 +115,7 @@ public class RxAVQuery: IRxAVQuery {
         self.order = []
         return self.addAscending(keys: keys)
     }
+    
     public func addAscending(keys: Array<String>) -> RxAVQuery {
         if self.order == nil {
             self.order = [String]()
@@ -121,14 +130,15 @@ public class RxAVQuery: IRxAVQuery {
         self.order = []
         return self.addDescending(keys: keys)
     }
+    
     public func addDescending(keys: Array<String>) -> RxAVQuery {
         if self.order == nil {
-            self.order = [String]();
+            self.order = [String]()
         }
         keys.forEach { (key) in
             self.order?.append("-" + key)
         }
-        return self;
+        return self
     }
 
     public func include(keys: Array<String>) -> RxAVQuery {
@@ -152,13 +162,14 @@ public class RxAVQuery: IRxAVQuery {
     }
 
     func qoute(s: String) -> String {
-        return "\\Q" + s.replacingOccurrences(of: "\\E", with: "\\E\\\\E\\Q") + "\\E";
+        return "\\Q" + s.replacingOccurrences(of: "\\E", with: "\\E\\\\E\\Q") + "\\E"
     }
+    
     func _addCondition(key: String, condition: String, value: Any) -> RxAVQuery {
         if self._where[key] != nil || self._where[key] is String {
             self._where[key] = [String: Any]()
         }
-        let encodedFilter = self._encode(value: value);
+        let encodedFilter = self._encode(value: value)
         let conditionMap = [condition: encodedFilter]
         self._where[key] = conditionMap
         return self
@@ -167,6 +178,7 @@ public class RxAVQuery: IRxAVQuery {
     func _encode(value: Any) -> Any {
         return RxAVQuery._encoder.encode(value: value)
     }
+    
     static var _encoder: IAVEncoder {
         get {
             return RxAVCorePlugins.sharedInstance.avEncoder

@@ -8,6 +8,7 @@ target 'RxLeanCloudSwift' do
     pod 'RxAlamofire'
     pod 'Alamofire', '> 4.4'
     pod 'Starscream', '~> 2.0.3'
+    pod "RxRealm"
 end
 
 target 'RxLeanCloudSwiftTests' do
@@ -16,6 +17,7 @@ target 'RxLeanCloudSwiftTests' do
     pod 'RxBlocking', '> 3.0'
     pod 'RxTest', '> 3.0'
     pod 'Starscream', '~> 2.0.3'
+    pod "RxRealm"
 end
 
 target 'RxLeanCloudDemo' do
@@ -25,4 +27,5 @@ target 'RxLeanCloudDemo' do
     pod 'RxAlamofire'
     pod 'Alamofire', '> 4.4'
     pod 'Starscream', '~> 2.0.3'
+    pod "RxRealm"
 end

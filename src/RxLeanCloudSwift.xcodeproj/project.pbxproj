@@ -37,6 +37,8 @@
 		6AA097951ED3C10200114C43 /* ObjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA097941ED3C10200114C43 /* ObjectController.swift */; };
 		6AA097971ED3C11200114C43 /* IObjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA097961ED3C11200114C43 /* IObjectState.swift */; };
 		6AA097991ED3C11E00114C43 /* MutableObjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA097981ED3C11E00114C43 /* MutableObjectState.swift */; };
+		6AC498B91EE55022008BB978 /* RxKVStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC498B81EE55022008BB978 /* RxKVStorage.swift */; };
+		6AC498BB1EE55038008BB978 /* IRxKVStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC498BA1EE55038008BB978 /* IRxKVStorage.swift */; };
 		6AEB4A9E1ED8283500F3F06A /* QueryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4A9D1ED8283500F3F06A /* QueryController.swift */; };
 		6AEB4AA01ED8284D00F3F06A /* IQueryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4A9F1ED8284D00F3F06A /* IQueryController.swift */; };
 		6AEB4AA41ED9008300F3F06A /* IJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4AA31ED9008300F3F06A /* IJSON.swift */; };
@@ -98,6 +100,8 @@
 		6AA097941ED3C10200114C43 /* ObjectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectController.swift; sourceTree = "<group>"; };
 		6AA097961ED3C11200114C43 /* IObjectState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IObjectState.swift; sourceTree = "<group>"; };
 		6AA097981ED3C11E00114C43 /* MutableObjectState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutableObjectState.swift; sourceTree = "<group>"; };
+		6AC498B81EE55022008BB978 /* RxKVStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxKVStorage.swift; sourceTree = "<group>"; };
+		6AC498BA1EE55038008BB978 /* IRxKVStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRxKVStorage.swift; sourceTree = "<group>"; };
 		6AEB4A9D1ED8283500F3F06A /* QueryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryController.swift; sourceTree = "<group>"; };
 		6AEB4A9F1ED8284D00F3F06A /* IQueryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQueryController.swift; sourceTree = "<group>"; };
 		6AEB4AA31ED9008300F3F06A /* IJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IJSON.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 				6AA097801ED329E100114C43 /* HttpClient */,
 				6AA097831ED329E100114C43 /* Object */,
 				6AEB4A9C1ED8280300F3F06A /* Query */,
+				6AC498B71EE54FA0008BB978 /* Storage */,
 				6A2757FF1ED9C113000D9DA3 /* User */,
 				6AEB4AA71ED92A0500F3F06A /* WebSocket */,
 			);
@@ -251,6 +256,15 @@
 				6A42ABAA1ED52FF2000E9D05 /* IObjectDecoder.swift */,
 			);
 			path = Object;
+			sourceTree = "<group>";
+		};
+		6AC498B71EE54FA0008BB978 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				6AC498B81EE55022008BB978 /* RxKVStorage.swift */,
+				6AC498BA1EE55038008BB978 /* IRxKVStorage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		6AEB4A9C1ED8280300F3F06A /* Query */ = {
@@ -530,6 +544,7 @@
 				6AA097871ED329E100114C43 /* IAVCommandRunner.swift in Sources */,
 				6A42ABA91ED52FD6000E9D05 /* ObjectDecoder.swift in Sources */,
 				6A42AB971ED4FE26000E9D05 /* IAVEncoder.swift in Sources */,
+				6AC498BB1EE55038008BB978 /* IRxKVStorage.swift in Sources */,
 				6AEB4AA91ED92A4D00F3F06A /* RxWebSocketClient.swift in Sources */,
 				6AA0978F1ED3BD3C00114C43 /* RxHttpClient.swift in Sources */,
 				6AEB4AC91ED94F2500F3F06A /* RxAVApp.swift in Sources */,
@@ -540,6 +555,7 @@
 				6A42ABAB1ED52FF2000E9D05 /* IObjectDecoder.swift in Sources */,
 				6AA097951ED3C10200114C43 /* ObjectController.swift in Sources */,
 				6AEB4ACF1ED94F2500F3F06A /* RxAVRealtime.swift in Sources */,
+				6AC498B91EE55022008BB978 /* RxKVStorage.swift in Sources */,
 				6AA097971ED3C11200114C43 /* IObjectState.swift in Sources */,
 				6AA097861ED329E100114C43 /* AVCommandRunner.swift in Sources */,
 			);

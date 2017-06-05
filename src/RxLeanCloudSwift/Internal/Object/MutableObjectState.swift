@@ -37,6 +37,13 @@ public class MutableObjectState: IObjectState {
         self.serverData = state.serverData
     }
 
+    public func merge(state: IObjectState) -> Void {
+        self.isNew = state.isNew
+        self.objectId = state.objectId
+        self.updatedAt = state.updatedAt
+        self.createdAt = state.createdAt
+    }
+
     public func containsKey(key: String) -> Bool {
         return serverData.containsKey(key: key)
     }
@@ -49,7 +56,7 @@ public class MutableObjectState: IObjectState {
 
     public func mutableClone() -> IObjectState {
         let state = MutableObjectState()
-        
+
         state.objectId = self.objectId
         state.isNew = self.isNew
         state.className = self.className

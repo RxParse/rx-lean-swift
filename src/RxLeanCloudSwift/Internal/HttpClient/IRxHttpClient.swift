@@ -10,5 +10,5 @@ import Foundation
 import RxSwift
 
 public protocol IRxHttpClient {
-    func execute(httpRequest: HttpRequest) -> Observable<HttpResponse>;
+    func execute(httpRequest: HttpRequest) -> Observable<HttpResponse>
 }

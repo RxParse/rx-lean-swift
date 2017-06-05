@@ -19,7 +19,7 @@ public class AVDecoder: IAVDecoder {
                 for (key, value) in dataMap {
                     newMap[key] = decode(value: value)
                 }
-                return newMap;
+                return newMap
             } else {
                 let typeString = dataMap["__type"] as! String
                 if typeString == "Date" {
@@ -38,7 +38,7 @@ public class AVDecoder: IAVDecoder {
     }
 
     public func decodePotinter(className: String, objectId: String) -> RxAVObject {
-        return RxAVObject.createWithoutData(classnName: className, objectId: objectId);
+        return RxAVObject.createWithoutData(classnName: className, objectId: objectId)
     }
 
     public func clone(dictionary: [String: Any]) -> [String: Any] {

@@ -33,4 +33,8 @@ public class RxAVUser: RxAVObject {
             return self.getProperty(key: "sessionToken") as? String
         }
     }
+
+//    public static func login(username: String, password: String) -> Observable<RxAVUser> {
+//        
+//    }
 }

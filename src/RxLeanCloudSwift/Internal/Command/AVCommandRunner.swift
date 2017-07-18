@@ -12,9 +12,12 @@ import RxSwift
 public class AVCommandRunner: IAVCommandRunner {
 
     var httpClient: IRxHttpClient
-    init(httpClient: IRxHttpClient) {
+    var websocketClient: IRxWebSokcetClient
+    init(httpClient: IRxHttpClient, websocketClient: IRxWebSokcetClient) {
         self.httpClient = httpClient
+        self.websocketClient = websocketClient
     }
+
 
     public func runRxCommand(command: AVCommand) -> Observable<AVCommandResponse> {
         return self.httpClient.execute(httpRequest: command).map { (httpResponse) -> AVCommandResponse in
@@ -47,10 +50,10 @@ public class AVCommandRunner: IAVCommandRunner {
 
         return self.runRxCommand(command: batchRequest).map({ (batchResponse) -> [AVCommandResponse] in
             var rtn: Array<AVCommandResponse> = [AVCommandResponse]()
-            let results = batchResponse.body as! [String:Any]
+            let results = batchResponse.body as! [String: Any]
             let batchResults = results["results"] as! Array<Any>
             let resultLength = batchResults.count
-            
+
             if resultLength != batchSize {
                 throw HttpError.batchRequestNotCompleted(result: "Batch command result count expected: \(batchSize)  but was: \(resultLength)")
             }

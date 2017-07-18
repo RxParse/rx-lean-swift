@@ -101,7 +101,7 @@ public class RxWebSocketClient: IRxWebSokcetClient, WebSocketDelegate, WebSocket
     public func websocketDidReceiveData(socket: Starscream.WebSocket, data: Data) {
 
     }
-    
+
     public func websocketDidReceivePong(socket: WebSocket, data: Data?) {
         print("pong<=", data!)
         self.socket?.write(ping: Data())

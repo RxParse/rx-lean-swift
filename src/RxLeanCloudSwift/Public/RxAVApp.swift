@@ -25,6 +25,8 @@ public class RxAVApp {
     var pushRouter: String = GlobalConst.push_router_public_cn
     var wss: String?
     var shortName: String = "default"
+    var userCacheKey: String = "currentUser";
+    var installationCacheKey: String = "currentInstallation"
 
     public init(appId: String, appKey: String, shortName: String? = "default", secure: Bool? = true) {
         self.appId = appId

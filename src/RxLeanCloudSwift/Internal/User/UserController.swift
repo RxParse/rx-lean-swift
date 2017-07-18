@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import RxSwift
+
+//public class UserController: IUserController {
+//
+//    public func logIn(username: String, password: String) -> Observable<IObjectState> {
+//        var data = ["username": username, "password": password]
+//        var cmd = 
+//    }
+//}

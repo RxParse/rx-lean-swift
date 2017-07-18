@@ -41,7 +41,9 @@ public class MutableObjectState: IObjectState {
         self.isNew = state.isNew
         self.objectId = state.objectId
         self.updatedAt = state.updatedAt
-        self.createdAt = state.createdAt
+        if state.createdAt != nil {
+            self.createdAt = state.createdAt
+        }
     }
 
     public func containsKey(key: String) -> Bool {

@@ -22,7 +22,7 @@ public class RxAVCorePlugins {
     var commandRunner: IAVCommandRunner {
         get {
             if _commandRunner == nil {
-                _commandRunner = AVCommandRunner(httpClient: self.httpClient)
+                _commandRunner = AVCommandRunner(httpClient: self.httpClient, websocketClient: self.webSocketClient)
             }
             return self._commandRunner!
         }

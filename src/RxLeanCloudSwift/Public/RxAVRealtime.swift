@@ -155,6 +155,18 @@ public class RxAVRealtime {
         self._bindWebSokcet()
     }
 
+    public static func connect(clientId: String, signature: AVIMSignature? = nil) throws -> Observable<[String:Any]> {
+        return try sharedInstance.connect(clientId: clientId, signature: signature)
+    }
+
+    public static func create(options: AVIMConversationCreateOptions) throws -> Observable<IAVIMConversation> {
+        return try sharedInstance.create(options: options)
+    }
+
+    public static func send(conversationId: String, jsonData: [String: Any], options: AVIMMessageSendOptions? = nil) throws -> Observable<IAVIMMessage> {
+        return try sharedInstance.send(conversationId: conversationId, jsonData: jsonData, options: options)
+    }
+
     public func connect(clientId: String, signature: AVIMSignature? = nil) throws -> Observable<[String:Any]> {
         return self.rxAVWebSocket.open().flatMap { (success) -> Observable<[String:Any]> in
             let options = AVIMConnectOptions(clientId: clientId, deviceToken: nil, tag: nil, st: nil, lastUnreadNotifTime: nil, signature: signature)

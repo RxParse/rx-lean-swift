@@ -137,9 +137,11 @@ public class RxAVObject: IRxAVObject {
         self._isNew = false
         self.rebuildEstimatedData()
     }
+    
     func rebuildEstimatedData() {
         self.estimatedData = self._state.serverData
     }
+    
     func collectDirtyChildren() -> [RxAVObject] {
         var dirtyChildren: [RxAVObject] = [RxAVObject]()
         for (_, value) in self.estimatedData {
@@ -149,6 +151,7 @@ public class RxAVObject: IRxAVObject {
         }
         return dirtyChildren
     }
+    
     enum RxAVObjectError: Error {
         case circularReference(reason: String)
     }
@@ -199,9 +202,11 @@ public class RxAVObject: IRxAVObject {
             warehouse.append(child)
         }
     }
+    
     func setProperty(key: String, value: Any) -> Void {
         self._state.serverData[key] = value
     }
+    
     func getProperty(key: String) -> Any? {
         if self._state.containsKey(key: key) {
             return self._state.serverData[key]

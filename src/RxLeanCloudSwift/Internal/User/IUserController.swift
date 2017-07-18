@@ -9,6 +9,6 @@
 import Foundation
 import RxSwift
 
-public protocol IUserController {
+internal protocol IUserController {
     func logIn(username: String, password: String) -> Observable<IObjectState>
 }

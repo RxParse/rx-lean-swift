@@ -28,8 +28,15 @@ public class RxAVClient {
     }
 
     var _enableLog: Bool = false
-    public func toggleLog(enable: Bool = true) {
+    public func toggleLog(enable: Bool = true) -> RxAVClient {
         _enableLog = enable
+        return self;
+    }
+    
+    var _eanbleWssForHttp = false;
+    public func toggleWssAsHttp(enable: Bool = true) -> RxAVClient {
+        _eanbleWssForHttp = enable
+        return self;
     }
 
     public func httpRequest(url: String, method: String?, headers: [String: String]?, data: [String: Any]?) -> Observable<HttpResponse> {

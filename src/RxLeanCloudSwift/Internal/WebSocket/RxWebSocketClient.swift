@@ -11,6 +11,37 @@ import RxSwift
 import Starscream
 
 public class RxWebSocketClient: IRxWebSokcetClient, WebSocketDelegate, WebSocketPongDelegate {
+    
+    public func websocketDidConnect(socket: WebSocketClient) {
+        //print("connected with ", socket.currentURL)
+        self.socket!.write(ping: Data())
+        self.stateSubject.onNext(1)
+    }
+    
+    public func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
+        self.stateSubject.onNext(3)
+    }
+    
+    public func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+        print("<=", text)
+        guard let data = text.data(using: .utf8),
+            let jsonData = try? JSONSerialization.jsonObject(with: data),
+            let jsonDict = jsonData as? [String: Any]
+            else {
+                return
+        }
+        self.messageSubject.onNext(jsonDict)
+    }
+    
+    public func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
+        
+    }
+    
+    public func websocketDidReceivePong(socket: WebSocketClient, data: Data?) {
+        print("pong<=", data!)
+        self.socket?.write(ping: Data())
+    }
+    
 
     var socket: WebSocket?
     var messageSubject: PublishSubject<Any> = PublishSubject<Any>()
@@ -76,34 +107,34 @@ public class RxWebSocketClient: IRxWebSokcetClient, WebSocketDelegate, WebSocket
         })
     }
 
-    public func websocketDidConnect(socket: Starscream.WebSocket) {
-        print("connected with ", socket.currentURL)
-        self.socket!.write(ping: Data())
-        self.stateSubject.onNext(1)
-    }
-
-    public func websocketDidDisconnect(socket: Starscream.WebSocket, error: NSError?) {
-        print("disconnected from ", socket.currentURL)
-        self.stateSubject.onNext(3)
-    }
-
-    public func websocketDidReceiveMessage(socket: Starscream.WebSocket, text: String) {
-        print("<=", text)
-        guard let data = text.data(using: .utf8),
-            let jsonData = try? JSONSerialization.jsonObject(with: data),
-            let jsonDict = jsonData as? [String: Any]
-            else {
-                return
-        }
-        self.messageSubject.onNext(jsonDict)
-    }
-
-    public func websocketDidReceiveData(socket: Starscream.WebSocket, data: Data) {
-
-    }
-
-    public func websocketDidReceivePong(socket: WebSocket, data: Data?) {
-        print("pong<=", data!)
-        self.socket?.write(ping: Data())
-    }
+//    public func websocketDidConnect(socket: Starscream.WebSocket) {
+//        print("connected with ", socket.currentURL)
+//        self.socket!.write(ping: Data())
+//        self.stateSubject.onNext(1)
+//    }
+//
+//    public func websocketDidDisconnect(socket: Starscream.WebSocket, error: NSError?) {
+//        print("disconnected from ", socket.currentURL)
+//        self.stateSubject.onNext(3)
+//    }
+//
+//    public func websocketDidReceiveMessage(socket: Starscream.WebSocket, text: String) {
+//        print("<=", text)
+//        guard let data = text.data(using: .utf8),
+//            let jsonData = try? JSONSerialization.jsonObject(with: data),
+//            let jsonDict = jsonData as? [String: Any]
+//            else {
+//                return
+//        }
+//        self.messageSubject.onNext(jsonDict)
+//    }
+//
+//    public func websocketDidReceiveData(socket: Starscream.WebSocket, data: Data) {
+//
+//    }
+//
+//    public func websocketDidReceivePong(socket: WebSocket, data: Data?) {
+//        print("pong<=", data!)
+//        self.socket?.write(ping: Data())
+//    }
 }

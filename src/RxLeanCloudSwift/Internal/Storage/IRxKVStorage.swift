@@ -24,5 +24,5 @@ public protocol IRxKVStorage {
     /*
      return the json-format string by the given key
      */
-    func get(key: String) -> Observable<String>
+    func get(key: String) -> Observable<String?>
 }

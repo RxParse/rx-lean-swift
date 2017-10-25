@@ -37,7 +37,7 @@ class ObjectTest: XCTestCase {
         let observable = todo.save()
         
         todo.save().map { (avObject) -> String in
-            return avObject.objectId
+            return avObject.objectId!
         }.map { (str) -> Int in
             return str.characters.count
         }.subscribe({ print($0) })
@@ -51,7 +51,7 @@ class ObjectTest: XCTestCase {
         scheduler.start()
 
         //print(results.events[0].value.element?.objectId)
-        XCTAssertTrue((results.events[0].value.element?.objectId.characters.count)! > 0)
+        XCTAssertTrue((results.events[0].value.element?.objectId?.characters.count)! > 0)
     }
     func testScheduledEvents() {
 

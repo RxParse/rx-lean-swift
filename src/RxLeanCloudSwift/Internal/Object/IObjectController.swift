@@ -12,4 +12,5 @@ import RxSwift
 public protocol IObjectController {
     func save(state: IObjectState, estimatedData: [String: Any]) -> Observable<IObjectState>
     func batchSave(states: [IObjectState], estimatedDatas: Array<[String: Any]>, app: RxAVApp) -> Observable<[IObjectState]>
+    func unpackResponse(avResponse: AVCommandResponse) -> IObjectState
 }

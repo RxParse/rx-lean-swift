@@ -79,6 +79,17 @@ public class RxAVCorePlugins {
         }
     }
 
+    private var _userController: IUserController? = nil
+    var userConroller: IUserController {
+        get {
+            if _userController == nil {
+                _userController = UserController(commandRunner: self.commandRunner) as IUserController
+            }
+            return _userController!
+        }
+    }
+
+
     static var dateFormatter: DateFormatter {
         get {
             let formatter = DateFormatter()

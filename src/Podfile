@@ -3,29 +3,26 @@ use_frameworks!
 workspace 'RxLeanCloudSwift.xcworkspace'
 
 target 'RxLeanCloudSwift' do
-    pod 'RxSwift',    '~> 3.0'
-    pod 'RxCocoa',    '~> 3.0'
+    pod 'RxSwift',    '~> 4.0'
+    pod 'RxCocoa',    '~> 4.0'
     pod 'RxAlamofire'
     pod 'Alamofire', '> 4.4'
-    pod 'Starscream', '~> 2.0.3'
-    pod "RxRealm"
+    pod 'Starscream', '~> 3.0.2'
 end
 
 target 'RxLeanCloudSwiftTests' do
-    pod 'RxSwift', '~> 3.0'
-    pod 'RxCocoa', '~> 3.0'
-    pod 'RxBlocking', '> 3.0'
-    pod 'RxTest', '> 3.0'
-    pod 'Starscream', '~> 2.0.3'
-    pod "RxRealm"
+    pod 'RxSwift', '~> 4.0'
+    pod 'RxCocoa', '~> 4.0'
+    pod 'RxBlocking', '> 4.0'
+    pod 'RxTest', '> 4.0'
+    pod 'Starscream', '~> 3.0.2'
 end
 
-target 'RxLeanCloudDemo' do
-    project 'RxLeanCloudDemo/RxLeanCloudDemo.xcodeproj'
-    pod 'RxSwift',    '~> 3.0'
-    pod 'RxCocoa',    '~> 3.0'
-    pod 'RxAlamofire'
-    pod 'Alamofire', '> 4.4'
-    pod 'Starscream', '~> 2.0.3'
-    pod "RxRealm"
-end
+# target 'RxLeanCloudDemo' do
+#     project 'RxLeanCloudDemo/RxLeanCloudDemo.xcodeproj'
+#     pod 'RxSwift',    '~> 4.0'
+#     pod 'RxCocoa',    '~> 4.0'
+#     pod 'RxAlamofire'
+#     pod 'Alamofire', '> 4.4'
+#     pod 'Starscream', '~> 3.0.2'
+# end

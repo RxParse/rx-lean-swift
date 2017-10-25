@@ -32,7 +32,7 @@ public class RxAVApp {
         self.appId = appId
         self.appKey = appKey
         let index = self.appId.index(self.appId.startIndex, offsetBy: 8)
-        let appSubDomain = self.appId.substring(to: index)
+        let appSubDomain = self.appId[...index]
         self.api = "\(appSubDomain).api.lncld.net"
         self.engine = "\(appSubDomain).engine.lncld.net"
         self.stats = "\(appSubDomain).stats.lncld.net"

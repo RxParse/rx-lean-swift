@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 struct GlobalConst {
     static let api_public_cn = "api.leancloud.cn"
@@ -57,5 +58,20 @@ public class RxAVApp {
 
     public func getPushRouterUrl() -> String {
         return "https://\(self.pushRouter)/v1/route?appId=\(self.appId)&secure=1"
+    }
+
+    public func getUserStorageKey() -> String {
+        return "\(self.appId)_current_user";
+    }
+
+    public func currentUser() -> Observable<RxAVUser> {
+        let key = self.getUserStorageKey()
+        return RxAVCorePlugins.sharedInstance.kvStorageController.get(key: key).map({ (userDataString) -> RxAVUser in
+            let userData = userDataString?.toDictionary()
+            let serverState = RxAVCorePlugins.sharedInstance.objectDecoder.decode(serverResult: userData as [String: Any]!, decoder: RxAVCorePlugins.sharedInstance.avDecoder)
+            let user = RxAVUser(className: "_User")
+            user.handleLogInResult(serverState: serverState)
+            return user
+        })
     }
 }

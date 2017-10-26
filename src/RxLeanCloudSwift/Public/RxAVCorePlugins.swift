@@ -10,14 +10,14 @@ import Foundation
 
 public class RxAVCorePlugins {
     static let sharedInstance = RxAVCorePlugins()
-
+    
     private var _httpClient: IRxHttpClient = RxHttpClient() as IRxHttpClient
     var httpClient: IRxHttpClient {
         get {
             return self._httpClient
         }
     }
-
+    
     private var _commandRunner: IAVCommandRunner? = nil
     var commandRunner: IAVCommandRunner {
         get {
@@ -27,7 +27,7 @@ public class RxAVCorePlugins {
             return self._commandRunner!
         }
     }
-
+    
     private var _webSocketClient: IRxWebSokcetClient? = nil
     var webSocketClient: IRxWebSokcetClient {
         get {
@@ -37,28 +37,28 @@ public class RxAVCorePlugins {
             return self._webSocketClient!
         }
     }
-
+    
     private var _avEncoder: IAVEncoder = AVEncoder() as IAVEncoder
     var avEncoder: IAVEncoder {
         get {
             return self._avEncoder
         }
     }
-
+    
     private var _avDecoder: IAVDecoder = AVDecoder() as IAVDecoder
     var avDecoder: IAVDecoder {
         get {
             return self._avDecoder
         }
     }
-
+    
     private var _objectDecoder: IObjectDecoder = ObjectDecoder() as IObjectDecoder
     var objectDecoder: IObjectDecoder {
         get {
             return self._objectDecoder
         }
     }
-
+    
     private var _objectController: IObjectController? = nil
     var objectController: IObjectController {
         get {
@@ -68,7 +68,7 @@ public class RxAVCorePlugins {
             return _objectController!
         }
     }
-
+    
     private var _queryController: IQueryController? = nil
     var queryController: IQueryController {
         get {
@@ -78,7 +78,7 @@ public class RxAVCorePlugins {
             return _queryController!
         }
     }
-
+    
     private var _userController: IUserController? = nil
     var userConroller: IUserController {
         get {
@@ -88,8 +88,17 @@ public class RxAVCorePlugins {
             return _userController!
         }
     }
-
-
+    
+    private var _kvStorageController:IRxKVStorage? = nil
+    var kvStorageController: IRxKVStorage {
+        get {
+            if _kvStorageController == nil {
+                _kvStorageController = RxKVStorage() as IRxKVStorage
+            }
+            return _kvStorageController!
+        }
+    }
+    
     static var dateFormatter: DateFormatter {
         get {
             let formatter = DateFormatter()

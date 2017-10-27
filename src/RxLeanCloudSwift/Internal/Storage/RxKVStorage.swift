@@ -18,15 +18,15 @@ public class RxAVSettings {
 }
 
 public class RxKVStorage: IRxKVStorage {
-    
-    public func set(key: String, value: String) -> Observable<String> {
 
+    public func set(key: String, value: String) -> Observable<String> {
         UserDefaults.standard.set(value, forKey: key)
         return Observable.from([value])
     }
 
     public func get(key: String) -> Observable<String?> {
-        return UserDefaults.standard.rx.observe(String.self, key)
+        let value = UserDefaults.standard.string(forKey: key)
+        return Observable.from([value])
     }
 
     public func remove(key: String) -> Observable<Bool> {
@@ -34,4 +34,8 @@ public class RxKVStorage: IRxKVStorage {
         return Observable.from([true])
     }
 
+    public func saveJSON(key: String, value: [String: Any]) -> Observable<String> {
+        let jsonString = value.JSONStringify()
+        return self.set(key: key, value: jsonString)
+    }
 }

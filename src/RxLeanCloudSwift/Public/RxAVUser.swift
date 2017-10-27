@@ -15,9 +15,21 @@ enum userError: Error {
 
 public class RxAVUser: RxAVObject {
 
+    init(app: RxAVApp) {
+        super.init(className: "_User", app: app)
+    }
+    convenience init() {
+        self.init(app: RxAVClient.sharedInstance.getCurrentApp())
+    }
     static var userController: IUserController {
         get {
             return RxAVCorePlugins.sharedInstance.userConroller
+        }
+    }
+
+    static var kvStorageController: IRxKVStorage {
+        get {
+            return RxAVCorePlugins.sharedInstance.kvStorageController
         }
     }
 
@@ -44,6 +56,13 @@ public class RxAVUser: RxAVObject {
         }
     }
 
+    public var mobilePhoneVerified: Bool {
+        get {
+            let value = self.getProperty(key: "mobilePhoneVerified")
+            return value == nil ? false : value as! Bool
+        }
+    }
+
     public static func logIn(username: String, password: String, app: RxAVApp? = nil) -> Observable<RxAVUser> {
         var _app = app
         if _app == nil {
@@ -51,14 +70,44 @@ public class RxAVUser: RxAVObject {
         }
 
         return self.userController.logIn(username: username, password: password, app: _app!).map({ (serverState) -> RxAVUser in
-            let user = RxAVUser(className: "_User")
-            user.handleLogInResult(serverState: serverState)
+            let user = RxAVUser()
+            user.handleLogInResult(serverState: serverState, app: _app!)
+//            _ = user.saveToStorage().subscribe({ (success) in
+//
+//            })
             return user;
         })
     }
 
-    func handleLogInResult(serverState: IObjectState) -> Void {
+    func handleLogInResult(serverState: IObjectState, app: RxAVApp) -> Void {
         self._state.apply(state: serverState)
+        self._state.app = app
         self._isDirty = false
+    }
+
+    func toJSON() -> [String: Any] {
+        var data = [String: Any]()
+        data["username"] = self.username
+        data["sessionToken"] = self.sessionToken
+        data["objectId"] = self.objectId
+//        data["createdAt"] = self.createdAt
+//        data["updatedAt"] = self.updatedAt
+        return data;
+    }
+
+    public func saveToStorage() -> Observable<Bool> {
+        let key = self._state.app?.getUserStorageKey()
+        let value = self.toJSON()
+        return RxAVUser.kvStorageController.saveJSON(key: key!, value: value).map { (jsonString) -> Bool in
+            return jsonString.count > 0
+        }
+    }
+
+    public static func current(app: RxAVApp? = nil) -> Observable<RxAVUser?> {
+        var _app = app
+        if _app == nil {
+            _app = RxAVClient.sharedInstance.getCurrentApp()
+        }
+        return _app!.currentUser()
     }
 }

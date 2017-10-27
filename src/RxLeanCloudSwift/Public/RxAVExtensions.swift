@@ -9,14 +9,11 @@
 import Foundation
 
 extension Dictionary {
-    
-    func containsKey(key: Key) -> Bool{
-        if self[key] != nil {
-            return true
-        }
-        return false
+
+    func containsKey(key: Key) -> Bool {
+        return self.keys.contains(key)
     }
-    
+
     func JSONStringify(prettyPrinted: Bool = false) -> String {
         let options = prettyPrinted ? JSONSerialization.WritingOptions.prettyPrinted : JSONSerialization.WritingOptions(rawValue: 0)
         if JSONSerialization.isValidJSONObject(self) {
@@ -26,10 +23,23 @@ extension Dictionary {
                     return string as String
                 }
             } catch {
-                print("error")
+                print(error.localizedDescription)
                 //Access error here
             }
         }
         return ""
+    }
+}
+
+extension String {
+    func toDictionary() -> [String: Any]? {
+        if let data = self.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
     }
 }

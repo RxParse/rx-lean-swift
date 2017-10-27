@@ -9,13 +9,23 @@
 import Foundation
 
 public class AVCommandResponse: HttpResponse {
-    public var jsonBody: [String: Any]? {
+
+    private var _jsonBody: [String: Any]? = nil
+    public override var jsonBody: [String: Any]? {
         get {
-            let json = self.body as? [String: Any]
-            if json != nil {
-                return json
+            if self._jsonBody != nil {
+                return self._jsonBody
             }
-            return nil
+            return super.jsonBody
         }
+    }
+
+    init(statusCode: Int, jsonBody: [String: Any]?) {
+        super.init(statusCode: statusCode, data: nil)
+        self._jsonBody = jsonBody
+    }
+
+    override init(statusCode: Int, data: Data?) {
+        super.init(statusCode: statusCode, data: data)
     }
 }

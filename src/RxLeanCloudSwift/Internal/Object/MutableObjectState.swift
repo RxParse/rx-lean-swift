@@ -47,7 +47,7 @@ public class MutableObjectState: IObjectState {
     }
 
     public func containsKey(key: String) -> Bool {
-        return serverData.containsKey(key: key)
+        return self.serverData.containsKey(key: key)
     }
 
     public func mutatedClone(_ hook: (IObjectState) -> Void) -> IObjectState {

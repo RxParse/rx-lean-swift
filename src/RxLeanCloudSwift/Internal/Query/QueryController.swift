@@ -21,7 +21,7 @@ public class QueryController: IQueryController {
         let cmd = AVCommand(relativeUrl: relativeUrl, method: "GET", data: nil, app: query.app!)
 
         return self.commandRunner.runRxCommand(command: cmd).map({ (avResponse) -> Array<IObjectState> in
-            var body = (avResponse.body as? [String: Any])!
+            var body = (avResponse.jsonBody)!
             let results = body["results"] as! Array<Any>
 
             return results.map({ (item) -> IObjectState in

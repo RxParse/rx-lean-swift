@@ -25,4 +25,9 @@ public protocol IRxKVStorage {
      return the json-format string by the given key
      */
     func get(key: String) -> Observable<String?>
+
+    /*
+     save a Dictionary to local storage
+     */
+    func saveJSON(key: String, value: [String: Any]) -> Observable<String>
 }

@@ -18,10 +18,21 @@ public protocol IRxAVObject {
 }
 
 public protocol IRxRealmObject {
-    
+
 }
 
 public class RxAVObject: IRxAVObject {
+
+    public init(className: String, app: RxAVApp) {
+        self._state.className = className
+        self._isDirty = true
+        self._state.app = app
+    }
+
+    public convenience init(className: String) {
+        let currentApp = RxAVClient.sharedInstance.getCurrentApp()
+        self.init(className: className, app: currentApp)
+    }
 
     static var objectController: IObjectController {
         get {
@@ -72,12 +83,6 @@ public class RxAVObject: IRxAVObject {
         get {
             return self._state.updatedAt
         }
-    }
-
-    public init(className: String) {
-        self._state.className = className
-        self._isDirty = true
-        self._state.app = RxAVClient.sharedInstance.getCurrentApp()
     }
 
     public func save() -> Observable<RxAVObject> {
@@ -137,11 +142,11 @@ public class RxAVObject: IRxAVObject {
         self._isNew = false
         self.rebuildEstimatedData()
     }
-    
+
     func rebuildEstimatedData() {
         self.estimatedData = self._state.serverData
     }
-    
+
     func collectDirtyChildren() -> [RxAVObject] {
         var dirtyChildren: [RxAVObject] = [RxAVObject]()
         for (_, value) in self.estimatedData {
@@ -151,7 +156,7 @@ public class RxAVObject: IRxAVObject {
         }
         return dirtyChildren
     }
-    
+
     enum RxAVObjectError: Error {
         case circularReference(reason: String)
     }
@@ -202,14 +207,16 @@ public class RxAVObject: IRxAVObject {
             warehouse.append(child)
         }
     }
-    
+
     func setProperty(key: String, value: Any) -> Void {
         self._state.serverData[key] = value
     }
-    
+
     func getProperty(key: String) -> Any? {
-        if self._state.containsKey(key: key) {
-            return self._state.serverData[key]
+        let contained = self._state.containsKey(key: key)
+        if contained {
+            let value = self._state.serverData[key]
+            return value
         }
         return nil
     }

@@ -52,6 +52,8 @@
 		6AEB4ACE1ED94F2500F3F06A /* RxAVQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4AC61ED94F2500F3F06A /* RxAVQuery.swift */; };
 		6AEB4ACF1ED94F2500F3F06A /* RxAVRealtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4AC71ED94F2500F3F06A /* RxAVRealtime.swift */; };
 		6AEB4AD01ED94F2500F3F06A /* RxAVWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4AC81ED94F2500F3F06A /* RxAVWebSocket.swift */; };
+		6AF08B981FA2E11000D8BF65 /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF08B971FA2E11000D8BF65 /* UserTest.swift */; };
+		6AF08B9B1FA2E20100D8BF65 /* init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF08B9A1FA2E20100D8BF65 /* init.swift */; };
 		DF99862FEDEC4EA96642E0B9 /* Pods_RxLeanCloudSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169B9337A238AB767A5A235F /* Pods_RxLeanCloudSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +117,8 @@
 		6AEB4AC61ED94F2500F3F06A /* RxAVQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVQuery.swift; sourceTree = "<group>"; };
 		6AEB4AC71ED94F2500F3F06A /* RxAVRealtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVRealtime.swift; sourceTree = "<group>"; };
 		6AEB4AC81ED94F2500F3F06A /* RxAVWebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVWebSocket.swift; sourceTree = "<group>"; };
+		6AF08B971FA2E11000D8BF65 /* UserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
+		6AF08B9A1FA2E20100D8BF65 /* init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = init.swift; sourceTree = "<group>"; };
 		79F7DC9F4B1E0AB218D1D063 /* Pods-RxLeanCloudSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLeanCloudSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxLeanCloudSwift/Pods-RxLeanCloudSwift.release.xcconfig"; sourceTree = "<group>"; };
 		D03478159047E8227AAC95CA /* Pods-RxLeanCloudSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLeanCloudSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxLeanCloudSwift/Pods-RxLeanCloudSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		E3E6782685B5431F551FF549 /* Pods-RxLeanCloudSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLeanCloudSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxLeanCloudSwiftTests/Pods-RxLeanCloudSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -201,9 +205,11 @@
 		6A857F3E1ED307B400D174E1 /* RxLeanCloudSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				6AF08B991FA2E1F800D8BF65 /* utils */,
 				6A857F3F1ED307B400D174E1 /* RxLeanCloudSwiftTests.swift */,
 				6A857F411ED307B400D174E1 /* Info.plist */,
 				6A42ABAC1ED55976000E9D05 /* ObjectTest.swift */,
+				6AF08B971FA2E11000D8BF65 /* UserTest.swift */,
 			);
 			path = RxLeanCloudSwiftTests;
 			sourceTree = "<group>";
@@ -299,6 +305,14 @@
 				6AEB4AC81ED94F2500F3F06A /* RxAVWebSocket.swift */,
 			);
 			path = Public;
+			sourceTree = "<group>";
+		};
+		6AF08B991FA2E1F800D8BF65 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				6AF08B9A1FA2E20100D8BF65 /* init.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		A602FE1AFFC883839AD20C43 /* Frameworks */ = {
@@ -567,6 +581,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A42ABAD1ED55976000E9D05 /* ObjectTest.swift in Sources */,
+				6AF08B9B1FA2E20100D8BF65 /* init.swift in Sources */,
+				6AF08B981FA2E11000D8BF65 /* UserTest.swift in Sources */,
 				6A857F401ED307B400D174E1 /* RxLeanCloudSwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,12 +646,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -684,11 +701,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

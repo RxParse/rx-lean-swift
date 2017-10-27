@@ -21,7 +21,7 @@ public class AVCommandRunner: IAVCommandRunner {
 
     public func runRxCommand(command: AVCommand) -> Observable<AVCommandResponse> {
         return self.httpClient.execute(httpRequest: command).map { (httpResponse) -> AVCommandResponse in
-            let avResponse = AVCommandResponse(statusCode: httpResponse.satusCode, body: httpResponse.body as? [String: Any])
+            let avResponse = AVCommandResponse(statusCode: httpResponse.satusCode, data: httpResponse.data)
             return avResponse
         }
     }
@@ -50,8 +50,8 @@ public class AVCommandRunner: IAVCommandRunner {
 
         return self.runRxCommand(command: batchRequest).map({ (batchResponse) -> [AVCommandResponse] in
             var rtn: Array<AVCommandResponse> = [AVCommandResponse]()
-            let results = batchResponse.body as! [String: Any]
-            let batchResults = results["results"] as! Array<Any>
+            let results = batchResponse.jsonBody
+            let batchResults = results!["results"] as! Array<Any>
             let resultLength = batchResults.count
 
             if resultLength != batchSize {
@@ -62,10 +62,10 @@ public class AVCommandRunner: IAVCommandRunner {
                 if result is [String: Any] {
                     let subBody = result as! [String: Any]
                     if subBody["success"] != nil {
-                        return AVCommandResponse(statusCode: 200, body: subBody["success"] as? [String: Any])
+                        return AVCommandResponse(statusCode: 200, jsonBody: subBody["success"] as? [String: Any])
                     }
                 }
-                return AVCommandResponse(statusCode: 400, body: ["failed": "batchError"])
+                return AVCommandResponse(statusCode: 400, jsonBody: ["failed": "batchError"])
             })
 
             return rtn

@@ -38,7 +38,7 @@ public class ObjectDecoder: IObjectDecoder {
         }
 
         for (key, value) in mutableServerResult {
-            mutableServerResult[key] = decoder.decode(value: value)
+            state.serverData[key] = decoder.decode(value: value)
         }
     }
 }

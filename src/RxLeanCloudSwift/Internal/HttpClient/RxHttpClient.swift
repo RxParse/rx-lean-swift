@@ -17,21 +17,23 @@ public class RxHttpClient: IRxHttpClient {
         let manager = self.getAlamofireManager()
         let method = self.getAlamofireMethod(httpRequest: httpRequest)
         let urlEncoding = self.getAlamofireUrlEncoding(httpRequest: httpRequest)
-        let escapedString = httpRequest.url.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
-        return manager.rx.responseJSON(method, escapedString!, parameters: httpRequest.data, encoding: urlEncoding, headers: httpRequest.headers).map { (response, data) -> HttpResponse in
-            var body: [String: Any] = ["results": ""]
-            if data is [String: Any] {
-                body = (data as? [String: Any])!
-            } else if data is Array<[String: Any]> {
-                let dataArray = data as! Array<[String: Any]>
-                body = ["results": dataArray]
-            }
-            let httpResponse = HttpResponse(statusCode: response.statusCode, body: body)
+        let escapedString = httpRequest.url.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+
+        return manager.rx.responseData(method, escapedString!, parameters: httpRequest.data, encoding: urlEncoding, headers: httpRequest.headers).map { (response, data) -> HttpResponse in
+//            let utf8DecodedString = String(data: data, encoding: .utf8)
+//            var body = utf8DecodedString?.toDictionary()
+//            if data is [String: Any] {
+//                body = (data as? [String: Any])!
+//            } else if data is Array<[String: Any]> {
+//                let dataArray = data as! Array<[String: Any]>
+//                body = ["results": dataArray]
+//            }
+            let httpResponse = HttpResponse(statusCode: response.statusCode, data: data)
             RxAVClient.sharedInstance.httpLog(request: httpRequest, response: httpResponse)
             return httpResponse
         }
     }
-    
+
     func getAlamofireUrlEncoding(httpRequest: HttpRequest) -> ParameterEncoding {
         let methodLowerCase = httpRequest.method.uppercased()
         switch methodLowerCase {

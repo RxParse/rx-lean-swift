@@ -32,7 +32,7 @@ public class RxAVWebSocket {
         let pushRouter = self.app?.getPushRouterUrl()
 
         return RxAVClient.sharedInstance.httpRequest(url: pushRouter!, method: nil, headers: nil, data: nil).flatMap({ (response) -> Observable<Bool> in
-            self.pushRouterState = response.body as? [String: Any]
+            self.pushRouterState = response.jsonBody
             if (self.pushRouterState?.containsKey(key: "server"))! {
                 let wss = self.pushRouterState?["server"] as! String
                 return self.rxWebSocketClient.open(url: wss, subprotocol: ["lc.json.3"])

@@ -57,7 +57,7 @@ public class ObjectController: IObjectController {
     }
 
    public func unpackResponse(avResponse: AVCommandResponse) -> IObjectState {
-        var serverState = RxAVCorePlugins.sharedInstance.objectDecoder.decode(serverResult: avResponse.body! as! [String: Any], decoder: RxAVCorePlugins.sharedInstance.avDecoder)
+    var serverState = RxAVCorePlugins.sharedInstance.objectDecoder.decode(serverResult: avResponse.jsonBody! , decoder: RxAVCorePlugins.sharedInstance.avDecoder)
         serverState = serverState.mutatedClone({ (state) in
             serverState.isNew = avResponse.satusCode == 200
         })

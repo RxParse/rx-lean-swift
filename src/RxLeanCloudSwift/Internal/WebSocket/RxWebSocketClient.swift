@@ -58,7 +58,7 @@ public class RxWebSocketClient: IRxWebSokcetClient, WebSocketDelegate, WebSocket
             if result.containsKey(key: "code") {
                 errorCode = result["code"] as? Int
             }
-            let response = AVCommandResponse(statusCode: errorCode != nil ? errorCode! : 200, body: result)
+            let response = AVCommandResponse(statusCode: errorCode != nil ? errorCode! : 200, jsonBody: result)
             return response
         })
         self.onState = stateSubject.asObservable()

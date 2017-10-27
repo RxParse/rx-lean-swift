@@ -11,7 +11,7 @@ import RxSwift
 
 public class RxAVClient {
 
-    static let sharedInstance = RxAVClient()
+    public static let sharedInstance = RxAVClient()
 
     public static func initialize(app: RxAVApp) -> RxAVClient {
         return RxAVClient.sharedInstance.add(app: app, replace: true)
@@ -32,7 +32,7 @@ public class RxAVClient {
         _enableLog = enable
         return self;
     }
-    
+
     var _eanbleWssForHttp = false;
     public func toggleWssAsHttp(enable: Bool = true) -> RxAVClient {
         _eanbleWssForHttp = enable
@@ -71,7 +71,7 @@ public class RxAVClient {
             print("===Request-END===")
             print("===Response-START===")
             print("StatusCode: ", response.satusCode)
-            print("RepsonseBody: ", response.body ?? "")
+            print("RepsonseBody: ", response.bodyString)
             print("===Response-END===")
             print("===HTTP-END===")
         }

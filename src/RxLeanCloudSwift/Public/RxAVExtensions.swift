@@ -11,10 +11,7 @@ import Foundation
 extension Dictionary {
 
     func containsKey(key: Key) -> Bool {
-        if self[key] != nil {
-            return true
-        }
-        return false
+        return self.keys.contains(key)
     }
 
     func JSONStringify(prettyPrinted: Bool = false) -> String {

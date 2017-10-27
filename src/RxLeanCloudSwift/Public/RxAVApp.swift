@@ -61,17 +61,22 @@ public class RxAVApp {
     }
 
     public func getUserStorageKey() -> String {
-        return "\(self.appId)_current_user";
+        return "\(self.appId)_\(self.userCacheKey)";
     }
 
-    public func currentUser() -> Observable<RxAVUser> {
+    public func currentUser() -> Observable<RxAVUser?> {
         let key = self.getUserStorageKey()
-        return RxAVCorePlugins.sharedInstance.kvStorageController.get(key: key).map({ (userDataString) -> RxAVUser in
-            let userData = userDataString?.toDictionary()
-            let serverState = RxAVCorePlugins.sharedInstance.objectDecoder.decode(serverResult: userData as [String: Any]!, decoder: RxAVCorePlugins.sharedInstance.avDecoder)
-            let user = RxAVUser(className: "_User")
-            user.handleLogInResult(serverState: serverState)
-            return user
+        return RxAVCorePlugins.sharedInstance.kvStorageController.get(key: key).map({ (userDataString) -> RxAVUser? in
+            if userDataString != nil {
+                let userData = userDataString?.toDictionary()
+                let serverState = RxAVCorePlugins.sharedInstance.objectDecoder.decode(serverResult: userData as [String: Any]!, decoder: RxAVCorePlugins.sharedInstance.avDecoder)
+                let user = RxAVUser()
+                user.handleLogInResult(serverState: serverState, app: self)
+                return user
+            } else {
+                return nil
+            }
         })
     }
 }
+

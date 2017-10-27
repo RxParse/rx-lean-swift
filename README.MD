@@ -14,8 +14,9 @@
   - [x] multiple RxAVApp
   - [x] request
 - [ ] RxAVUser
-  - [ ] logIn
+  - [x] logIn
   - [ ] signUp
+  - [x] cache to local storage(use [UserDefaults.standard](https://developer.apple.com/documentation/foundation/userdefaults)).
 - [ ] RxSMS
   - [ ] send
   - [ ] verify

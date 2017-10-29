@@ -11,6 +11,7 @@
 		6A2757FD1ED9BA21000D9DA3 /* RxAVUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2757FC1ED9BA21000D9DA3 /* RxAVUser.swift */; };
 		6A2758011ED9C15E000D9DA3 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2758001ED9C15E000D9DA3 /* UserController.swift */; };
 		6A2758031ED9C16D000D9DA3 /* IUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2758021ED9C16D000D9DA3 /* IUserController.swift */; };
+		6A3F43A81FA48E5F00B784EE /* RxAVCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F43A71FA48E5F00B784EE /* RxAVCloud.swift */; };
 		6A42AB971ED4FE26000E9D05 /* IAVEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A42AB961ED4FE26000E9D05 /* IAVEncoder.swift */; };
 		6A42AB991ED4FEE8000E9D05 /* AVEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A42AB981ED4FEE8000E9D05 /* AVEncoder.swift */; };
 		6A42ABA51ED51AD3000E9D05 /* AVDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A42ABA41ED51AD3000E9D05 /* AVDecoder.swift */; };
@@ -73,6 +74,7 @@
 		6A2757FC1ED9BA21000D9DA3 /* RxAVUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVUser.swift; sourceTree = "<group>"; };
 		6A2758001ED9C15E000D9DA3 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		6A2758021ED9C16D000D9DA3 /* IUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IUserController.swift; sourceTree = "<group>"; };
+		6A3F43A71FA48E5F00B784EE /* RxAVCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAVCloud.swift; sourceTree = "<group>"; };
 		6A42AB961ED4FE26000E9D05 /* IAVEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAVEncoder.swift; sourceTree = "<group>"; };
 		6A42AB981ED4FEE8000E9D05 /* AVEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVEncoder.swift; sourceTree = "<group>"; };
 		6A42ABA41ED51AD3000E9D05 /* AVDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVDecoder.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				6AEB4AC71ED94F2500F3F06A /* RxAVRealtime.swift */,
 				6A2757FC1ED9BA21000D9DA3 /* RxAVUser.swift */,
 				6AEB4AC81ED94F2500F3F06A /* RxAVWebSocket.swift */,
+				6A3F43A71FA48E5F00B784EE /* RxAVCloud.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				6AEB4A9E1ED8283500F3F06A /* QueryController.swift in Sources */,
 				6AA097871ED329E100114C43 /* IAVCommandRunner.swift in Sources */,
 				6A42ABA91ED52FD6000E9D05 /* ObjectDecoder.swift in Sources */,
+				6A3F43A81FA48E5F00B784EE /* RxAVCloud.swift in Sources */,
 				6A42AB971ED4FE26000E9D05 /* IAVEncoder.swift in Sources */,
 				6AC498BB1EE55038008BB978 /* IRxKVStorage.swift in Sources */,
 				6AEB4AA91ED92A4D00F3F06A /* RxWebSocketClient.swift in Sources */,

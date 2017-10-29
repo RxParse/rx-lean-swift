@@ -21,9 +21,9 @@
   - [ ] send
   - [ ] verify
   - [ ] captcha
-- [ ] RxAVEngine
-  - [ ] callCloudFunctions
-  - [ ] rpcCloudFunctions
+- [ ] RxAVCloud
+  - [x] callCloudFunction
+  - [ ] rpcCloudFunction
 - [ ] RxAVRealtime - [RxAVRealtime doc issue](https://github.com/RxLeanCloud/rx-lean-swift/issues/5)
   - [x] connect
   - [x] connectWithUser

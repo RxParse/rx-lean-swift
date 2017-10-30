@@ -37,6 +37,69 @@
 - [ ] RxAVPush
   - [ ] registerDeviceToken
 
+## 安装 - Installation
+
+### Cocoapods
+
+假设有一个 XCode 的 Project 叫做 `Sights`，请编写如下 Podfile 放在根目录下：
+
+```ruby
+platform :ios, '10.0'
+use_frameworks!
+
+target 'Sights' do
+    pod 'RxLeanCloud','~> 0.1.0'
+end
+
+target 'SightsTests' do
+    pod 'RxLeanCloud','~> 0.1.0'
+    pod 'RxBlocking', '> 4.0'
+    pod 'RxTest', '> 4.0'
+end
+```
+
+## 测试
+首先需要引用测试的时候必要的 module :
+
+```swift
+import RxLeanCloudSwift
+import RxSwift
+import RxTest
+import RxBlocking
+```
+
+在单元测试项目里面需要在 setup 里面进行如下初始化：
+
+```swift
+  override func setUp() {
+      super.setUp()
+      // Put setup code here. This method is called before the invocation of each test method in the class.
+      let app: RxAVApp = RxAVApp(appId: "uay57kigwe0b6f5n0e1d4z4xhydsml3dor24bzwvzr57wdap", appKey: "kfgz7jjfsk55r5a8a3y4ttd3je1ko11bkibcikonk32oozww")
+      let sdk = RxAVClient.initialize(app: app)
+      sdk.toggleLog(enable: true)
+  }
+```
+
+单元测试示例如下：
+
+```swift
+func testCreareNewAVObject() {
+    let todo = RxAVObject(className: "RxSwiftTodo")
+    todo["foo"] = "bar"
+    let result = todo.save()
+        .toBlocking()
+        .materialize()
+
+    switch result {
+    case .completed(let elements):
+        print(elements[0].createdAt)
+        //XCTFail("Expected result to complete with error, but result was successful.")
+    case .failed(let elements, let error):
+        print(error.localizedDescription)
+    }
+}
+```
+
 ## 为什么要使用 RxSwift？ - Why RxSwift
 
 首先要安利一下 [ReactiveX/RxSwift](https://github.com/ReactiveX/RxSwift) 上社区主页的几篇介绍文章请英文好的同学一定要去阅读

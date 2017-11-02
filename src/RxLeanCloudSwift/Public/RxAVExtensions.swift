@@ -14,6 +14,13 @@ extension Dictionary {
         return self.keys.contains(key)
     }
 
+    func tryGetValue(key: Key) -> Value? {
+        if self.containsKey(key: key) {
+            return self[key]
+        }
+        return nil
+    }
+
     func JSONStringify(prettyPrinted: Bool = false) -> String {
         let options = prettyPrinted ? JSONSerialization.WritingOptions.prettyPrinted : JSONSerialization.WritingOptions(rawValue: 0)
         if JSONSerialization.isValidJSONObject(self) {

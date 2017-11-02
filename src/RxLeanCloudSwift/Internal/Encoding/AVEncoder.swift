@@ -26,6 +26,9 @@ public class AVEncoder: IAVEncoder {
                 json[pair.key] = self.encode(value: pair.value)
             }
             return json
+        } else if value is IAVFieldOperation {
+            let operation = value as! IAVFieldOperation
+            return operation.encode()
         }
         return value
     }
@@ -47,7 +50,12 @@ public class AVEncoder: IAVEncoder {
     }
 
     public func isValidType(value: Any) -> Bool {
-        return value is String || value is RxAVObject || value is Date
+        return value is String
+            || value is RxAVObject
+            || value is Date
+            || value is Data
+            || value is Dictionary<String, Any>
+            || value is Array<Any>
     }
 
     public func isRxAVObject(value: Any) -> Bool {

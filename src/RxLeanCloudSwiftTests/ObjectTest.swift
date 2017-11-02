@@ -37,11 +37,25 @@ class ObjectTest: XCTestCase {
 
         switch result {
         case .completed(let elements):
-            print(elements[0].createdAt)
+            print(elements[0].createdAt ?? "")
             //XCTFail("Expected result to complete with error, but result was successful.")
-        case .failed(let elements, let error):
+        case .failed(_, let error):
             print(error.localizedDescription)
         }
+    }
+
+    func testRemoveProperty() {
+        let todo = RxAVObject(className: "RxSwiftTodo")
+        todo["foo"] = "bar"
+        let result = todo.save()
+            .toBlocking()
+            .materialize()
+
+        todo["foo"] = nil
+
+        let result2 = todo.save()
+            .toBlocking()
+            .materialize()
     }
 
     func testExample() {

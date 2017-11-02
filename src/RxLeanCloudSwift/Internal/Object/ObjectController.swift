@@ -16,19 +16,20 @@ public class ObjectController: IObjectController {
         self.commandRunner = commandRunner
     }
 
-    public func save(state: IObjectState, estimatedData: [String: Any]) -> Observable<IObjectState> {
+    public func save(state: IObjectState, operations: [String: IAVFieldOperation]) -> Observable<IObjectState> {
 
-        let cmd = self.packRequest(state: state, estimatedData: estimatedData)
+        let cmd = self.packRequest(state: state, operations: operations)
+
         return self.commandRunner.runRxCommand(command: cmd).map({ (avResponse) -> IObjectState in
             return self.unpackResponse(avResponse: avResponse)
         })
     }
 
-    public func batchSave(states: [IObjectState], estimatedDatas: Array<[String: Any]>, app: RxAVApp) -> Observable<[IObjectState]> {
+    public func batchSave(states: [IObjectState], operationss: Array<[String: IAVFieldOperation]>, app: RxAVApp) -> Observable<[IObjectState]> {
 
-        let pair = zip(states, estimatedDatas)
+        let pair = zip(states, operationss)
         let cmds = pair.map { (seKV) -> AVCommand in
-            return packRequest(state: seKV.0, estimatedData: seKV.1)
+            return packRequest(state: seKV.0, operations: seKV.1)
         }
 
         return self.commandRunner.runBatchRxCommands(commands: cmds, app: app).map({ (avResponses) -> [IObjectState] in
@@ -38,9 +39,9 @@ public class ObjectController: IObjectController {
         })
     }
 
-    func packRequest(state: IObjectState, estimatedData: [String: Any]) -> AVCommand {
+    func packRequest(state: IObjectState, operations: [String: IAVFieldOperation]) -> AVCommand {
         var mutableState = state.mutatedClone { (state) in
-            
+
         }
 
         mutableState = self.removeReadOnlyFields(state: mutableState)
@@ -48,7 +49,7 @@ public class ObjectController: IObjectController {
 
         var mutableEncoded = [String: Any]()
 
-        for (key, value) in estimatedData {
+        for (key, value) in operations {
             mutableEncoded[key] = RxAVCorePlugins.sharedInstance.avEncoder.encode(value: value)
         }
 
@@ -56,8 +57,8 @@ public class ObjectController: IObjectController {
         return AVCommand(relativeUrl: realtiveUrl, method: mutableState.objectId == nil ? "POST" : "PUT", data: mutableEncoded, app: mutableState.app!)
     }
 
-   public func unpackResponse(avResponse: AVCommandResponse) -> IObjectState {
-    var serverState = RxAVCorePlugins.sharedInstance.objectDecoder.decode(serverResult: avResponse.jsonBody! , decoder: RxAVCorePlugins.sharedInstance.avDecoder)
+    public func unpackResponse(avResponse: AVCommandResponse) -> IObjectState {
+        var serverState = RxAVCorePlugins.sharedInstance.objectDecoder.decode(serverResult: avResponse.jsonBody!, decoder: RxAVCorePlugins.sharedInstance.avDecoder)
         serverState = serverState.mutatedClone({ (state) in
             serverState.isNew = avResponse.satusCode == 200
         })

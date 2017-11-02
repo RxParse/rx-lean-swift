@@ -53,6 +53,10 @@
 		6AEB4ACE1ED94F2500F3F06A /* RxAVQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4AC61ED94F2500F3F06A /* RxAVQuery.swift */; };
 		6AEB4ACF1ED94F2500F3F06A /* RxAVRealtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4AC71ED94F2500F3F06A /* RxAVRealtime.swift */; };
 		6AEB4AD01ED94F2500F3F06A /* RxAVWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4AC81ED94F2500F3F06A /* RxAVWebSocket.swift */; };
+		6AEB98481FAB1FB700D0ACA3 /* IAVFieldOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB98471FAB1FB700D0ACA3 /* IAVFieldOperation.swift */; };
+		6AEB984A1FAB273200D0ACA3 /* AVSetOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB98491FAB273200D0ACA3 /* AVSetOperation.swift */; };
+		6AEB984C1FAB5C7600D0ACA3 /* AVRemoveOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB984B1FAB5C7600D0ACA3 /* AVRemoveOperation.swift */; };
+		6AEB984E1FAB62BE00D0ACA3 /* AVDeleteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB984D1FAB62BE00D0ACA3 /* AVDeleteOperation.swift */; };
 		6AF08B981FA2E11000D8BF65 /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF08B971FA2E11000D8BF65 /* UserTest.swift */; };
 		6AF08B9B1FA2E20100D8BF65 /* init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF08B9A1FA2E20100D8BF65 /* init.swift */; };
 		DF99862FEDEC4EA96642E0B9 /* Pods_RxLeanCloudSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169B9337A238AB767A5A235F /* Pods_RxLeanCloudSwift.framework */; };
@@ -119,6 +123,10 @@
 		6AEB4AC61ED94F2500F3F06A /* RxAVQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVQuery.swift; sourceTree = "<group>"; };
 		6AEB4AC71ED94F2500F3F06A /* RxAVRealtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVRealtime.swift; sourceTree = "<group>"; };
 		6AEB4AC81ED94F2500F3F06A /* RxAVWebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVWebSocket.swift; sourceTree = "<group>"; };
+		6AEB98471FAB1FB700D0ACA3 /* IAVFieldOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAVFieldOperation.swift; sourceTree = "<group>"; };
+		6AEB98491FAB273200D0ACA3 /* AVSetOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVSetOperation.swift; sourceTree = "<group>"; };
+		6AEB984B1FAB5C7600D0ACA3 /* AVRemoveOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVRemoveOperation.swift; sourceTree = "<group>"; };
+		6AEB984D1FAB62BE00D0ACA3 /* AVDeleteOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVDeleteOperation.swift; sourceTree = "<group>"; };
 		6AF08B971FA2E11000D8BF65 /* UserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
 		6AF08B9A1FA2E20100D8BF65 /* init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = init.swift; sourceTree = "<group>"; };
 		79F7DC9F4B1E0AB218D1D063 /* Pods-RxLeanCloudSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLeanCloudSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxLeanCloudSwift/Pods-RxLeanCloudSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -219,6 +227,7 @@
 		6AA0977B1ED329E100114C43 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				6AEB98461FAB1F4400D0ACA3 /* Operation */,
 				6AA0977C1ED329E100114C43 /* Command */,
 				6A42AB951ED4FDFA000E9D05 /* Encoding */,
 				6AA097801ED329E100114C43 /* HttpClient */,
@@ -308,6 +317,17 @@
 				6A3F43A71FA48E5F00B784EE /* RxAVCloud.swift */,
 			);
 			path = Public;
+			sourceTree = "<group>";
+		};
+		6AEB98461FAB1F4400D0ACA3 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				6AEB98471FAB1FB700D0ACA3 /* IAVFieldOperation.swift */,
+				6AEB98491FAB273200D0ACA3 /* AVSetOperation.swift */,
+				6AEB984B1FAB5C7600D0ACA3 /* AVRemoveOperation.swift */,
+				6AEB984D1FAB62BE00D0ACA3 /* AVDeleteOperation.swift */,
+			);
+			path = Operation;
 			sourceTree = "<group>";
 		};
 		6AF08B991FA2E1F800D8BF65 /* utils */ = {
@@ -557,20 +577,24 @@
 				6AEB4AA41ED9008300F3F06A /* IJSON.swift in Sources */,
 				6AA097911ED3BE3800114C43 /* AVCommandResponse.swift in Sources */,
 				6A42ABA51ED51AD3000E9D05 /* AVDecoder.swift in Sources */,
+				6AEB984A1FAB273200D0ACA3 /* AVSetOperation.swift in Sources */,
 				6AA097991ED3C11E00114C43 /* MutableObjectState.swift in Sources */,
 				6AEB4A9E1ED8283500F3F06A /* QueryController.swift in Sources */,
 				6AA097871ED329E100114C43 /* IAVCommandRunner.swift in Sources */,
 				6A42ABA91ED52FD6000E9D05 /* ObjectDecoder.swift in Sources */,
 				6A3F43A81FA48E5F00B784EE /* RxAVCloud.swift in Sources */,
 				6A42AB971ED4FE26000E9D05 /* IAVEncoder.swift in Sources */,
+				6AEB984C1FAB5C7600D0ACA3 /* AVRemoveOperation.swift in Sources */,
 				6AC498BB1EE55038008BB978 /* IRxKVStorage.swift in Sources */,
 				6AEB4AA91ED92A4D00F3F06A /* RxWebSocketClient.swift in Sources */,
+				6AEB984E1FAB62BE00D0ACA3 /* AVDeleteOperation.swift in Sources */,
 				6AA0978F1ED3BD3C00114C43 /* RxHttpClient.swift in Sources */,
 				6AEB4AC91ED94F2500F3F06A /* RxAVApp.swift in Sources */,
 				6AEB4ACB1ED94F2500F3F06A /* RxAVCorePlugins.swift in Sources */,
 				6A2758031ED9C16D000D9DA3 /* IUserController.swift in Sources */,
 				6AA097881ED329E100114C43 /* HttpRequest.swift in Sources */,
 				6AEB4ACD1ED94F2500F3F06A /* RxAVObject.swift in Sources */,
+				6AEB98481FAB1FB700D0ACA3 /* IAVFieldOperation.swift in Sources */,
 				6A42ABAB1ED52FF2000E9D05 /* IObjectDecoder.swift in Sources */,
 				6AA097951ED3C10200114C43 /* ObjectController.swift in Sources */,
 				6AEB4ACF1ED94F2500F3F06A /* RxAVRealtime.swift in Sources */,

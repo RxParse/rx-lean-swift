@@ -9,4 +9,5 @@
 import Foundation
 public protocol IAVEncoder {
     func encode(value: Any) -> Any
+    func isValidType(value: Any) -> Bool
 }

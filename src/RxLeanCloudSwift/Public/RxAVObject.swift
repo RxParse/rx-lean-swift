@@ -17,10 +17,6 @@ public protocol IRxAVObject {
     var updatedAt: Date? { get }
 }
 
-public protocol IRxRealmObject {
-
-}
-
 public class RxAVObject: IRxAVObject {
 
     public init(className: String, app: RxAVApp) {
@@ -45,6 +41,7 @@ public class RxAVObject: IRxAVObject {
     var _state: MutableObjectState = MutableObjectState()
 
     var estimatedData: [String: Any] = [String: Any]()
+    var operationStack: [String: IAVFieldOperation] = [String: IAVFieldOperation]()
 
     public var className: String {
         get {
@@ -66,10 +63,44 @@ public class RxAVObject: IRxAVObject {
 
     public subscript (key: String) -> Any? {
         get {
-            return self.estimatedData[key]
+            if self.estimatedData.containsKey(key: key) {
+                return self.estimatedData[key]
+            }
+            return nil
         }
         set {
+            self.set(key: key, value: newValue)
+            //self.estimatedData[key] = newValue
+        }
+    }
+
+    public func set(key: String, value: Any?) {
+        if value == nil {
+            self.performOperation(key: key, operation: AVDeleteOperation.sharedInstance)
+        } else {
+            let valid = RxAVCorePlugins.sharedInstance.avEncoder.isValidType(value: value!)
+            if valid {
+                self.performOperation(key: key, operation: AVSetOperation(value: value!))
+            }
+        }
+    }
+
+    func performOperation(key: String, operation: IAVFieldOperation) {
+        let oldValue = self.estimatedData.tryGetValue(key: key)
+        let newValue = operation.apply(oldValue: oldValue, key: key)
+
+        if newValue is AVDeleteToken {
             self.estimatedData[key] = newValue
+        } else {
+            self.estimatedData.removeValue(forKey: key)
+        }
+
+
+        let oldOperation = self.operationStack.tryGetValue(key: key)
+        let newOperation = operation.mergeWithPrevious(previous: oldOperation)
+        self.operationStack[key] = newOperation
+        if self.operationStack.count > 0 {
+            self._isDirty = true
         }
     }
 
@@ -101,7 +132,7 @@ public class RxAVObject: IRxAVObject {
                 return self.save()
             })
         } else {
-            observableResult = RxAVObject.objectController.save(state: self._state, estimatedData: self.estimatedData).map { (serverState) -> RxAVObject in
+            observableResult = RxAVObject.objectController.save(state: self._state, operations: self.operationStack).map { (serverState) -> RxAVObject in
                 self.handlerSaved(serverState: serverState)
                 return self
             }
@@ -119,10 +150,10 @@ public class RxAVObject: IRxAVObject {
         let states = objArray.map { (obj) -> IObjectState in
             return obj._state
         }
-        let estimatedDatas = objArray.map { (obj) -> [String: Any] in
-            return obj.estimatedData
+        let operationss = objArray.map { (obj) -> [String: IAVFieldOperation] in
+            return obj.operationStack
         }
-        return RxAVObject.objectController.batchSave(states: states, estimatedDatas: estimatedDatas, app: self._state.app!).map { (serverStateArray) -> Bool in
+        return RxAVObject.objectController.batchSave(states: states, operationss: operationss, app: self._state.app!).map { (serverStateArray) -> Bool in
             let pair = zip(objArray, serverStateArray)
             pair.forEach({ (obj, state) in
                 obj.handlerSaved(serverState: state)
@@ -221,3 +252,4 @@ public class RxAVObject: IRxAVObject {
         return nil
     }
 }
+

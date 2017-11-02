@@ -10,8 +10,19 @@ import Foundation
 import RxSwift
 
 struct GlobalConst {
-    static let api_public_cn = "api.leancloud.cn"
-    static let push_router_public_cn = "router.g0.push.leancloud.cn/v1/route?appId={0}"
+    static let api_public_north_cn = "api.leancloud.cn"
+    static let push_router_public_north_cn = "router.g0.push.leancloud.cn"
+    static let api_public_east_cn = "e1-api.leancloud.cn"
+    static let push_router_public_east_cn = "router-q0-push.leancloud.cn"
+    static let api_public_north_us = "us-api.leancloud.cn";
+    static let push_router_public_north_us = "router-a0-push.leancloud.cn";
+}
+
+public enum RxAVRegion {
+    case Public_North_CN
+    case Public_East_CN
+    case Public_North_US
+    case Private_Custom
 }
 
 public class RxAVApp {
@@ -19,26 +30,44 @@ public class RxAVApp {
     var appKey: String
     var apiVersion: String = "/1.1"
     var schema: String = "https://"
-    var api: String = GlobalConst.api_public_cn
-    var engine: String = GlobalConst.api_public_cn
-    var stats: String = GlobalConst.api_public_cn
-    var push: String = GlobalConst.api_public_cn
-    var pushRouter: String = GlobalConst.push_router_public_cn
+    var api: String = GlobalConst.api_public_north_cn
+    var engine: String = GlobalConst.api_public_north_cn
+    var stats: String = GlobalConst.api_public_north_cn
+    var push: String = GlobalConst.api_public_north_cn
+    var pushRouter: String = GlobalConst.push_router_public_north_cn
     var wss: String?
     var shortName: String = "default"
     var userCacheKey: String = "currentUser";
     var installationCacheKey: String = "currentInstallation"
 
-    public init(appId: String, appKey: String, shortName: String? = "default", secure: Bool? = true) {
+    public init(appId: String, appKey: String, region: RxAVRegion = RxAVRegion.Public_North_CN, shortName: String? = "default", secure: Bool? = true) {
         self.appId = appId
         self.appKey = appKey
-        let index = self.appId.index(self.appId.startIndex, offsetBy: 8)
-        let appSubDomain = self.appId[...index]
-        self.api = "\(appSubDomain).api.lncld.net"
-        self.engine = "\(appSubDomain).engine.lncld.net"
-        self.stats = "\(appSubDomain).stats.lncld.net"
-        self.push = "\(appSubDomain).push.lncld.net"
-        self.pushRouter = "\(appSubDomain).rtm.lncld.net"
+
+        switch region {
+        case .Public_East_CN: do {
+                self.api = GlobalConst.api_public_east_cn
+                self.engine = GlobalConst.api_public_east_cn
+                self.stats = GlobalConst.api_public_east_cn
+                self.push = GlobalConst.api_public_east_cn
+                self.pushRouter = GlobalConst.push_router_public_east_cn
+            }
+        case .Public_North_US: do {
+                self.api = GlobalConst.api_public_north_us
+                self.engine = GlobalConst.api_public_north_us
+                self.stats = GlobalConst.api_public_north_us
+                self.push = GlobalConst.api_public_north_us
+                self.pushRouter = GlobalConst.push_router_public_north_us
+            }
+        default:
+            let index = self.appId.index(self.appId.startIndex, offsetBy: 8)
+            let appSubDomain = self.appId[...index]
+            self.api = "\(appSubDomain).api.lncld.net"
+            self.engine = "\(appSubDomain).engine.lncld.net"
+            self.stats = "\(appSubDomain).stats.lncld.net"
+            self.push = "\(appSubDomain).push.lncld.net"
+            self.pushRouter = "\(appSubDomain).rtm.lncld.net"
+        }
     }
 
     public func getHeaders() -> Dictionary<String, String> {

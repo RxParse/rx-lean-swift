@@ -18,13 +18,17 @@ public class RxAVClient {
     }
 
     var remoteApps = Array<RxAVApp>()
-    public func add(app: RxAVApp, replace: Bool?) -> RxAVClient {
+    var currentAppIndex = 0
+    public func add(app: RxAVApp, replace: Bool = false) -> RxAVClient {
         self.remoteApps.append(app)
+        if replace {
+            currentAppIndex = self.remoteApps.count - 1
+        }
         return self
     }
 
     public func getCurrentApp() -> RxAVApp {
-        return self.remoteApps.first!
+        return self.remoteApps[currentAppIndex]
     }
 
     var _enableLog: Bool = false

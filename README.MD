@@ -2,10 +2,14 @@
 使用 Swift 语言重新编写的基于 RxSwift 的 SDK for iOS/macOS/tvOS/watchOS
 
 ## 开发进度
+
 - [ ] RxAVObject - [RxAVObject doc issue](https://github.com/RxLeanCloud/rx-lean-swift/issues/8)
   - [x] save
   - [x] update
   - [ ] delete
+  - [x] fetch
+  - [x] increase
+  - [x] unset
 - [ ] RxAVQuery - [RxAVQuery doc issue](https://github.com/RxLeanCloud/rx-lean-swift/issues/9)
   - [x] find
   - [ ] first

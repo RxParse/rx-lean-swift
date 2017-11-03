@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 extension Dictionary {
 
@@ -48,5 +49,22 @@ extension String {
             }
         }
         return nil
+    }
+}
+
+extension RxAVObject {
+    public func fetch(keys: [String]? = nil) -> Observable<RxAVObject> {
+        var queryString = [String: Any]()
+        if keys != nil {
+            let encode = keys!.joined(separator: ",")
+            queryString["include"] = encode
+        }
+        return RxAVObject.objectController.fetch(state: self._state, queryString: queryString).map({ (severState) -> RxAVObject in
+            self.handleFetchResult(serverState: severState)
+            return self
+        })
+    }
+    public func unset(key: String) {
+        self[key] = nil
     }
 }

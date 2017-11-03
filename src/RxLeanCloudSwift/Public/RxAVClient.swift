@@ -31,6 +31,14 @@ public class RxAVClient {
         return self.remoteApps[currentAppIndex]
     }
 
+    public func takeApp(app: RxAVApp?) -> RxAVApp {
+        var _app = app
+        if _app == nil {
+            _app = RxAVClient.sharedInstance.getCurrentApp()
+        }
+        return _app!
+    }
+
     var _enableLog: Bool = false
     public func toggleLog(enable: Bool = true) -> RxAVClient {
         _enableLog = enable

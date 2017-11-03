@@ -11,6 +11,7 @@
 		6A2757FD1ED9BA21000D9DA3 /* RxAVUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2757FC1ED9BA21000D9DA3 /* RxAVUser.swift */; };
 		6A2758011ED9C15E000D9DA3 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2758001ED9C15E000D9DA3 /* UserController.swift */; };
 		6A2758031ED9C16D000D9DA3 /* IUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2758021ED9C16D000D9DA3 /* IUserController.swift */; };
+		6A33343D1FABF44700BE26F4 /* AVIncrementOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33343C1FABF44700BE26F4 /* AVIncrementOperation.swift */; };
 		6A3F43A81FA48E5F00B784EE /* RxAVCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F43A71FA48E5F00B784EE /* RxAVCloud.swift */; };
 		6A42AB971ED4FE26000E9D05 /* IAVEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A42AB961ED4FE26000E9D05 /* IAVEncoder.swift */; };
 		6A42AB991ED4FEE8000E9D05 /* AVEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A42AB981ED4FEE8000E9D05 /* AVEncoder.swift */; };
@@ -78,6 +79,7 @@
 		6A2757FC1ED9BA21000D9DA3 /* RxAVUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAVUser.swift; sourceTree = "<group>"; };
 		6A2758001ED9C15E000D9DA3 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		6A2758021ED9C16D000D9DA3 /* IUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IUserController.swift; sourceTree = "<group>"; };
+		6A33343C1FABF44700BE26F4 /* AVIncrementOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVIncrementOperation.swift; sourceTree = "<group>"; };
 		6A3F43A71FA48E5F00B784EE /* RxAVCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAVCloud.swift; sourceTree = "<group>"; };
 		6A42AB961ED4FE26000E9D05 /* IAVEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAVEncoder.swift; sourceTree = "<group>"; };
 		6A42AB981ED4FEE8000E9D05 /* AVEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVEncoder.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				6AEB98491FAB273200D0ACA3 /* AVSetOperation.swift */,
 				6AEB984B1FAB5C7600D0ACA3 /* AVRemoveOperation.swift */,
 				6AEB984D1FAB62BE00D0ACA3 /* AVDeleteOperation.swift */,
+				6A33343C1FABF44700BE26F4 /* AVIncrementOperation.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				6AEB4A9E1ED8283500F3F06A /* QueryController.swift in Sources */,
 				6AA097871ED329E100114C43 /* IAVCommandRunner.swift in Sources */,
 				6A42ABA91ED52FD6000E9D05 /* ObjectDecoder.swift in Sources */,
+				6A33343D1FABF44700BE26F4 /* AVIncrementOperation.swift in Sources */,
 				6A3F43A81FA48E5F00B784EE /* RxAVCloud.swift in Sources */,
 				6A42AB971ED4FE26000E9D05 /* IAVEncoder.swift in Sources */,
 				6AEB984C1FAB5C7600D0ACA3 /* AVRemoveOperation.swift in Sources */,

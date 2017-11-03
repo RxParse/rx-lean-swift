@@ -11,4 +11,5 @@ import RxSwift
 
 public protocol IQueryController {
     func find(query: IRxAVQuery) -> Observable<Array<IObjectState>>
+    func buildQueryString(parameters: [String: Any]) -> String 
 }

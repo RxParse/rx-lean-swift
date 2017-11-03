@@ -51,6 +51,11 @@ public class AVEncoder: IAVEncoder {
 
     public func isValidType(value: Any) -> Bool {
         return value is String
+            || value is Int
+            || value is Int8
+            || value is Int16
+            || value is Int32
+            || value is Int64
             || value is RxAVObject
             || value is Date
             || value is Data

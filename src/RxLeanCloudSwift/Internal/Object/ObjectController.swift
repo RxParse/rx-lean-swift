@@ -39,6 +39,16 @@ public class ObjectController: IObjectController {
         })
     }
 
+    public func fetch(state: IObjectState, queryString: [String: Any]) -> Observable<IObjectState> {
+        let _queryString = RxAVCorePlugins.sharedInstance.queryController.buildQueryString(parameters: queryString)
+        let realtiveUrl = "/classes/\(state.className)/\(state.objectId!)?\(_queryString)"
+        let cmd = AVCommand(relativeUrl: realtiveUrl, method: "GET", data: nil, app: state.app!)
+
+        return self.commandRunner.runRxCommand(command: cmd).map({ (avResponse) -> IObjectState in
+            return self.unpackResponse(avResponse: avResponse)
+        })
+    }
+
     func packRequest(state: IObjectState, operations: [String: IAVFieldOperation]) -> AVCommand {
         var mutableState = state.mutatedClone { (state) in
 

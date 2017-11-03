@@ -31,6 +31,14 @@ class ObjectTest: XCTestCase {
     func testCreareNewAVObject() {
         let todo = RxAVObject(className: "RxSwiftTodo")
         todo["foo"] = "bar"
+
+        todo["num"] = 1
+        todo.increase(key: "num", amount: 688)
+
+        todo["json"] = ["key1": "value1", "key2": "value2"]
+
+        todo["list"] = ["bar1", "bar2"]
+
         let result = todo.save()
             .toBlocking()
             .materialize()
@@ -41,6 +49,25 @@ class ObjectTest: XCTestCase {
             //XCTFail("Expected result to complete with error, but result was successful.")
         case .failed(_, let error):
             print(error.localizedDescription)
+        }
+    }
+
+    func testFetchObject() {
+        let todo = RxAVObject.createWithoutData(classnName: "RxSwiftTodo", objectId: "59fc0fd52f301e0069c76a67")
+        let result = todo.fetch()
+            .toBlocking()
+            .materialize()
+
+        switch result {
+        case .completed(let elements): do {
+                if let num = elements[0]["num"] {
+                    print("num:\(num)")
+                }
+            }
+        case .failed(_, let error):
+            print(error.localizedDescription)
+        default:
+            print("done")
         }
     }
 

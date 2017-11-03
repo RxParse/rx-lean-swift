@@ -30,6 +30,12 @@ public class RxAVObject: IRxAVObject {
         self.init(className: className, app: currentApp)
     }
 
+    public convenience init(className: String, objectId: String, app: RxAVApp?) {
+        let _app = RxAVClient.sharedInstance.takeApp(app: app)
+        self.init(className: className, app: _app)
+        self.objectId = objectId
+    }
+
     static var objectController: IObjectController {
         get {
             return RxAVCorePlugins.sharedInstance.objectController
@@ -41,7 +47,7 @@ public class RxAVObject: IRxAVObject {
     var _state: MutableObjectState = MutableObjectState()
 
     var estimatedData: [String: Any] = [String: Any]()
-    var operationStack: [String: IAVFieldOperation] = [String: IAVFieldOperation]()
+    var currentOperations: [String: IAVFieldOperation] = [String: IAVFieldOperation]()
 
     public var className: String {
         get {
@@ -64,7 +70,10 @@ public class RxAVObject: IRxAVObject {
     public subscript (key: String) -> Any? {
         get {
             if self.estimatedData.containsKey(key: key) {
-                return self.estimatedData[key]
+                if let value = self.estimatedData[key] {
+                    return value
+                }
+                return self.estimatedData[key]!
             }
             return nil
         }
@@ -85,6 +94,18 @@ public class RxAVObject: IRxAVObject {
         }
     }
 
+    public func increase(key: String) {
+        self.performOperation(key: key, operation: AVIncrementOperation(_amount: 1))
+    }
+
+    public func increase(key: String, amount: Int) {
+        self.performOperation(key: key, operation: AVIncrementOperation(_amount: amount))
+    }
+
+    public func increase(key: String, amount: Double) {
+        self.performOperation(key: key, operation: AVIncrementOperation(_amount: amount))
+    }
+
     func performOperation(key: String, operation: IAVFieldOperation) {
         let oldValue = self.estimatedData.tryGetValue(key: key)
         let newValue = operation.apply(oldValue: oldValue, key: key)
@@ -95,11 +116,10 @@ public class RxAVObject: IRxAVObject {
             self.estimatedData.removeValue(forKey: key)
         }
 
-
-        let oldOperation = self.operationStack.tryGetValue(key: key)
+        let oldOperation = self.currentOperations.tryGetValue(key: key)
         let newOperation = operation.mergeWithPrevious(previous: oldOperation)
-        self.operationStack[key] = newOperation
-        if self.operationStack.count > 0 {
+        self.currentOperations[key] = newOperation
+        if self.currentOperations.count > 0 {
             self._isDirty = true
         }
     }
@@ -132,7 +152,7 @@ public class RxAVObject: IRxAVObject {
                 return self.save()
             })
         } else {
-            observableResult = RxAVObject.objectController.save(state: self._state, operations: self.operationStack).map { (serverState) -> RxAVObject in
+            observableResult = RxAVObject.objectController.save(state: self._state, operations: self.currentOperations).map { (serverState) -> RxAVObject in
                 self.handlerSaved(serverState: serverState)
                 return self
             }
@@ -151,7 +171,7 @@ public class RxAVObject: IRxAVObject {
             return obj._state
         }
         let operationss = objArray.map { (obj) -> [String: IAVFieldOperation] in
-            return obj.operationStack
+            return obj.currentOperations
         }
         return RxAVObject.objectController.batchSave(states: states, operationss: operationss, app: self._state.app!).map { (serverStateArray) -> Bool in
             let pair = zip(objArray, serverStateArray)

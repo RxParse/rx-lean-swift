@@ -45,11 +45,24 @@ public class QueryController: IQueryController {
         return "/classes/\(query.className!)?\(queryString)"
     }
 
+    public func buildQueryString(parameters: [String: Any]) -> String {
+        var encodedArray = [String]()
+        for (key, value) in parameters {
+            let encodedValue = RxAVCorePlugins.sharedInstance.avEncoder.encode(value: value)
+            let encodedJSONObject = encodedValue as! [String: Any]
+            let encodedJSONString = encodedJSONObject.JSONStringify()
+            let encodedKey = RxAVCorePlugins.sharedInstance.avEncoder.encode(value: key)
+            encodedArray.append("\(encodedKey)=\(encodedJSONString)")
+        }
+        let queryString = encodedArray.joined(separator: "&")
+        return queryString
+    }
+
     func buildParameters(query: IRxAVQuery, includeClassName: Bool = false) -> [String: Any] {
         var result: [String: Any] = [String: Any]()
         if query.condition.count > 0 {
             let encodedWhere = RxAVCorePlugins.sharedInstance.avEncoder.encode(value: query.condition)
-            let jsonObject = encodedWhere as! [String:Any]
+            let jsonObject = encodedWhere as! [String: Any]
             result["where"] = jsonObject.JSONStringify()
         }
         if query.order != nil {

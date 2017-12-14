@@ -1,5 +1,5 @@
 //
-//  RxAVCorePlugins.swift
+//  AVCorePlugins.swift
 //  RxLeanCloudSwift
 //
 //  Created by WuJun on 22/05/2017.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-public class RxAVCorePlugins {
-    static let sharedInstance = RxAVCorePlugins()
+public class AVCorePlugins {
+    static let sharedInstance = AVCorePlugins()
     
     private var _httpClient: IRxHttpClient = RxHttpClient() as IRxHttpClient
     var httpClient: IRxHttpClient {

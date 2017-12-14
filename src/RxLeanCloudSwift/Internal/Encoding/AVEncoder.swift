@@ -17,8 +17,8 @@ public class AVEncoder: IAVEncoder {
             let string = String(data: value as! Data, encoding: .utf8)
             let bytesMap: [String: String] = ["__type": "Bytes", "base64": string!]
             return bytesMap
-        } else if self.isRxAVObject(value: value) {
-            return encodeRxAVObject(avObject: value as! RxAVObject)
+        } else if self.isAVObject(value: value) {
+            return encodeAVObject(avObject: value as! AVObject)
         } else if value is [String: Any] {
             let dic = value as! [String: Any]
             var json = [String: Any]()
@@ -34,14 +34,14 @@ public class AVEncoder: IAVEncoder {
     }
 
     public func encodeDate(date: Date) -> [String: Any] {
-        let formatter = RxAVCorePlugins.dateFormatter
+        let formatter = AVCorePlugins.dateFormatter
         var encoded = [String: Any]()
         encoded["__type"] = "Date"
         encoded["iso"] = formatter.string(from: date)
         return encoded
     }
 
-    public func encodeRxAVObject(avObject: RxAVObject) -> [String: Any] {
+    public func encodeAVObject(avObject: AVObject) -> [String: Any] {
         var encoded = [String: Any]()
         encoded["__type"] = "Pointer"
         encoded["className"] = avObject.className
@@ -56,14 +56,14 @@ public class AVEncoder: IAVEncoder {
             || value is Int16
             || value is Int32
             || value is Int64
-            || value is RxAVObject
+            || value is AVObject
             || value is Date
             || value is Data
             || value is Dictionary<String, Any>
             || value is Array<Any>
     }
 
-    public func isRxAVObject(value: Any) -> Bool {
-        return value is RxAVObject
+    public func isAVObject(value: Any) -> Bool {
+        return value is AVObject
     }
 }

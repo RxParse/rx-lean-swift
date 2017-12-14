@@ -29,7 +29,7 @@ public class RxHttpClient: IRxHttpClient {
 //                body = ["results": dataArray]
 //            }
             let httpResponse = HttpResponse(statusCode: response.statusCode, data: data)
-            RxAVClient.sharedInstance.httpLog(request: httpRequest, response: httpResponse)
+            AVClient.sharedInstance.httpLog(request: httpRequest, response: httpResponse)
             return httpResponse
         }
     }

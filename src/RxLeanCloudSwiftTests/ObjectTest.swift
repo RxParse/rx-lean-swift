@@ -9,9 +9,9 @@
 import XCTest
 import RxLeanCloudSwift
 import RxSwift
-import RxTest
 import Alamofire
 import RxAlamofire
+import RxTest
 import RxBlocking
 
 
@@ -29,7 +29,7 @@ class ObjectTest: XCTestCase {
     }
 
     func testCreareNewAVObject() {
-        let todo = RxAVObject(className: "RxSwiftTodo")
+        let todo = AVObject(className: "RxSwiftTodo")
         todo["foo"] = "bar"
 
         todo["num"] = 1
@@ -53,7 +53,7 @@ class ObjectTest: XCTestCase {
     }
 
     func testFetchObject() {
-        let todo = RxAVObject.createWithoutData(classnName: "RxSwiftTodo", objectId: "59fc0fd52f301e0069c76a67")
+        let todo = AVObject.createWithoutData(classnName: "RxSwiftTodo", objectId: "59fc0fd52f301e0069c76a67")
         let result = todo.fetch()
             .toBlocking()
             .materialize()
@@ -72,7 +72,7 @@ class ObjectTest: XCTestCase {
     }
 
     func testRemoveProperty() {
-        let todo = RxAVObject(className: "RxSwiftTodo")
+        let todo = AVObject(className: "RxSwiftTodo")
         todo["foo"] = "bar"
         let result = todo.save()
             .toBlocking()
@@ -90,7 +90,7 @@ class ObjectTest: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let scheduler = TestScheduler(initialClock: 0)
 
-        let todo = RxAVObject(className: "SwiftTodo")
+        let todo = AVObject(className: "SwiftTodo")
         todo["foo"] = "bar"
         let observable = todo.save()
 
@@ -101,7 +101,7 @@ class ObjectTest: XCTestCase {
         }.subscribe({ print($0) })
 
 
-        let results = scheduler.createObserver(RxAVObject.self)
+        let results = scheduler.createObserver(AVObject.self)
         var subscription: Disposable! = nil
         scheduler.scheduleAt(50) { subscription = observable.subscribe(results) }
         scheduler.scheduleAt(600) { subscription.dispose() }
@@ -110,12 +110,18 @@ class ObjectTest: XCTestCase {
         //print(results.events[0].value.element?.objectId)
         //XCTAssertTrue((results.events[0].value.element?.objectId?.characters.count)! > 0)
     }
-
+    func testSaveInBackgroud() {
+        let todo = AVObject(className: "SwiftTodo")
+        todo["foo"] = "bar"
+        todo.save { (avObject) in
+            
+        }
+    }
     func testInit() {
 
         let scheduler = TestScheduler(initialClock: 0)
         let stringURL = "https://uay57kig.api.lncld.net/1.1/classes/SwiftTodo"
-        let app: RxAVApp = RxAVApp(appId: "uay57kigwe0b6f5n0e1d4z4xhydsml3dor24bzwvzr57wdap", appKey: "kfgz7jjfsk55r5a8a3y4ttd3je1ko11bkibcikonk32oozww")
+        let app: AVApp = AVApp(appId: "uay57kigwe0b6f5n0e1d4z4xhydsml3dor24bzwvzr57wdap", appKey: "kfgz7jjfsk55r5a8a3y4ttd3je1ko11bkibcikonk32oozww")
         let headers = app.getHeaders()
         var objData: [String: Any] = [String: Any]()
         objData["foo"] = "bar"

@@ -14,7 +14,7 @@ public protocol IObjectState {
     var objectId: String? { get set }
     var updatedAt: Date? { get set }
     var createdAt: Date? { get set }
-    var app: RxAVApp? { get set }
+    var app: AVApp? { get set }
     var serverData: [String: Any] { get set }
     func containsKey(key: String) -> Bool
     func mutatedClone(_ hook: (_ source: IObjectState) -> Void) -> IObjectState

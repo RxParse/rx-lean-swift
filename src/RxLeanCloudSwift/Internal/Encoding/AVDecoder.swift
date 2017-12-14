@@ -23,7 +23,7 @@ public class AVDecoder: IAVDecoder {
             } else {
                 let typeString = dataMap["__type"] as! String
                 if typeString == "Date" {
-                    let formatter = RxAVCorePlugins.dateFormatter
+                    let formatter = AVCorePlugins.dateFormatter
                     let dateString = dataMap["iso"] as! String
                     return formatter.date(from: dateString) as Any
                 } else if typeString == "Pointer" {
@@ -37,8 +37,8 @@ public class AVDecoder: IAVDecoder {
         return value
     }
 
-    public func decodePotinter(className: String, objectId: String) -> RxAVObject {
-        return RxAVObject.createWithoutData(classnName: className, objectId: objectId)
+    public func decodePotinter(className: String, objectId: String) -> AVObject {
+        return AVObject.createWithoutData(classnName: className, objectId: objectId)
     }
 
     public func clone(dictionary: [String: Any]) -> [String: Any] {

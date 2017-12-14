@@ -29,7 +29,7 @@ public class AVCommandRunner: IAVCommandRunner {
     enum HttpError: Error {
         case batchRequestNotCompleted(result: String)
     }
-    public func runBatchRxCommands(commands: [AVCommand], app: RxAVApp) -> Observable<[AVCommandResponse]> {
+    public func runBatchRxCommands(commands: [AVCommand], app: AVApp) -> Observable<[AVCommandResponse]> {
 
         let batchSize = commands.count
 

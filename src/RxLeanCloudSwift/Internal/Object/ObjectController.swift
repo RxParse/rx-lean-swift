@@ -25,7 +25,7 @@ public class ObjectController: IObjectController {
         })
     }
 
-    public func batchSave(states: [IObjectState], operationss: Array<[String: IAVFieldOperation]>, app: RxAVApp) -> Observable<[IObjectState]> {
+    public func batchSave(states: [IObjectState], operationss: Array<[String: IAVFieldOperation]>, app: AVApp) -> Observable<[IObjectState]> {
 
         let pair = zip(states, operationss)
         let cmds = pair.map { (seKV) -> AVCommand in
@@ -40,7 +40,7 @@ public class ObjectController: IObjectController {
     }
 
     public func fetch(state: IObjectState, queryString: [String: Any]) -> Observable<IObjectState> {
-        let _queryString = RxAVCorePlugins.sharedInstance.queryController.buildQueryString(parameters: queryString)
+        let _queryString = AVCorePlugins.sharedInstance.queryController.buildQueryString(parameters: queryString)
         let realtiveUrl = "/classes/\(state.className)/\(state.objectId!)?\(_queryString)"
         let cmd = AVCommand(relativeUrl: realtiveUrl, method: "GET", data: nil, app: state.app!)
 
@@ -60,7 +60,7 @@ public class ObjectController: IObjectController {
         var mutableEncoded = [String: Any]()
 
         for (key, value) in operations {
-            mutableEncoded[key] = RxAVCorePlugins.sharedInstance.avEncoder.encode(value: value)
+            mutableEncoded[key] = AVCorePlugins.sharedInstance.avEncoder.encode(value: value)
         }
 
         let realtiveUrl = mutableState.objectId == nil ? "/classes/\(mutableState.className)" : "/classes/\(mutableState.className)/\(mutableState.objectId!)"
@@ -68,7 +68,7 @@ public class ObjectController: IObjectController {
     }
 
     public func unpackResponse(avResponse: AVCommandResponse) -> IObjectState {
-        var serverState = RxAVCorePlugins.sharedInstance.objectDecoder.decode(serverResult: avResponse.jsonBody!, decoder: RxAVCorePlugins.sharedInstance.avDecoder)
+        var serverState = AVCorePlugins.sharedInstance.objectDecoder.decode(serverResult: avResponse.jsonBody!, decoder: AVCorePlugins.sharedInstance.avDecoder)
         serverState = serverState.mutatedClone({ (state) in
             serverState.isNew = avResponse.satusCode == 200
         })

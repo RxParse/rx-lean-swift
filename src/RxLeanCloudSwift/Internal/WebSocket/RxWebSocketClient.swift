@@ -95,7 +95,7 @@ public class RxWebSocketClient: IRxWebSokcetClient, WebSocketDelegate, WebSocket
             throw websocketError.connectionClosed
         }
         self.socket?.write(string: (command.data?.JSONStringify())!)
-        RxAVClient.sharedInstance.websocketLog(cmd: command)
+        AVClient.sharedInstance.websocketLog(cmd: command)
         return self.onMessage.filter({ (avResponse) -> Bool in
             var matched = false
             if (avResponse.jsonBody?.containsKey(key: "i"))! && (command.data?.containsKey(key: "i"))! {

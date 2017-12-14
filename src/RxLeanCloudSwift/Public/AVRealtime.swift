@@ -118,11 +118,11 @@ public struct AVIMConnectOptions {
     var signature: AVIMSignature?
 }
 
-public class RxAVRealtime {
-    public static let sharedInstance = RxAVRealtime(app: nil)
+public class AVRealtime {
+    public static let sharedInstance = AVRealtime(app: nil)
 
-    var _rxAVWebsocket: RxAVWebSocket = RxAVWebSocket.sharedInstance
-    public var rxAVWebSocket: RxAVWebSocket {
+    var _rxAVWebsocket: AVWebSocket = AVWebSocket.sharedInstance
+    public var rxAVWebSocket: AVWebSocket {
         get {
             return self._rxAVWebsocket
         }
@@ -135,7 +135,7 @@ public class RxAVRealtime {
     var messageSubject: PublishSubject<IAVIMMessage>
     public var onMessage: Observable<IAVIMMessage>
     public var clientId: String?
-    var app: RxAVApp
+    var app: AVApp
     var idSeed: Int = -65535
     private let lock = DispatchSemaphore(value: 1)
     func cmdIdAutomation() -> Int {
@@ -144,12 +144,8 @@ public class RxAVRealtime {
         idSeed += 1
         return idSeed
     }
-    public init(app: RxAVApp? = nil) {
-        if app != nil {
-            self.app = app!
-        } else {
-            self.app = RxAVClient.sharedInstance.getCurrentApp()
-        }
+    public init(app: AVApp? = nil) {
+        self.app = AVClient.sharedInstance.takeApp(app: app)
         messageSubject = PublishSubject<IAVIMMessage>()
         onMessage = messageSubject.asObservable()
         self._bindWebSokcet()
@@ -177,7 +173,7 @@ public class RxAVRealtime {
     public func connectWithOptions(options: AVIMConnectOptions) throws -> Observable<[String:Any]> {
         self.clientId = options.clientId
         var cmdBody = self._makeCommand()
-        cmdBody["ua"] = "rx-lean-swift/\(RxAVClient.sharedInstance.getSDKVersion())"
+        cmdBody["ua"] = "rx-lean-swift/\(AVClient.sharedInstance.getSDKVersion())"
         cmdBody["cmd"] = "session"
         cmdBody["op"] = "open"
 
@@ -195,7 +191,7 @@ public class RxAVRealtime {
         return try self.rxAVWebSocket.send(json: cmdBody)
     }
 
-    public func connectWithUser(user: RxAVUser) throws -> Observable<[String:Any]> {
+    public func connectWithUser(user: AVUser) throws -> Observable<[String:Any]> {
         return try self.connect(clientId: user.username)
     }
 

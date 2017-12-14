@@ -1,5 +1,5 @@
 //
-//  RxAVApp.swift
+//  AVApp.swift
 //  RxLeanCloudSwift
 //
 //  Created by WuJun on 22/05/2017.
@@ -18,14 +18,14 @@ struct GlobalConst {
     static let push_router_public_north_us = "router-a0-push.leancloud.cn";
 }
 
-public enum RxAVRegion {
+public enum AVRegion {
     case Public_North_CN
     case Public_East_CN
     case Public_North_US
     case Private_Custom
 }
 
-public class RxAVApp {
+public class AVApp {
     var appId: String
     var appKey: String
     var apiVersion: String = "/1.1"
@@ -40,7 +40,7 @@ public class RxAVApp {
     var userCacheKey: String = "currentUser";
     var installationCacheKey: String = "currentInstallation"
 
-    public init(appId: String, appKey: String, region: RxAVRegion = RxAVRegion.Public_North_CN, shortName: String? = "default", secure: Bool? = true) {
+    public init(appId: String, appKey: String, region: AVRegion = AVRegion.Public_North_CN, shortName: String? = "default", secure: Bool? = true) {
         self.appId = appId
         self.appKey = appKey
 
@@ -93,13 +93,13 @@ public class RxAVApp {
         return "\(self.appId)_\(self.userCacheKey)";
     }
 
-    public func currentUser() -> Observable<RxAVUser?> {
+    public func currentUser() -> Observable<AVUser?> {
         let key = self.getUserStorageKey()
-        return RxAVCorePlugins.sharedInstance.kvStorageController.get(key: key).map({ (userDataString) -> RxAVUser? in
+        return AVCorePlugins.sharedInstance.kvStorageController.get(key: key).map({ (userDataString) -> AVUser? in
             if userDataString != nil {
                 let userData = userDataString?.toDictionary()
-                let serverState = RxAVCorePlugins.sharedInstance.objectDecoder.decode(serverResult: userData as [String: Any]!, decoder: RxAVCorePlugins.sharedInstance.avDecoder)
-                let user = RxAVUser()
+                let serverState = AVCorePlugins.sharedInstance.objectDecoder.decode(serverResult: userData as [String: Any]!, decoder: AVCorePlugins.sharedInstance.avDecoder)
+                let user = AVUser()
                 user.handleLogInResult(serverState: serverState, app: self)
                 return user
             } else {

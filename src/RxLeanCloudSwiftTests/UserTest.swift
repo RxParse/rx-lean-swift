@@ -27,7 +27,7 @@ class UserTest: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 
-        let result = RxAVUser.logIn(username: "junwu", password: "leancloud")
+        let result = AVUser.logIn(username: "junwu", password: "leancloud")
             .toBlocking()
             .materialize()
 
@@ -41,11 +41,11 @@ class UserTest: XCTestCase {
     }
 
     func testLogInGetCurrentUser() {
-        let result = RxAVUser.logIn(username: "junwu", password: "leancloud").flatMap { (user) -> Observable<Bool> in
+        let result = AVUser.logIn(username: "junwu", password: "leancloud").flatMap { (user) -> Observable<Bool> in
             return user.saveToStorage()
-        }.flatMap({ (success) -> Observable<RxAVUser?> in
+        }.flatMap({ (success) -> Observable<AVUser?> in
             if success {
-                return RxAVUser.current()
+                return AVUser.current()
             }
             return Observable.from(nil)
 

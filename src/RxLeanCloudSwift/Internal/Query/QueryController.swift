@@ -16,8 +16,8 @@ public class QueryController: IQueryController {
         self.commandRunner = commandRunner
     }
 
-    public func find(query: IRxAVQuery) -> Observable<Array<IObjectState>> {
-        let relativeUrl = self.buildQueryString(query: query as! RxAVQuery)
+    public func find(query: IAVQuery) -> Observable<Array<IObjectState>> {
+        let relativeUrl = self.buildQueryString(query: query as! AVQuery)
         let cmd = AVCommand(relativeUrl: relativeUrl, method: "GET", data: nil, app: query.app!)
 
         return self.commandRunner.runRxCommand(command: cmd).map({ (avResponse) -> Array<IObjectState> in
@@ -26,12 +26,12 @@ public class QueryController: IQueryController {
 
             return results.map({ (item) -> IObjectState in
                 let jsonResult = item as! [String: Any]
-                let state = RxAVCorePlugins.sharedInstance.objectDecoder.decode(serverResult: jsonResult, decoder: RxAVCorePlugins.sharedInstance.avDecoder)
+                let state = AVCorePlugins.sharedInstance.objectDecoder.decode(serverResult: jsonResult, decoder: AVCorePlugins.sharedInstance.avDecoder)
                 return state
             })
         })
     }
-    func buildQueryString(query: RxAVQuery) -> String {
+    func buildQueryString(query: AVQuery) -> String {
         let queryJson = self.buildParameters(query: query, includeClassName: false)
 
         var queryArray = [String]()
@@ -48,20 +48,20 @@ public class QueryController: IQueryController {
     public func buildQueryString(parameters: [String: Any]) -> String {
         var encodedArray = [String]()
         for (key, value) in parameters {
-            let encodedValue = RxAVCorePlugins.sharedInstance.avEncoder.encode(value: value)
+            let encodedValue = AVCorePlugins.sharedInstance.avEncoder.encode(value: value)
             let encodedJSONObject = encodedValue as! [String: Any]
             let encodedJSONString = encodedJSONObject.JSONStringify()
-            let encodedKey = RxAVCorePlugins.sharedInstance.avEncoder.encode(value: key)
+            let encodedKey = AVCorePlugins.sharedInstance.avEncoder.encode(value: key)
             encodedArray.append("\(encodedKey)=\(encodedJSONString)")
         }
         let queryString = encodedArray.joined(separator: "&")
         return queryString
     }
 
-    func buildParameters(query: IRxAVQuery, includeClassName: Bool = false) -> [String: Any] {
+    func buildParameters(query: IAVQuery, includeClassName: Bool = false) -> [String: Any] {
         var result: [String: Any] = [String: Any]()
         if query.condition.count > 0 {
-            let encodedWhere = RxAVCorePlugins.sharedInstance.avEncoder.encode(value: query.condition)
+            let encodedWhere = AVCorePlugins.sharedInstance.avEncoder.encode(value: query.condition)
             let jsonObject = encodedWhere as! [String: Any]
             result["where"] = jsonObject.JSONStringify()
         }

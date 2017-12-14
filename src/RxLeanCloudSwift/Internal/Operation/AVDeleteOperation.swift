@@ -19,7 +19,7 @@ public class AVDeleteOperation: IAVFieldOperation {
         self.deleteToken = AVDeleteToken.sharedInstance
     }
     public func encode() -> Any {
-        //return RxAVCorePlugins.sharedInstance.avEncoder.encode(value: self.value)
+        //return AVCorePlugins.sharedInstance.avEncoder.encode(value: self.value)
         return ["__op": "Delete"];
     }
 

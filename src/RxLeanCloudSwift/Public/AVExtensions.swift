@@ -52,19 +52,26 @@ extension String {
     }
 }
 
-extension RxAVObject {
-    public func fetch(keys: [String]? = nil) -> Observable<RxAVObject> {
+extension AVObject {
+    public func fetch(keys: [String]? = nil) -> Observable<AVObject> {
         var queryString = [String: Any]()
         if keys != nil {
             let encode = keys!.joined(separator: ",")
             queryString["include"] = encode
         }
-        return RxAVObject.objectController.fetch(state: self._state, queryString: queryString).map({ (severState) -> RxAVObject in
+        return AVObject.objectController.fetch(state: self._state, queryString: queryString).map({ (severState) -> AVObject in
             self.handleFetchResult(serverState: severState)
             return self
         })
     }
     public func unset(key: String) {
         self[key] = nil
+    }
+
+    public func save(_ completion: @escaping (AVObject) -> Void) {
+        let subscription = self.save().subscribe { event in
+            completion(event.element!)
+        }
+        subscription.dispose()
     }
 }

@@ -1,5 +1,5 @@
 //
-//  RxAVObject.swift
+//  AVObject.swift
 //  RxLeanCloudSwift
 //
 //  Created by WuJun on 22/05/2017.
@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public protocol IRxAVObject {
+public protocol IAVObject {
     var objectId: String? { get }
     var className: String { get set }
     subscript (key: String) -> Any? { get set }
@@ -17,28 +17,28 @@ public protocol IRxAVObject {
     var updatedAt: Date? { get }
 }
 
-public class RxAVObject: IRxAVObject {
+public class AVObject: IAVObject {
 
-    public init(className: String, app: RxAVApp) {
+    public init(className: String, app: AVApp) {
         self._state.className = className
         self._isDirty = true
         self._state.app = app
     }
 
     public convenience init(className: String) {
-        let currentApp = RxAVClient.sharedInstance.getCurrentApp()
+        let currentApp = AVClient.sharedInstance.getCurrentApp()
         self.init(className: className, app: currentApp)
     }
 
-    public convenience init(className: String, objectId: String, app: RxAVApp?) {
-        let _app = RxAVClient.sharedInstance.takeApp(app: app)
+    public convenience init(className: String, objectId: String, app: AVApp?) {
+        let _app = AVClient.sharedInstance.takeApp(app: app)
         self.init(className: className, app: _app)
         self.objectId = objectId
     }
 
-    static var objectController: IObjectController {
+    public static var objectController: IObjectController {
         get {
-            return RxAVCorePlugins.sharedInstance.objectController
+            return AVCorePlugins.sharedInstance.objectController
         }
     }
 
@@ -87,7 +87,7 @@ public class RxAVObject: IRxAVObject {
         if value == nil {
             self.performOperation(key: key, operation: AVDeleteOperation.sharedInstance)
         } else {
-            let valid = RxAVCorePlugins.sharedInstance.avEncoder.isValidType(value: value!)
+            let valid = AVCorePlugins.sharedInstance.avEncoder.isValidType(value: value!)
             if valid {
                 self.performOperation(key: key, operation: AVSetOperation(value: value!))
             }
@@ -136,23 +136,23 @@ public class RxAVObject: IRxAVObject {
         }
     }
 
-    public func save() -> Observable<RxAVObject> {
-        var observableResult: Observable<RxAVObject> = Observable.from([self])
+    public func save() -> Observable<AVObject> {
+        var observableResult: Observable<AVObject> = Observable.from([self])
 
         if !self._isDirty {
             return observableResult
         }
 
-        try! RxAVObject.recursionCollectDirtyChildren(root: self, warehouse: [RxAVObject](), seen: [RxAVObject](), seenNew: [RxAVObject]())
+        try! AVObject.recursionCollectDirtyChildren(root: self, warehouse: [AVObject](), seen: [AVObject](), seenNew: [AVObject]())
 
         let dirtyChildren = self.collectAllLeafNodes()
 
         if dirtyChildren.count > 0 {
-            observableResult = self.batchSave(objArray: dirtyChildren).flatMap({ (batchSuccess) -> Observable<RxAVObject> in
+            observableResult = self.batchSave(objArray: dirtyChildren).flatMap({ (batchSuccess) -> Observable<AVObject> in
                 return self.save()
             })
         } else {
-            observableResult = RxAVObject.objectController.save(state: self._state, operations: self.currentOperations).map { (serverState) -> RxAVObject in
+            observableResult = AVObject.objectController.save(state: self._state, operations: self.currentOperations).map { (serverState) -> AVObject in
                 self.handlerSaved(serverState: serverState)
                 return self
             }
@@ -160,20 +160,20 @@ public class RxAVObject: IRxAVObject {
         return observableResult
     }
 
-    public static func createWithoutData(classnName: String, objectId: String) -> RxAVObject {
-        let objInstance = RxAVObject(className: classnName)
+    public static func createWithoutData(classnName: String, objectId: String) -> AVObject {
+        let objInstance = AVObject(className: classnName)
         objInstance.objectId = objectId
         return objInstance
     }
 
-    func batchSave(objArray: Array<RxAVObject>) -> Observable<Bool> {
+    func batchSave(objArray: Array<AVObject>) -> Observable<Bool> {
         let states = objArray.map { (obj) -> IObjectState in
             return obj._state
         }
         let operationss = objArray.map { (obj) -> [String: IAVFieldOperation] in
             return obj.currentOperations
         }
-        return RxAVObject.objectController.batchSave(states: states, operationss: operationss, app: self._state.app!).map { (serverStateArray) -> Bool in
+        return AVObject.objectController.batchSave(states: states, operationss: operationss, app: self._state.app!).map { (serverStateArray) -> Bool in
             let pair = zip(objArray, serverStateArray)
             pair.forEach({ (obj, state) in
                 obj.handlerSaved(serverState: state)
@@ -198,22 +198,22 @@ public class RxAVObject: IRxAVObject {
         self.estimatedData = self._state.serverData
     }
 
-    func collectDirtyChildren() -> [RxAVObject] {
-        var dirtyChildren: [RxAVObject] = [RxAVObject]()
+    func collectDirtyChildren() -> [AVObject] {
+        var dirtyChildren: [AVObject] = [AVObject]()
         for (_, value) in self.estimatedData {
-            if value is RxAVObject {
-                dirtyChildren.append(value as! RxAVObject)
+            if value is AVObject {
+                dirtyChildren.append(value as! AVObject)
             }
         }
         return dirtyChildren
     }
 
-    enum RxAVObjectError: Error {
+    enum AVObjectError: Error {
         case circularReference(reason: String)
     }
 
-    func collectAllLeafNodes() -> [RxAVObject] {
-        var leafNodes: Array<RxAVObject> = []
+    func collectAllLeafNodes() -> [AVObject] {
+        var leafNodes: Array<AVObject> = []
         let dirtyChildren = self.collectDirtyChildren()
 
         dirtyChildren.forEach { (child) in
@@ -230,18 +230,18 @@ public class RxAVObject: IRxAVObject {
         return leafNodes
     }
 
-    static func recursionCollectDirtyChildren(root: RxAVObject, warehouse: Array<RxAVObject>, seen: Array<RxAVObject>, seenNew: Array<RxAVObject>) throws {
+    static func recursionCollectDirtyChildren(root: AVObject, warehouse: Array<AVObject>, seen: Array<AVObject>, seenNew: Array<AVObject>) throws {
         var seen = seen
         var warehouse = warehouse
 
         let dirtyChildren = root.collectDirtyChildren()
 
         try dirtyChildren.forEach { (child) in
-            var scopedSeenNew: Array<RxAVObject> = [RxAVObject]()
+            var scopedSeenNew: Array<AVObject> = [AVObject]()
             if seenNew.contains(where: { (item) -> Bool in
                 return item === child
             }) {
-                throw RxAVObjectError.circularReference(reason: "Found a circular dependency while saving")
+                throw AVObjectError.circularReference(reason: "Found a circular dependency while saving")
             }
 
             scopedSeenNew = scopedSeenNew + seenNew
@@ -254,7 +254,7 @@ public class RxAVObject: IRxAVObject {
             }
 
             seen.append(child)
-            try RxAVObject.recursionCollectDirtyChildren(root: child, warehouse: warehouse, seen: seen, seenNew: scopedSeenNew)
+            try AVObject.recursionCollectDirtyChildren(root: child, warehouse: warehouse, seen: seen, seenNew: scopedSeenNew)
             warehouse.append(child)
         }
     }

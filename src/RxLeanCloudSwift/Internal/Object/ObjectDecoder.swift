@@ -22,13 +22,13 @@ public class ObjectDecoder: IObjectDecoder {
 
         if mutableServerResult["createdAt"] != nil {
             let dateString = mutableServerResult["createdAt"] as! String
-            state.createdAt = RxAVCorePlugins.dateFormatter.date(from: dateString)
+            state.createdAt = AVCorePlugins.dateFormatter.date(from: dateString)
 
             mutableServerResult["createdAt"] = nil
         }
         if mutableServerResult["updatedAt"] != nil {
             let dateString = mutableServerResult["updatedAt"] as! String
-            state.updatedAt = RxAVCorePlugins.dateFormatter.date(from: dateString)
+            state.updatedAt = AVCorePlugins.dateFormatter.date(from: dateString)
 
             mutableServerResult["updatedAt"] = nil
         }

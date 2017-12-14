@@ -14,7 +14,7 @@ public class AVSetOperation: IAVFieldOperation {
         self.value = value
     }
     public func encode() -> Any {
-        return RxAVCorePlugins.sharedInstance.avEncoder.encode(value: self.value)
+        return AVCorePlugins.sharedInstance.avEncoder.encode(value: self.value)
     }
 
     public func mergeWithPrevious(previous: IAVFieldOperation?) -> IAVFieldOperation {

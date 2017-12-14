@@ -15,12 +15,12 @@ public class UserController: IUserController {
         self.commandRunner = commandRunner
     }
 
-    public func logIn(username: String, password: String, app: RxAVApp) -> Observable<IObjectState> {
+    public func logIn(username: String, password: String, app: AVApp) -> Observable<IObjectState> {
         let data = ["username": username, "password": password]
         let cmd = AVCommand(relativeUrl: "/login", method: "POST", data: data, app: app)
 
         return self.commandRunner.runRxCommand(command: cmd).map({ (avResponse) -> IObjectState in
-            return RxAVCorePlugins.sharedInstance.objectController.unpackResponse(avResponse: avResponse)
+            return AVCorePlugins.sharedInstance.objectController.unpackResponse(avResponse: avResponse)
         })
     }
 }

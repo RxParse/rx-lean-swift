@@ -9,20 +9,20 @@
 import Foundation
 import RxSwift
 
-public class RxAVWebSocket {
+public class AVWebSocket {
 
-    public static var sharedInstance: RxAVWebSocket = RxAVWebSocket(app: nil)
+    public static var sharedInstance: AVWebSocket = AVWebSocket(app: nil)
 
     public var rxWebSocketClient: IRxWebSokcetClient {
         get {
-            return RxAVCorePlugins.sharedInstance.webSocketClient
+            return AVCorePlugins.sharedInstance.webSocketClient
         }
     }
     
-    var app: RxAVApp? = nil
+    var app: AVApp? = nil
     var pushRouterState: [String: Any]?
-    public init(app: RxAVApp? = nil) {
-        self.app = RxAVClient.sharedInstance.getCurrentApp()
+    public init(app: AVApp? = nil) {
+        self.app = AVClient.sharedInstance.getCurrentApp()
     }
 
     public func open() -> Observable<Bool> {
@@ -31,7 +31,7 @@ public class RxAVWebSocket {
         }
         let pushRouter = self.app?.getPushRouterUrl()
 
-        return RxAVClient.sharedInstance.httpRequest(url: pushRouter!, method: nil, headers: nil, data: nil).flatMap({ (response) -> Observable<Bool> in
+        return AVClient.sharedInstance.httpRequest(url: pushRouter!, method: nil, headers: nil, data: nil).flatMap({ (response) -> Observable<Bool> in
             self.pushRouterState = response.jsonBody
             if (self.pushRouterState?.containsKey(key: "server"))! {
                 let wss = self.pushRouterState?["server"] as! String

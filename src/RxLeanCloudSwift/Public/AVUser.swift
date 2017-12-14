@@ -13,23 +13,23 @@ enum userError: Error {
     case canNotResetUsername
 }
 
-public class RxAVUser: RxAVObject {
+public class AVUser: AVObject {
 
-    init(app: RxAVApp) {
+    init(app: AVApp) {
         super.init(className: "_User", app: app)
     }
     convenience init() {
-        self.init(app: RxAVClient.sharedInstance.getCurrentApp())
+        self.init(app: AVClient.sharedInstance.getCurrentApp())
     }
     static var userController: IUserController {
         get {
-            return RxAVCorePlugins.sharedInstance.userConroller
+            return AVCorePlugins.sharedInstance.userConroller
         }
     }
 
     static var kvStorageController: IRxKVStorage {
         get {
-            return RxAVCorePlugins.sharedInstance.kvStorageController
+            return AVCorePlugins.sharedInstance.kvStorageController
         }
     }
 
@@ -63,14 +63,14 @@ public class RxAVUser: RxAVObject {
         }
     }
 
-    public static func logIn(username: String, password: String, app: RxAVApp? = nil) -> Observable<RxAVUser> {
+    public static func logIn(username: String, password: String, app: AVApp? = nil) -> Observable<AVUser> {
         var _app = app
         if _app == nil {
-            _app = RxAVClient.sharedInstance.getCurrentApp()
+            _app = AVClient.sharedInstance.getCurrentApp()
         }
 
-        return self.userController.logIn(username: username, password: password, app: _app!).map({ (serverState) -> RxAVUser in
-            let user = RxAVUser()
+        return self.userController.logIn(username: username, password: password, app: _app!).map({ (serverState) -> AVUser in
+            let user = AVUser()
             user.handleLogInResult(serverState: serverState, app: _app!)
 //            _ = user.saveToStorage().subscribe({ (success) in
 //
@@ -79,7 +79,7 @@ public class RxAVUser: RxAVObject {
         })
     }
 
-    func handleLogInResult(serverState: IObjectState, app: RxAVApp) -> Void {
+    func handleLogInResult(serverState: IObjectState, app: AVApp) -> Void {
         self._state.apply(state: serverState)
         self._state.app = app
         self._isDirty = false
@@ -98,15 +98,15 @@ public class RxAVUser: RxAVObject {
     public func saveToStorage() -> Observable<Bool> {
         let key = self._state.app?.getUserStorageKey()
         let value = self.toJSON()
-        return RxAVUser.kvStorageController.saveJSON(key: key!, value: value).map { (jsonString) -> Bool in
+        return AVUser.kvStorageController.saveJSON(key: key!, value: value).map { (jsonString) -> Bool in
             return jsonString.count > 0
         }
     }
 
-    public static func current(app: RxAVApp? = nil) -> Observable<RxAVUser?> {
+    public static func current(app: AVApp? = nil) -> Observable<AVUser?> {
         var _app = app
         if _app == nil {
-            _app = RxAVClient.sharedInstance.getCurrentApp()
+            _app = AVClient.sharedInstance.getCurrentApp()
         }
         return _app!.currentUser()
     }

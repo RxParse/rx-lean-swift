@@ -18,7 +18,7 @@ public class AVUser: AVObject {
     init(app: AVApp) {
         super.init(className: "_User", app: app)
     }
-    convenience init() {
+    public convenience init() {
         self.init(app: AVClient.sharedInstance.getCurrentApp())
     }
     static var userController: IUserController {
@@ -27,7 +27,7 @@ public class AVUser: AVObject {
         }
     }
 
-    static var kvStorageController: IRxKVStorage {
+    static var kvStorageController: IKVStorage {
         get {
             return AVCorePlugins.sharedInstance.kvStorageController
         }
@@ -35,47 +35,69 @@ public class AVUser: AVObject {
 
     public var username: String {
         get {
-            return self.getProperty(key: "username") as! String
+            return self.get(key: "username") as! String
         }
         set {
             if self.sessionToken == nil {
-                self.setProperty(key: "username", value: newValue)
+                self.set(key: "username", value: newValue)
+            }
+        }
+    }
+
+    public var password: String? {
+        get {
+            return self.get(key: "password") as! String?
+        }
+        set {
+            if self.sessionToken == nil {
+                self.set(key: "password", value: newValue!)
             }
         }
     }
 
     public var sessionToken: String? {
         get {
-            return self.getProperty(key: "sessionToken") as? String
+            return self.get(key: "sessionToken") as? String
         }
     }
 
     public var mobilePhoneNumber: String? {
         get {
-            return self.getProperty(key: "mobilePhoneNumber") as? String
+            return self.get(key: "mobilePhoneNumber") as? String
+        }
+        set {
+            if self.sessionToken == nil {
+                self.set(key: "mobilePhoneNumber", value: newValue!)
+            }
         }
     }
 
     public var mobilePhoneVerified: Bool {
         get {
-            let value = self.getProperty(key: "mobilePhoneVerified")
+            let value = self.get(key: "mobilePhoneVerified")
             return value == nil ? false : value as! Bool
         }
     }
 
-    public static func logIn(username: String, password: String, app: AVApp? = nil) -> Observable<AVUser> {
-        var _app = app
-        if _app == nil {
-            _app = AVClient.sharedInstance.getCurrentApp()
-        }
+    public func signUp() -> Observable<Bool> {
+        return self.create().flatMap ({ (state) -> Observable<Bool> in
+            self.handleLogInResult(serverState: state, app: self._state.app!)
+            return self.saveToStorage()
+        })
+    }
 
-        return self.userController.logIn(username: username, password: password, app: _app!).map({ (serverState) -> AVUser in
-            let user = AVUser()
-            user.handleLogInResult(serverState: serverState, app: _app!)
-//            _ = user.saveToStorage().subscribe({ (success) in
-//
-//            })
-            return user;
+    func create() -> Observable<IObjectState> {
+        return AVUser.userController.create(state: self._state, operations: self.currentOperations)
+    }
+
+    public static func logIn(username: String, password: String, app: AVApp? = nil) -> Observable<AVUser> {
+        let _app = AVClient.sharedInstance.takeApp(app: app)
+        let user = AVUser()
+        return self.userController.logIn(username: username, password: password, app: _app).flatMap({ (serverState) -> Observable<Bool> in
+            user.handleLogInResult(serverState: serverState, app: _app)
+            return user.saveToStorage()
+        }).map({ (saved) -> AVUser in
+            return user
         })
     }
 
@@ -90,8 +112,6 @@ public class AVUser: AVObject {
         data["username"] = self.username
         data["sessionToken"] = self.sessionToken
         data["objectId"] = self.objectId
-//        data["createdAt"] = self.createdAt
-//        data["updatedAt"] = self.updatedAt
         return data;
     }
 

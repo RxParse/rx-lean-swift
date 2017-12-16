@@ -36,7 +36,7 @@ public class AVObject: IAVObject {
         self.objectId = objectId
     }
 
-    public static var objectController: IObjectController {
+    static var objectController: IObjectController {
         get {
             return AVCorePlugins.sharedInstance.objectController
         }
@@ -46,7 +46,7 @@ public class AVObject: IAVObject {
     var _isDirty: Bool = false
     var _state: MutableObjectState = MutableObjectState()
 
-    var estimatedData: [String: Any] = [String: Any]()
+    var localEstimatedData: [String: Any] = [String: Any]()
     var currentOperations: [String: IAVFieldOperation] = [String: IAVFieldOperation]()
 
     public var className: String {
@@ -69,18 +69,21 @@ public class AVObject: IAVObject {
 
     public subscript (key: String) -> Any? {
         get {
-            if self.estimatedData.containsKey(key: key) {
-                if let value = self.estimatedData[key] {
-                    return value
-                }
-                return self.estimatedData[key]!
-            }
-            return nil
+            return self.get(key: key)
         }
         set {
             self.set(key: key, value: newValue)
-            //self.estimatedData[key] = newValue
+            //self.localEstimatedData[key] = newValue
         }
+    }
+
+    public func get(key: String) -> Any? {
+        if self.localEstimatedData.containsKey(key: key) {
+            if let value = self.localEstimatedData[key] {
+                return value
+            }
+        }
+        return self.getProperty(key: key)
     }
 
     public func set(key: String, value: Any?) {
@@ -107,13 +110,13 @@ public class AVObject: IAVObject {
     }
 
     func performOperation(key: String, operation: IAVFieldOperation) {
-        let oldValue = self.estimatedData.tryGetValue(key: key)
+        let oldValue = self.localEstimatedData.tryGetValue(key: key)
         let newValue = operation.apply(oldValue: oldValue, key: key)
 
         if newValue is AVDeleteToken {
-            self.estimatedData[key] = newValue
+            self.localEstimatedData[key] = newValue
         } else {
-            self.estimatedData.removeValue(forKey: key)
+            self.localEstimatedData.removeValue(forKey: key)
         }
 
         let oldOperation = self.currentOperations.tryGetValue(key: key)
@@ -191,16 +194,16 @@ public class AVObject: IAVObject {
         self._state.apply(state: serverState)
         self._isDirty = false
         self._isNew = false
-        self.rebuildEstimatedData()
+        self.rebuildlocalEstimatedData()
     }
 
-    func rebuildEstimatedData() {
-        self.estimatedData = self._state.serverData
+    func rebuildlocalEstimatedData() {
+        self.localEstimatedData = self._state.serverData
     }
 
     func collectDirtyChildren() -> [AVObject] {
         var dirtyChildren: [AVObject] = [AVObject]()
-        for (_, value) in self.estimatedData {
+        for (_, value) in self.localEstimatedData {
             if value is AVObject {
                 dirtyChildren.append(value as! AVObject)
             }

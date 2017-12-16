@@ -67,11 +67,4 @@ extension AVObject {
     public func unset(key: String) {
         self[key] = nil
     }
-
-    public func save(_ completion: @escaping (AVObject) -> Void) {
-        let subscription = self.save().subscribe { event in
-            completion(event.element!)
-        }
-        subscription.dispose()
-    }
 }

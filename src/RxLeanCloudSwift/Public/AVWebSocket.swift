@@ -13,7 +13,7 @@ public class AVWebSocket {
 
     public static var sharedInstance: AVWebSocket = AVWebSocket(app: nil)
 
-    public var rxWebSocketClient: IRxWebSokcetClient {
+    public var AVWebSocketClient: IWebSokcetClient {
         get {
             return AVCorePlugins.sharedInstance.webSocketClient
         }
@@ -27,7 +27,7 @@ public class AVWebSocket {
 
     public func open() -> Observable<Bool> {
         if self.app?.wss != nil {
-            return self.rxWebSocketClient.open(url: (app?.wss)!, subprotocol: nil)
+            return self.AVWebSocketClient.open(url: (app?.wss)!, subprotocol: nil)
         }
         let pushRouter = self.app?.getPushRouterUrl()
 
@@ -35,7 +35,7 @@ public class AVWebSocket {
             self.pushRouterState = response.jsonBody
             if (self.pushRouterState?.containsKey(key: "server"))! {
                 let wss = self.pushRouterState?["server"] as! String
-                return self.rxWebSocketClient.open(url: wss, subprotocol: ["lc.json.3"])
+                return self.AVWebSocketClient.open(url: wss, subprotocol: ["lc.json.3"])
             }
             return Observable.from([false])
         })
@@ -43,7 +43,7 @@ public class AVWebSocket {
 
     public func send(json: [String: Any]) throws -> Observable<[String:Any]> {
         let cmd = AVCommand.create(json: json, app: self.app!)
-        return try self.rxWebSocketClient.send(command: cmd).map({ (avResponse) -> [String: Any] in
+        return try self.AVWebSocketClient.send(command: cmd).map({ (avResponse) -> [String: Any] in
             return avResponse.jsonBody!
         })
     }

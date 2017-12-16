@@ -1,5 +1,5 @@
 //
-//  RxWebSocketClient.swift
+//  AVWebSocketClient.swift
 //  RxLeanCloudSwift
 //
 //  Created by WuJun on 27/05/2017.
@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import Starscream
 
-public class RxWebSocketClient: IRxWebSokcetClient, WebSocketDelegate, WebSocketPongDelegate {
+public class AVWebSocketClient: IWebSokcetClient, WebSocketDelegate, WebSocketPongDelegate {
     
     public func websocketDidConnect(socket: WebSocketClient) {
         //print("connected with ", socket.currentURL)

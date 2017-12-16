@@ -1,5 +1,5 @@
 //
-//  AVCommandRunner.swift
+//  AVHttpCommandRunner.swift
 //  RxLeanCloudSwift
 //
 //  Created by WuJun on 22/05/2017.
@@ -9,18 +9,15 @@
 import Foundation
 import RxSwift
 
-public class AVCommandRunner: IAVCommandRunner {
+public class AVHttpCommandRunner: IAVCommandRunner {
 
-    var httpClient: IRxHttpClient
-    var websocketClient: IRxWebSokcetClient
-    init(httpClient: IRxHttpClient, websocketClient: IRxWebSokcetClient) {
+    var httpClient: IHttpClient
+    init(httpClient: IHttpClient) {
         self.httpClient = httpClient
-        self.websocketClient = websocketClient
     }
 
-
     public func runRxCommand(command: AVCommand) -> Observable<AVCommandResponse> {
-        return self.httpClient.execute(httpRequest: command).map { (httpResponse) -> AVCommandResponse in
+        return self.httpClient.rxExecute(httpRequest: command).map { (httpResponse) -> AVCommandResponse in
             let avResponse = AVCommandResponse(statusCode: httpResponse.satusCode, data: httpResponse.data)
             return avResponse
         }

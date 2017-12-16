@@ -1,5 +1,5 @@
 //
-//  IRxHttpClient.swift
+//  IHttpClient.swift
 //  RxLeanCloudSwift
 //
 //  Created by WuJun on 22/05/2017.
@@ -9,6 +9,6 @@
 import Foundation
 import RxSwift
 
-public protocol IRxHttpClient {
-    func execute(httpRequest: HttpRequest) -> Observable<HttpResponse>
+public protocol IHttpClient {
+    func rxExecute(httpRequest: HttpRequest) -> Observable<HttpResponse>
 }

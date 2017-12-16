@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public protocol IRxWebSokcetClient {
+public protocol IWebSokcetClient {
 
     func open(url: String, subprotocol: [String]?) -> Observable<Bool>
 

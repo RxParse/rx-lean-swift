@@ -1,5 +1,5 @@
 //
-//  IRxKVStorage.swift
+//  IKVStorage.swift
 //  RxLeanCloudSwift
 //
 //  Created by WuJun on 05/06/2017.
@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public protocol IRxKVStorage {
+public protocol IKVStorage {
 
     /*
      return json-format String

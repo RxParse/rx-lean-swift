@@ -59,11 +59,11 @@ public class AVClient {
             method = "GET"
         }
         let req = HttpRequest(method: method!, url: url, headers: headers, data: data)
-        return AVCorePlugins.sharedInstance.httpClient.execute(httpRequest: req)
+        return AVCorePlugins.sharedInstance.httpClient.rxExecute(httpRequest: req)
     }
 
     public func runCommand(cmd: AVCommand) -> Observable<AVCommandResponse> {
-        return AVCorePlugins.sharedInstance.commandRunner.runRxCommand(command: cmd)
+        return AVCorePlugins.sharedInstance.httpCommandRunner.runRxCommand(command: cmd)
     }
 
     public func websocketLog(cmd: AVCommand) -> Void {

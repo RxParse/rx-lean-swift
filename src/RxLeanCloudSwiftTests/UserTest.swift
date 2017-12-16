@@ -60,7 +60,34 @@ class UserTest: XCTestCase {
             print(error.localizedDescription)
         }
     }
+    func testSignUp() {
+        var user = AVUser()
+        user.username = self.randomString(8)
+        user.password = "leancloud"
+//        user.mobilePhoneNumber = "18612345678"
 
+        let result = user.signUp().toBlocking().materialize()
+
+        switch result {
+        case .completed(let elements):
+            print(elements[0])
+            //XCTFail("Expected result to complete with error, but result was successful.")
+        case .failed(let _, let error):
+            print(error.localizedDescription)
+        }
+    }
+
+    func randomString(_ length: Int) -> String {
+
+        let master = Array("abcdefghijklmnopqrstuvwxyz-ABCDEFGHIJKLMNOPQRSTUVWXYZ_123456789".utf8CString) //0...62 = 63
+        var randomString = ""
+
+        for _ in 1...length {
+            let random = arc4random_uniform(UInt32(master.count))
+            randomString.append(String(master[Int(random)]))
+        }
+        return randomString
+    }
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

@@ -24,16 +24,19 @@
 		6A42ABB31ED55F78000E9D05 /* RxAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A42ABAF1ED55F78000E9D05 /* RxAlamofire.framework */; };
 		6A42ABB41ED55F78000E9D05 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A42ABB01ED55F78000E9D05 /* RxCocoa.framework */; };
 		6A42ABB51ED55F78000E9D05 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A42ABB11ED55F78000E9D05 /* RxSwift.framework */; };
+		6A50F7FC1FE354C7005FB653 /* LeanCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A50F7FB1FE354C7005FB653 /* LeanCloud.swift */; };
+		6A50F7FE1FE3ABE7005FB653 /* AVUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A50F7FD1FE3ABE7005FB653 /* AVUtility.swift */; };
+		6A50F8001FE3B6B2005FB653 /* RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A50F7FF1FE3B6B2005FB653 /* RxExtensions.swift */; };
 		6A857F3B1ED307B400D174E1 /* RxLeanCloudSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A857F311ED307B400D174E1 /* RxLeanCloudSwift.framework */; };
 		6A857F401ED307B400D174E1 /* RxLeanCloudSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A857F3F1ED307B400D174E1 /* RxLeanCloudSwiftTests.swift */; };
 		6A857F421ED307B400D174E1 /* RxLeanCloudSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A857F341ED307B400D174E1 /* RxLeanCloudSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AA097851ED329E100114C43 /* AVCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0977D1ED329E100114C43 /* AVCommand.swift */; };
-		6AA097861ED329E100114C43 /* AVCommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0977E1ED329E100114C43 /* AVCommandRunner.swift */; };
+		6AA097861ED329E100114C43 /* AVHttpCommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0977E1ED329E100114C43 /* AVHttpCommandRunner.swift */; };
 		6AA097871ED329E100114C43 /* IAVCommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0977F1ED329E100114C43 /* IAVCommandRunner.swift */; };
 		6AA097881ED329E100114C43 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA097811ED329E100114C43 /* HttpRequest.swift */; };
-		6AA097891ED329E100114C43 /* IRxHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA097821ED329E100114C43 /* IRxHttpClient.swift */; };
+		6AA097891ED329E100114C43 /* IHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA097821ED329E100114C43 /* IHttpClient.swift */; };
 		6AA0978D1ED3BC7100114C43 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0978C1ED3BC7100114C43 /* HttpResponse.swift */; };
-		6AA0978F1ED3BD3C00114C43 /* RxHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0978E1ED3BD3C00114C43 /* RxHttpClient.swift */; };
+		6AA0978F1ED3BD3C00114C43 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0978E1ED3BD3C00114C43 /* HttpClient.swift */; };
 		6AA097911ED3BE3800114C43 /* AVCommandResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA097901ED3BE3800114C43 /* AVCommandResponse.swift */; };
 		6AA097931ED3C0F300114C43 /* IObjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA097921ED3C0F300114C43 /* IObjectController.swift */; };
 		6AA097951ED3C10200114C43 /* ObjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA097941ED3C10200114C43 /* ObjectController.swift */; };
@@ -44,13 +47,14 @@
 		6AA4D28A1FE2800B007A4E32 /* AVSMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4D2891FE2800B007A4E32 /* AVSMS.swift */; };
 		6AA4D28D1FE2A998007A4E32 /* FileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4D28C1FE2A998007A4E32 /* FileState.swift */; };
 		6AA4D28F1FE2A9BF007A4E32 /* QiniuStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4D28E1FE2A9BF007A4E32 /* QiniuStrategy.swift */; };
-		6AC498B91EE55022008BB978 /* RxKVStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC498B81EE55022008BB978 /* RxKVStorage.swift */; };
-		6AC498BB1EE55038008BB978 /* IRxKVStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC498BA1EE55038008BB978 /* IRxKVStorage.swift */; };
+		6AC095991FE3F91800C7D052 /* AVWebSocketCommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC095981FE3F91800C7D052 /* AVWebSocketCommandRunner.swift */; };
+		6AC498B91EE55022008BB978 /* KVStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC498B81EE55022008BB978 /* KVStorage.swift */; };
+		6AC498BB1EE55038008BB978 /* IKVStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC498BA1EE55038008BB978 /* IKVStorage.swift */; };
 		6AEB4A9E1ED8283500F3F06A /* QueryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4A9D1ED8283500F3F06A /* QueryController.swift */; };
 		6AEB4AA01ED8284D00F3F06A /* IQueryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4A9F1ED8284D00F3F06A /* IQueryController.swift */; };
 		6AEB4AA41ED9008300F3F06A /* IJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4AA31ED9008300F3F06A /* IJSON.swift */; };
-		6AEB4AA91ED92A4D00F3F06A /* RxWebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4AA81ED92A4D00F3F06A /* RxWebSocketClient.swift */; };
-		6AEB4AAB1ED92A6600F3F06A /* IRxWebScoketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4AAA1ED92A6600F3F06A /* IRxWebScoketClient.swift */; };
+		6AEB4AA91ED92A4D00F3F06A /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4AA81ED92A4D00F3F06A /* WebSocketClient.swift */; };
+		6AEB4AAB1ED92A6600F3F06A /* IWebScoketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4AAA1ED92A6600F3F06A /* IWebScoketClient.swift */; };
 		6AEB4AC91ED94F2500F3F06A /* AVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4AC11ED94F2500F3F06A /* AVApp.swift */; };
 		6AEB4ACA1ED94F2500F3F06A /* AVClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4AC21ED94F2500F3F06A /* AVClient.swift */; };
 		6AEB4ACB1ED94F2500F3F06A /* AVCorePlugins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4AC31ED94F2500F3F06A /* AVCorePlugins.swift */; };
@@ -97,6 +101,9 @@
 		6A42ABAF1ED55F78000E9D05 /* RxAlamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAlamofire.framework; path = "../../../Users/wujun/Library/Developer/Xcode/DerivedData/RxLeanCloudSwift-eevxrfmrjklfvcbcnskbtjdskxgm/Build/Products/Debug-iphonesimulator/RxAlamofire/RxAlamofire.framework"; sourceTree = "<group>"; };
 		6A42ABB01ED55F78000E9D05 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = "../../../Users/wujun/Library/Developer/Xcode/DerivedData/RxLeanCloudSwift-eevxrfmrjklfvcbcnskbtjdskxgm/Build/Products/Debug-iphonesimulator/RxCocoa/RxCocoa.framework"; sourceTree = "<group>"; };
 		6A42ABB11ED55F78000E9D05 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "../../../Users/wujun/Library/Developer/Xcode/DerivedData/RxLeanCloudSwift-eevxrfmrjklfvcbcnskbtjdskxgm/Build/Products/Debug-iphonesimulator/RxSwift/RxSwift.framework"; sourceTree = "<group>"; };
+		6A50F7FB1FE354C7005FB653 /* LeanCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeanCloud.swift; sourceTree = "<group>"; };
+		6A50F7FD1FE3ABE7005FB653 /* AVUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVUtility.swift; sourceTree = "<group>"; };
+		6A50F7FF1FE3B6B2005FB653 /* RxExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExtensions.swift; sourceTree = "<group>"; };
 		6A857F311ED307B400D174E1 /* RxLeanCloudSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxLeanCloudSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A857F341ED307B400D174E1 /* RxLeanCloudSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxLeanCloudSwift.h; sourceTree = "<group>"; };
 		6A857F351ED307B400D174E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,12 +111,12 @@
 		6A857F3F1ED307B400D174E1 /* RxLeanCloudSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxLeanCloudSwiftTests.swift; sourceTree = "<group>"; };
 		6A857F411ED307B400D174E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AA0977D1ED329E100114C43 /* AVCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVCommand.swift; sourceTree = "<group>"; };
-		6AA0977E1ED329E100114C43 /* AVCommandRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVCommandRunner.swift; sourceTree = "<group>"; };
+		6AA0977E1ED329E100114C43 /* AVHttpCommandRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVHttpCommandRunner.swift; sourceTree = "<group>"; };
 		6AA0977F1ED329E100114C43 /* IAVCommandRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAVCommandRunner.swift; sourceTree = "<group>"; };
 		6AA097811ED329E100114C43 /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
-		6AA097821ED329E100114C43 /* IRxHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRxHttpClient.swift; sourceTree = "<group>"; };
+		6AA097821ED329E100114C43 /* IHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IHttpClient.swift; sourceTree = "<group>"; };
 		6AA0978C1ED3BC7100114C43 /* HttpResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
-		6AA0978E1ED3BD3C00114C43 /* RxHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxHttpClient.swift; sourceTree = "<group>"; };
+		6AA0978E1ED3BD3C00114C43 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		6AA097901ED3BE3800114C43 /* AVCommandResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVCommandResponse.swift; sourceTree = "<group>"; };
 		6AA097921ED3C0F300114C43 /* IObjectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IObjectController.swift; sourceTree = "<group>"; };
 		6AA097941ED3C10200114C43 /* ObjectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectController.swift; sourceTree = "<group>"; };
@@ -120,13 +127,14 @@
 		6AA4D2891FE2800B007A4E32 /* AVSMS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVSMS.swift; sourceTree = "<group>"; };
 		6AA4D28C1FE2A998007A4E32 /* FileState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileState.swift; sourceTree = "<group>"; };
 		6AA4D28E1FE2A9BF007A4E32 /* QiniuStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiniuStrategy.swift; sourceTree = "<group>"; };
-		6AC498B81EE55022008BB978 /* RxKVStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxKVStorage.swift; sourceTree = "<group>"; };
-		6AC498BA1EE55038008BB978 /* IRxKVStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRxKVStorage.swift; sourceTree = "<group>"; };
+		6AC095981FE3F91800C7D052 /* AVWebSocketCommandRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVWebSocketCommandRunner.swift; sourceTree = "<group>"; };
+		6AC498B81EE55022008BB978 /* KVStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVStorage.swift; sourceTree = "<group>"; };
+		6AC498BA1EE55038008BB978 /* IKVStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKVStorage.swift; sourceTree = "<group>"; };
 		6AEB4A9D1ED8283500F3F06A /* QueryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryController.swift; sourceTree = "<group>"; };
 		6AEB4A9F1ED8284D00F3F06A /* IQueryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQueryController.swift; sourceTree = "<group>"; };
 		6AEB4AA31ED9008300F3F06A /* IJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IJSON.swift; sourceTree = "<group>"; };
-		6AEB4AA81ED92A4D00F3F06A /* RxWebSocketClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxWebSocketClient.swift; sourceTree = "<group>"; };
-		6AEB4AAA1ED92A6600F3F06A /* IRxWebScoketClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRxWebScoketClient.swift; sourceTree = "<group>"; };
+		6AEB4AA81ED92A4D00F3F06A /* WebSocketClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
+		6AEB4AAA1ED92A6600F3F06A /* IWebScoketClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IWebScoketClient.swift; sourceTree = "<group>"; };
 		6AEB4AC11ED94F2500F3F06A /* AVApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVApp.swift; sourceTree = "<group>"; };
 		6AEB4AC21ED94F2500F3F06A /* AVClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVClient.swift; sourceTree = "<group>"; };
 		6AEB4AC31ED94F2500F3F06A /* AVCorePlugins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVCorePlugins.swift; sourceTree = "<group>"; };
@@ -257,9 +265,10 @@
 			isa = PBXGroup;
 			children = (
 				6AA0977D1ED329E100114C43 /* AVCommand.swift */,
-				6AA0977E1ED329E100114C43 /* AVCommandRunner.swift */,
+				6AA0977E1ED329E100114C43 /* AVHttpCommandRunner.swift */,
 				6AA0977F1ED329E100114C43 /* IAVCommandRunner.swift */,
 				6AA097901ED3BE3800114C43 /* AVCommandResponse.swift */,
+				6AC095981FE3F91800C7D052 /* AVWebSocketCommandRunner.swift */,
 			);
 			path = Command;
 			sourceTree = "<group>";
@@ -268,9 +277,9 @@
 			isa = PBXGroup;
 			children = (
 				6AA097811ED329E100114C43 /* HttpRequest.swift */,
-				6AA097821ED329E100114C43 /* IRxHttpClient.swift */,
+				6AA097821ED329E100114C43 /* IHttpClient.swift */,
 				6AA0978C1ED3BC7100114C43 /* HttpResponse.swift */,
-				6AA0978E1ED3BD3C00114C43 /* RxHttpClient.swift */,
+				6AA0978E1ED3BD3C00114C43 /* HttpClient.swift */,
 			);
 			path = HttpClient;
 			sourceTree = "<group>";
@@ -300,8 +309,8 @@
 		6AC498B71EE54FA0008BB978 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				6AC498B81EE55022008BB978 /* RxKVStorage.swift */,
-				6AC498BA1EE55038008BB978 /* IRxKVStorage.swift */,
+				6AC498B81EE55022008BB978 /* KVStorage.swift */,
+				6AC498BA1EE55038008BB978 /* IKVStorage.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -318,8 +327,8 @@
 		6AEB4AA71ED92A0500F3F06A /* WebSocket */ = {
 			isa = PBXGroup;
 			children = (
-				6AEB4AA81ED92A4D00F3F06A /* RxWebSocketClient.swift */,
-				6AEB4AAA1ED92A6600F3F06A /* IRxWebScoketClient.swift */,
+				6AEB4AA81ED92A4D00F3F06A /* WebSocketClient.swift */,
+				6AEB4AAA1ED92A6600F3F06A /* IWebScoketClient.swift */,
 			);
 			path = WebSocket;
 			sourceTree = "<group>";
@@ -340,6 +349,9 @@
 				6AA4D2851FE27F8B007A4E32 /* AVFile.swift */,
 				6AA4D2871FE27FF3007A4E32 /* AVCQL.swift */,
 				6AA4D2891FE2800B007A4E32 /* AVSMS.swift */,
+				6A50F7FB1FE354C7005FB653 /* LeanCloud.swift */,
+				6A50F7FD1FE3ABE7005FB653 /* AVUtility.swift */,
+				6A50F7FF1FE3B6B2005FB653 /* RxExtensions.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -612,12 +624,13 @@
 				6AA0978D1ED3BC7100114C43 /* HttpResponse.swift in Sources */,
 				6A2758011ED9C15E000D9DA3 /* UserController.swift in Sources */,
 				6AA097931ED3C0F300114C43 /* IObjectController.swift in Sources */,
-				6AA097891ED329E100114C43 /* IRxHttpClient.swift in Sources */,
+				6AA097891ED329E100114C43 /* IHttpClient.swift in Sources */,
 				6AEB4ACE1ED94F2500F3F06A /* AVQuery.swift in Sources */,
 				6A42AB991ED4FEE8000E9D05 /* AVEncoder.swift in Sources */,
 				6AA4D2861FE27F8B007A4E32 /* AVFile.swift in Sources */,
-				6AEB4AAB1ED92A6600F3F06A /* IRxWebScoketClient.swift in Sources */,
+				6AEB4AAB1ED92A6600F3F06A /* IWebScoketClient.swift in Sources */,
 				6AA4D28F1FE2A9BF007A4E32 /* QiniuStrategy.swift in Sources */,
+				6A50F7FE1FE3ABE7005FB653 /* AVUtility.swift in Sources */,
 				6AEB4ACA1ED94F2500F3F06A /* AVClient.swift in Sources */,
 				6A2757FD1ED9BA21000D9DA3 /* AVUser.swift in Sources */,
 				6AA097851ED329E100114C43 /* AVCommand.swift in Sources */,
@@ -635,13 +648,16 @@
 				6A42ABA91ED52FD6000E9D05 /* ObjectDecoder.swift in Sources */,
 				6A33343D1FABF44700BE26F4 /* AVIncrementOperation.swift in Sources */,
 				6A3F43A81FA48E5F00B784EE /* AVCloud.swift in Sources */,
+				6AC095991FE3F91800C7D052 /* AVWebSocketCommandRunner.swift in Sources */,
 				6A42AB971ED4FE26000E9D05 /* IAVEncoder.swift in Sources */,
 				6AEB984C1FAB5C7600D0ACA3 /* AVRemoveOperation.swift in Sources */,
-				6AC498BB1EE55038008BB978 /* IRxKVStorage.swift in Sources */,
-				6AEB4AA91ED92A4D00F3F06A /* RxWebSocketClient.swift in Sources */,
+				6AC498BB1EE55038008BB978 /* IKVStorage.swift in Sources */,
+				6AEB4AA91ED92A4D00F3F06A /* WebSocketClient.swift in Sources */,
 				6AEB984E1FAB62BE00D0ACA3 /* AVDeleteOperation.swift in Sources */,
-				6AA0978F1ED3BD3C00114C43 /* RxHttpClient.swift in Sources */,
+				6A50F7FC1FE354C7005FB653 /* LeanCloud.swift in Sources */,
+				6AA0978F1ED3BD3C00114C43 /* HttpClient.swift in Sources */,
 				6AA4D28D1FE2A998007A4E32 /* FileState.swift in Sources */,
+				6A50F8001FE3B6B2005FB653 /* RxExtensions.swift in Sources */,
 				6AEB4AC91ED94F2500F3F06A /* AVApp.swift in Sources */,
 				6AEB4ACB1ED94F2500F3F06A /* AVCorePlugins.swift in Sources */,
 				6A2758031ED9C16D000D9DA3 /* IUserController.swift in Sources */,
@@ -651,9 +667,9 @@
 				6A42ABAB1ED52FF2000E9D05 /* IObjectDecoder.swift in Sources */,
 				6AA097951ED3C10200114C43 /* ObjectController.swift in Sources */,
 				6AEB4ACF1ED94F2500F3F06A /* AVRealtime.swift in Sources */,
-				6AC498B91EE55022008BB978 /* RxKVStorage.swift in Sources */,
+				6AC498B91EE55022008BB978 /* KVStorage.swift in Sources */,
 				6AA097971ED3C11200114C43 /* IObjectState.swift in Sources */,
-				6AA097861ED329E100114C43 /* AVCommandRunner.swift in Sources */,
+				6AA097861ED329E100114C43 /* AVHttpCommandRunner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

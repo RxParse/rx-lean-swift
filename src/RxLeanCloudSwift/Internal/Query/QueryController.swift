@@ -11,16 +11,16 @@ import RxSwift
 
 public class QueryController: IQueryController {
 
-    var commandRunner: IAVCommandRunner
-    init(commandRunner: IAVCommandRunner) {
-        self.commandRunner = commandRunner
+    var httpCommandRunner: IAVCommandRunner
+    init(httpCommandRunner: IAVCommandRunner) {
+        self.httpCommandRunner = httpCommandRunner
     }
 
     public func find(query: IAVQuery) -> Observable<Array<IObjectState>> {
         let relativeUrl = self.buildQueryString(query: query as! AVQuery)
         let cmd = AVCommand(relativeUrl: relativeUrl, method: "GET", data: nil, app: query.app!)
 
-        return self.commandRunner.runRxCommand(command: cmd).map({ (avResponse) -> Array<IObjectState> in
+        return self.httpCommandRunner.runRxCommand(command: cmd).map({ (avResponse) -> Array<IObjectState> in
             var body = (avResponse.jsonBody)!
             let results = body["results"] as! Array<Any>
 

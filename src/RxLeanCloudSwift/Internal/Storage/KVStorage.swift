@@ -11,13 +11,13 @@ import RxSwift
 import RxCocoa
 
 
-public class RxAVSettings {
+public class AVSettings {
     @objc dynamic var id = UUID().uuidString
     @objc dynamic var key: String = ""
     @objc dynamic var value: String = ""
 }
 
-public class RxKVStorage: IRxKVStorage {
+public class RxKVStorage: IKVStorage {
 
     public func set(key: String, value: String) -> Observable<String> {
         UserDefaults.standard.set(value, forKey: key)

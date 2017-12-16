@@ -110,13 +110,7 @@ class ObjectTest: XCTestCase {
         //print(results.events[0].value.element?.objectId)
         //XCTAssertTrue((results.events[0].value.element?.objectId?.characters.count)! > 0)
     }
-    func testSaveInBackgroud() {
-        let todo = AVObject(className: "SwiftTodo")
-        todo["foo"] = "bar"
-        todo.save { (avObject) in
-            
-        }
-    }
+
     func testInit() {
 
         let scheduler = TestScheduler(initialClock: 0)
@@ -161,6 +155,18 @@ class ObjectTest: XCTestCase {
         //        let json = obj as! [String: Any]
         //        print("json", json)
 
+    }
+
+    func testCallback() {
+        let expert = expectation(description: "Example")
+        let todo = AVObject(className: "SwiftTodo")
+        todo["foo"] = "bar"
+        todo.save().onExecuted(completion: { (object) in
+            expert.fulfill()
+        }) { (error) in
+            XCTFail("Expected getSandwiches to succeed, but it failed. ?")
+        }
+        waitForExpectations(timeout: 10, handler: nil)
     }
 
     func testPerformanceExample() {

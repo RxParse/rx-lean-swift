@@ -11,16 +11,16 @@ import RxSwift
 
 public class ObjectController: IObjectController {
 
-    var commandRunner: IAVCommandRunner
-    init(commandRunner: IAVCommandRunner) {
-        self.commandRunner = commandRunner
+    var httpCommandRunner: IAVCommandRunner
+    init(httpCommandRunner: IAVCommandRunner) {
+        self.httpCommandRunner = httpCommandRunner
     }
 
     public func save(state: IObjectState, operations: [String: IAVFieldOperation]) -> Observable<IObjectState> {
 
         let cmd = self.packRequest(state: state, operations: operations)
 
-        return self.commandRunner.runRxCommand(command: cmd).map({ (avResponse) -> IObjectState in
+        return self.httpCommandRunner.runRxCommand(command: cmd).map({ (avResponse) -> IObjectState in
             return self.unpackResponse(avResponse: avResponse)
         })
     }
@@ -32,7 +32,7 @@ public class ObjectController: IObjectController {
             return packRequest(state: seKV.0, operations: seKV.1)
         }
 
-        return self.commandRunner.runBatchRxCommands(commands: cmds, app: app).map({ (avResponses) -> [IObjectState] in
+        return self.httpCommandRunner.runBatchRxCommands(commands: cmds, app: app).map({ (avResponses) -> [IObjectState] in
             return avResponses.map({ (avResponse) -> IObjectState in
                 return self.unpackResponse(avResponse: avResponse)
             })
@@ -44,12 +44,12 @@ public class ObjectController: IObjectController {
         let realtiveUrl = "/classes/\(state.className)/\(state.objectId!)?\(_queryString)"
         let cmd = AVCommand(relativeUrl: realtiveUrl, method: "GET", data: nil, app: state.app!)
 
-        return self.commandRunner.runRxCommand(command: cmd).map({ (avResponse) -> IObjectState in
+        return self.httpCommandRunner.runRxCommand(command: cmd).map({ (avResponse) -> IObjectState in
             return self.unpackResponse(avResponse: avResponse)
         })
     }
 
-    func packRequest(state: IObjectState, operations: [String: IAVFieldOperation]) -> AVCommand {
+    public func packRequest(state: IObjectState, operations: [String: IAVFieldOperation]) -> AVCommand {
         var mutableState = state.mutatedClone { (state) in
 
         }
@@ -57,10 +57,12 @@ public class ObjectController: IObjectController {
         mutableState = self.removeReadOnlyFields(state: mutableState)
         mutableState = self.removeRelationFields(state: mutableState)
 
-        var mutableEncoded = [String: Any]()
-
-        for (key, value) in operations {
-            mutableEncoded[key] = AVCorePlugins.sharedInstance.avEncoder.encode(value: value)
+        var mutableEncoded: [String: Any]? = nil
+        if operations.count > 0 {
+            mutableEncoded = [String: Any]()
+            for (key, value) in operations {
+                mutableEncoded![key] = AVCorePlugins.sharedInstance.avEncoder.encode(value: value)
+            }
         }
 
         let realtiveUrl = mutableState.objectId == nil ? "/classes/\(mutableState.className)" : "/classes/\(mutableState.className)/\(mutableState.objectId!)"
@@ -102,3 +104,4 @@ public class ObjectController: IObjectController {
         return state
     }
 }
+

@@ -280,7 +280,7 @@ public class AVRealtime {
     }
 
     func _bindWebSokcet() {
-        self.onMessage = self.rxAVWebSocket.rxWebSocketClient.onMessage.filter { (avResponse) -> Bool in
+        self.onMessage = self.rxAVWebSocket.AVWebSocketClient.onMessage.filter { (avResponse) -> Bool in
             let cmdName = avResponse.jsonBody?["cmd"] as! String
             return cmdName == "direct"
         }.map { (avResponse) -> IAVIMMessage in

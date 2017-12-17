@@ -29,6 +29,9 @@ public class AVEncoder: IAVEncoder {
         } else if value is IAVFieldOperation {
             let operation = value as! IAVFieldOperation
             return operation.encode()
+        } else if value is Array<Any> {
+            let encodedArray = self.encodeArray(list: value as! Array<Any>)
+            return encodedArray
         }
         return value
     }
@@ -47,6 +50,17 @@ public class AVEncoder: IAVEncoder {
         encoded["className"] = avObject.className
         encoded["objectId"] = avObject.objectId
         return encoded
+    }
+
+    public func encodeArray(list: Array<Any>) -> Array<Any> {
+        var resultArray = Array<Any>()
+        for item in list {
+            if self.isValidType(value: item) {
+                let encoedItem = self.encode(value: item)
+                resultArray.append(encoedItem)
+            }
+        }
+        return resultArray
     }
 
     public func isValidType(value: Any) -> Bool {

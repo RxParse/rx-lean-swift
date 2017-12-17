@@ -19,6 +19,21 @@ public class AVSMS {
     }
 }
 
+public class AVUserAuthSMS: AVSMS {
+    public func send() -> Observable<Bool> {
+        var payload = [String: Any]()
+        payload["mobilePhoneNumber"] = self.mobilePhoneNumber
+        let cmd = AVCommand(relativeUrl: "/requestLoginSmsCode", method: "POST", data: payload, app: self.app)
+        return AVClient.sharedInstance.runCommand(cmd: cmd).map({ (avResponse) -> Bool in
+            return avResponse.satusCode == 200
+        })
+    }
+    public var shortCode: String? = nil
+    public func setShortCode(receivedShortCode: String) {
+        self.shortCode = receivedShortCode
+    }
+}
+
 public class AVValidationSMS: AVSMS {
     public static func send(mobilePhoneNumber: String, ttl: Int = 10) -> Observable<Bool> {
         return AVValidationSMS.send(mobilePhoneNumber: mobilePhoneNumber, appName: nil, operationName: nil)
@@ -101,7 +116,7 @@ public class AVNoticeSMS: AVSMS {
                 payload[key] = value
             })
         }
-        
+
         let cmd = AVCommand(relativeUrl: "/requestSmsCode", method: "POST", data: payload, app: self.app)
         return AVClient.sharedInstance.runCommand(cmd: cmd).map({ (avResponse) -> Bool in
             return avResponse.satusCode == 200

@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 
 public class UserController: IUserController {
+    
     var httpCommandRunner: IAVCommandRunner
     init(httpCommandRunner: IAVCommandRunner) {
         self.httpCommandRunner = httpCommandRunner
@@ -23,6 +24,21 @@ public class UserController: IUserController {
             return AVCorePlugins.sharedInstance.objectController.unpackResponse(avResponse: avResponse)
         })
     }
+    public func logInWith(relativeUrl: String, logInData: [String: Any], app: AVApp) -> Observable<IObjectState> {
+        let cmd = AVCommand(relativeUrl: relativeUrl, method: "POST", data: logInData, app: app)
+        return self.httpCommandRunner.runRxCommand(command: cmd).map({ (avResponse) -> IObjectState in
+            return AVCorePlugins.sharedInstance.objectController.unpackResponse(avResponse: avResponse)
+        })
+    }
+
+    public func get(sessionToken: String) -> Observable<IObjectState> {
+        let cmd = AVCommand(relativeUrl: "/users/me", method: "GET", data: nil, app: nil)
+        cmd.apiSessionToken = sessionToken
+        return self.httpCommandRunner.runRxCommand(command: cmd).map({ (avResponse) -> IObjectState in
+            return AVCorePlugins.sharedInstance.objectController.unpackResponse(avResponse: avResponse)
+        })
+    }
+
     func create(state: IObjectState, operations: [String: IAVFieldOperation]) -> Observable<IObjectState> {
         let cmd = AVCorePlugins.sharedInstance.objectController.packRequest(state: state, operations: operations)
         return self.httpCommandRunner.runRxCommand(command: cmd).map({ (avResponse) -> IObjectState in

@@ -15,12 +15,10 @@ import RxTest
 import RxBlocking
 
 
-class ObjectTest: XCTestCase {
+class ObjectTest: LeanCloudUnitTestBase {
 
     override func setUp() {
         super.setUp()
-
-        RxLeanCloudSwiftUtils.initialize()
     }
 
     override func tearDown() {
@@ -168,12 +166,4 @@ class ObjectTest: XCTestCase {
         }
         waitForExpectations(timeout: 10, handler: nil)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

@@ -66,6 +66,12 @@ public class AVClient {
         return AVCorePlugins.sharedInstance.httpCommandRunner.runRxCommand(command: cmd)
     }
 
+    func runCommandSuccessced(cmd: AVCommand) -> Observable<Bool> {
+        return self.runCommand(cmd: cmd).map({ (avResponse) -> Bool in
+            return avResponse.satusCode == 200
+        })
+    }
+
     public func websocketLog(cmd: AVCommand) -> Void {
         if _enableLog {
 //            print("===Websocket-Command-START===")

@@ -17,7 +17,17 @@ public protocol IAVObject {
     var updatedAt: Date? { get }
 }
 
-public class AVObject: IAVObject {
+public class AVObject: IAVObject, IAVQueryable {
+
+    public required init(serverState: IObjectState) {
+        _ = self.retore(serverState: serverState)
+    }
+    public func retore(serverState: IObjectState) -> AVObject {
+        self.handleFetchResult(serverState: serverState)
+        return self
+    }
+
+    public typealias AVQueryableType = AVObject
 
     public init(className: String, app: AVApp) {
         self._state.className = className
@@ -84,6 +94,18 @@ public class AVObject: IAVObject {
             }
         }
         return self.getProperty(key: key)
+    }
+
+    public func get<T:Any>(defaultValue: T, key: String) -> T {
+        if self.localEstimatedData.containsKey(key: key) {
+            if let value = self.localEstimatedData[key] {
+                return value as! T
+            }
+        }
+        if let serverValue = self.getProperty(key: key) {
+            return serverValue as! T
+        }
+        return defaultValue
     }
 
     public func set(key: String, value: Any?) {
@@ -163,10 +185,19 @@ public class AVObject: IAVObject {
         return observableResult
     }
 
+    public func delete() -> Observable<Bool> {
+        return AVObject.objectController.delete(state: self._state, sessionToken: nil)
+    }
+
     public static func createWithoutData(classnName: String, objectId: String) -> AVObject {
         let objInstance = AVObject(className: classnName)
         objInstance.objectId = objectId
         return objInstance
+    }
+
+    static func fromState<T:AVObject>(state: IObjectState) -> T {
+        let result = T(serverState: state)
+        return result as T
     }
 
     func batchSave(objArray: Array<AVObject>) -> Observable<Bool> {
@@ -262,6 +293,10 @@ public class AVObject: IAVObject {
         }
     }
 
+    func containsKey(key: String) -> Bool {
+        return self.localEstimatedData.containsKey(key: key) || self._state.containsKey(key: key)
+    }
+
     func setProperty(key: String, value: Any) -> Void {
         self._state.serverData[key] = value
     }
@@ -273,6 +308,12 @@ public class AVObject: IAVObject {
             return value
         }
         return nil
+    }
+
+    var app: AVApp {
+        get {
+            return self._state.app!
+        }
     }
 }
 

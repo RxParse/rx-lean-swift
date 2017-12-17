@@ -17,7 +17,7 @@ public class QueryController: IQueryController {
     }
 
     public func find(query: IAVQuery) -> Observable<Array<IObjectState>> {
-        let relativeUrl = self.buildQueryString(query: query as! AVQuery)
+        let relativeUrl = self.buildQueryString(query: query)
         let cmd = AVCommand(relativeUrl: relativeUrl, method: "GET", data: nil, app: query.app!)
 
         return self.httpCommandRunner.runRxCommand(command: cmd).map({ (avResponse) -> Array<IObjectState> in
@@ -31,7 +31,8 @@ public class QueryController: IQueryController {
             })
         })
     }
-    func buildQueryString(query: AVQuery) -> String {
+    
+    func buildQueryString(query: IAVQuery) -> String {
         let queryJson = self.buildParameters(query: query, includeClassName: false)
 
         var queryArray = [String]()

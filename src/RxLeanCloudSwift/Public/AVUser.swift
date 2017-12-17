@@ -21,6 +21,11 @@ public class AVUser: AVObject {
     public convenience init() {
         self.init(app: AVClient.sharedInstance.getCurrentApp())
     }
+
+    public required init(serverState: IObjectState) {
+        super.init(serverState: serverState)
+    }
+
     static var userController: IUserController {
         get {
             return AVCorePlugins.sharedInstance.userConroller
@@ -35,7 +40,7 @@ public class AVUser: AVObject {
 
     public var username: String {
         get {
-            return self.get(key: "username") as! String
+            return self.get(defaultValue: "", key: "username")
         }
         set {
             if self.sessionToken == nil {
@@ -79,24 +84,114 @@ public class AVUser: AVObject {
         }
     }
 
+    public var email: String? {
+        get {
+            return self.get(defaultValue: nil, key: "email")
+        }
+        set {
+            self.set(key: "email", value: newValue)
+        }
+    }
+
+    public var authData: [String: Any]? {
+        get {
+            let data = self.get(key: "authData")
+            return data == nil ? nil : data as? [String: Any]
+        }
+        set {
+            self.set(key: "authData", value: newValue)
+        }
+    }
+
     public func signUp() -> Observable<Bool> {
-        return self.create().flatMap ({ (state) -> Observable<Bool> in
-            self.handleLogInResult(serverState: state, app: self._state.app!)
-            return self.saveToStorage()
+        return self.create().flatMap ({ (state) -> Observable<AVUser> in
+            return AVUser.setCurrent(serverState: state)
+        }).map({ (user) -> Bool in
+            return user.objectId != nil
         })
     }
 
+    public func logIn() -> Observable<AVUser> {
+        var logInData = [String: Any]()
+        if let password = self.password {
+            logInData["password"] = password
+        } else {
+            return Observable.error(AVUserError.passwordNeededWhenLogIn(error: "Cannot log in user with an empty password."))
+        }
+        if let email = self.email {
+            logInData["username"] = email
+        }
+        if let mobilePhomeNumber = self.mobilePhoneNumber {
+            logInData["username"] = mobilePhomeNumber
+        }
+        if !self.username.isEmpty {
+            logInData["username"] = self.username
+        }
+        return AVUser.userController.logInWith(relativeUrl: "/login", logInData: logInData, app: self.app).flatMap({ (serverState) -> Observable<AVUser> in
+            return AVUser.setCurrent(serverState: serverState)
+        })
+    }
+    public enum resetPasswordMode {
+        case mobilePhoneNumber
+        case email
+    }
+
+    public func requestResetPassword(_ mode: resetPasswordMode) -> Observable<Bool> {
+        var requestData = [String: Any]()
+        var url = ""
+        switch mode {
+        case .mobilePhoneNumber:
+            requestData["mobilePhoneNumber"] = self.mobilePhoneNumber
+            url = "/requestPasswordResetBySmsCode"
+        default:
+            requestData["email"] = self.email
+            url = "/requestPasswordReset"
+        }
+
+        let cmd = AVCommand(relativeUrl: url, method: "POST", data: requestData, app: self.app)
+        return AVClient.sharedInstance.runCommandSuccessced(cmd: cmd)
+    }
+
+    public func resetPassword(newPassword: String, shortCode: String) -> Observable<Bool> {
+        var data = [String: Any]()
+        data["password"] = newPassword
+        let cmd = AVCommand(relativeUrl: "/resetPasswordBySmsCode/\(shortCode)", method: "POST", data: data, app: self.app)
+        return AVClient.sharedInstance.runCommandSuccessced(cmd: cmd)
+    }
+
+    public func updatePassword(newPassword: String, oldPassword: String) -> Observable<Bool> {
+        var data = [String: Any]()
+        data["new_password"] = newPassword
+        data["old_password"] = oldPassword
+        let cmd = AVCommand(relativeUrl: "/users/\(String(describing: self.objectId))/updatePassword", method: "PUT", data: data, app: self.app)
+        return AVClient.sharedInstance.runCommandSuccessced(cmd: cmd)
+    }
+    
+    enum AVUserError: Error {
+        case userExist(error: String)
+        case usernameEmpty(error: String)
+        case passwordNotSpecified(error: String)
+        case passwordNeededWhenLogIn(error: String)
+    }
     func create() -> Observable<IObjectState> {
+        if self.objectId != nil {
+            return Observable.error(AVUserError.userExist(error: "Cannot sign up a user that already exists."))
+        }
+        if self.authData == nil {
+            if self.username.lengthOfBytes(using: String.Encoding.utf8) == 0 {
+                return Observable.error(AVUserError.usernameEmpty(error: "Cannot sign up user with an empty name."))
+            }
+            if self.password == nil {
+                return Observable.error(AVUserError.passwordNotSpecified(error: "Cannot sign up user with an empty password."))
+            }
+        }
         return AVUser.userController.create(state: self._state, operations: self.currentOperations)
     }
 
-    public static func logIn(username: String, password: String, app: AVApp? = nil) -> Observable<AVUser> {
-        let _app = AVClient.sharedInstance.takeApp(app: app)
-        let user = AVUser()
-        return self.userController.logIn(username: username, password: password, app: _app).flatMap({ (serverState) -> Observable<Bool> in
-            user.handleLogInResult(serverState: serverState, app: _app)
-            return user.saveToStorage()
-        }).map({ (saved) -> AVUser in
+    static func setCurrent(serverState: IObjectState) -> Observable<AVUser> {
+        let user = AVUser(serverState: serverState)
+        //user.handleLogInResult(serverState: serverState, app: user._state.app!)
+        return user.saveToStorage().map({ (saved) -> AVUser in
             return user
         })
     }
@@ -115,6 +210,47 @@ public class AVUser: AVObject {
         return data;
     }
 
+    public static func logIn(username: String, password: String, app: AVApp? = nil) -> Observable<AVUser> {
+        let _app = AVClient.sharedInstance.takeApp(app: app)
+        return self.userController.logIn(username: username, password: password, app: _app).flatMap({ (serverState) -> Observable<AVUser> in
+            var state = serverState
+            state.app = _app
+            return AVUser.setCurrent(serverState: state)
+        })
+    }
+
+    public static func logIn(sms: AVUserAuthSMS) -> Observable<AVUser> {
+        var logInData = [String: Any]()
+        logInData["mobilePhoneNumber"] = sms.mobilePhoneNumber
+        logInData["smsCode"] = sms.shortCode
+        return AVUser.userController.logInWith(relativeUrl: "/login", logInData: logInData, app: sms.app).flatMap({ (serverState) -> Observable<AVUser> in
+            return AVUser.setCurrent(serverState: serverState)
+        })
+    }
+
+    public static func signUpOrLogIn(sms: AVUserAuthSMS) -> Observable<AVUser> {
+        var logInData = [String: Any]()
+        logInData["mobilePhoneNumber"] = sms.mobilePhoneNumber
+        logInData["smsCode"] = sms.shortCode
+        return AVUser.userController.logInWith(relativeUrl: "/usersByMobilePhone", logInData: logInData, app: sms.app).flatMap({ (serverState) -> Observable<AVUser> in
+            return AVUser.setCurrent(serverState: serverState)
+        })
+    }
+
+    public static func become(sessionToken: String, app: AVApp? = nil) -> Observable<AVUser> {
+        let _app = AVClient.sharedInstance.takeApp(app: app)
+        return AVUser.userController.get(sessionToken: sessionToken).flatMap({ (serverState) -> Observable<AVUser> in
+            var state = serverState
+            state.app = _app
+            return AVUser.setCurrent(serverState: state)
+        })
+    }
+
+    public static func current(app: AVApp? = nil) -> Observable<AVUser?> {
+        let _app = AVClient.sharedInstance.takeApp(app: app)
+        return _app.currentUser()
+    }
+
     public func saveToStorage() -> Observable<Bool> {
         let key = self._state.app?.getUserStorageKey()
         let value = self.toJSON()
@@ -122,12 +258,5 @@ public class AVUser: AVObject {
             return jsonString.count > 0
         }
     }
-
-    public static func current(app: AVApp? = nil) -> Observable<AVUser?> {
-        var _app = app
-        if _app == nil {
-            _app = AVClient.sharedInstance.getCurrentApp()
-        }
-        return _app!.currentUser()
-    }
 }
+

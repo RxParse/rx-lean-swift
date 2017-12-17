@@ -21,8 +21,29 @@ public protocol IAVQuery {
     var app: AVApp? { get set }
 }
 
-public class AVQuery: IAVQuery {
+public protocol IAVQueryable {
+    associatedtype AVQueryableType
+    init(serverState: IObjectState)
+    func retore(serverState: IObjectState) -> AVQueryableType
+}
 
+public protocol QueryableConvertible {
+    associatedtype QueryableType
+    func find() -> Observable<Array<QueryableType>>
+}
+
+public class AVQuery<TEntity>: IAVQuery, QueryableConvertible where TEntity: IAVQueryable {
+
+    public func find() -> Observable<Array<TEntity>> {
+        return AVQuery.queryController.find(query: self).map({ (serverStates) -> Array<TEntity> in
+            return serverStates.map({ (serverState) -> TEntity in
+                let entity = TEntity(serverState: serverState)
+                return entity
+            })
+        })
+    }
+
+    public typealias QueryableType = TEntity
     public var condition: [String: Any] {
         get {
             return self._where
@@ -42,16 +63,6 @@ public class AVQuery: IAVQuery {
     public init(className: String) {
         self.className = className
         self.app = AVClient.sharedInstance.getCurrentApp()
-    }
-
-    public func find() -> Observable<Array<IAVObject>> {
-        return AVQuery.queryController.find(query: self).map({ (serverStates) -> Array<IAVObject> in
-            return serverStates.map({ (serverState) -> IAVObject in
-                let rxObject = AVObject(className: self.className!)
-                rxObject.handleFetchResult(serverState: serverState)
-                return rxObject as IAVObject
-            })
-        })
     }
 
     public func equalTo(key: String, value: Any) -> AVQuery {
@@ -78,35 +89,35 @@ public class AVQuery: IAVQuery {
     public func greaterThanOrEqualTo(key: String, value: Any) -> AVQuery {
         return self._addCondition(key: key, condition: "$gte", value: value)
     }
-    
+
     public func containedIn(key: String, value: Any) -> AVQuery {
         return self._addCondition(key: key, condition: "$in", value: value)
     }
-    
+
     public func notContainedIn(key: String, value: Any) -> AVQuery {
         return self._addCondition(key: key, condition: "$nin", value: value)
     }
-    
+
     public func containsAll(key: String, value: Any) -> AVQuery {
         return self._addCondition(key: key, condition: "$all", value: value)
     }
-    
+
     public func exists(key: String) -> AVQuery {
         return self._addCondition(key: key, condition: "$exists", value: true)
     }
-    
+
     public func doesNotExist(key: String) -> AVQuery {
         return self._addCondition(key: key, condition: "$exists", value: false)
     }
-    
+
     public func contains(key: String, value: String) -> AVQuery {
         return self._addCondition(key: key, condition: "$regex", value: self.qoute(s: value))
     }
-    
+
     public func startsWith(key: String, value: String) -> AVQuery {
         return self._addCondition(key: key, condition: "$gt", value: self.qoute(s: value))
     }
-    
+
     public func endsWith(key: String, value: String) -> AVQuery {
         return self._addCondition(key: key, condition: "$gt", value: self.qoute(s: value))
     }
@@ -115,7 +126,7 @@ public class AVQuery: IAVQuery {
         self.order = []
         return self.addAscending(keys: keys)
     }
-    
+
     public func addAscending(keys: Array<String>) -> AVQuery {
         if self.order == nil {
             self.order = [String]()
@@ -130,7 +141,7 @@ public class AVQuery: IAVQuery {
         self.order = []
         return self.addDescending(keys: keys)
     }
-    
+
     public func addDescending(keys: Array<String>) -> AVQuery {
         if self.order == nil {
             self.order = [String]()
@@ -164,7 +175,7 @@ public class AVQuery: IAVQuery {
     func qoute(s: String) -> String {
         return "\\Q" + s.replacingOccurrences(of: "\\E", with: "\\E\\\\E\\Q") + "\\E"
     }
-    
+
     func _addCondition(key: String, condition: String, value: Any) -> AVQuery {
         if self._where[key] != nil || self._where[key] is String {
             self._where[key] = [String: Any]()
@@ -178,7 +189,7 @@ public class AVQuery: IAVQuery {
     func _encode(value: Any) -> Any {
         return AVQuery._encoder.encode(value: value)
     }
-    
+
     static var _encoder: IAVEncoder {
         get {
             return AVCorePlugins.sharedInstance.avEncoder

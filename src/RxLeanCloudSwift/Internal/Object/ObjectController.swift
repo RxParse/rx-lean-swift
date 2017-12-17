@@ -39,6 +39,14 @@ public class ObjectController: IObjectController {
         })
     }
 
+    public func delete(state: IObjectState, sessionToken: String?) -> Observable<Bool> {
+        let cmd = AVCommand(relativeUrl: "/classes/\(state.className)/\(String(describing: state.objectId))", method: "Delete", data: nil, app: state.app)
+        cmd.apiSessionToken = sessionToken
+        return self.httpCommandRunner.runRxCommand(command: cmd).map({ (avResponse) -> Bool in
+            return avResponse.satusCode == 200
+        })
+    }
+
     public func fetch(state: IObjectState, queryString: [String: Any]) -> Observable<IObjectState> {
         let _queryString = AVCorePlugins.sharedInstance.queryController.buildQueryString(parameters: queryString)
         let realtiveUrl = "/classes/\(state.className)/\(state.objectId!)?\(_queryString)"

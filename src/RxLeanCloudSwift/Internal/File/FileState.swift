@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+public class FileState {
+    public var objectId: String?
+    public var name: String?
+    public var cloudName: String?
+    public var mimeType: String?
+    public var url: String?
+    public var metaData: [String: Any]?
+    public var size: Float = 0
+}

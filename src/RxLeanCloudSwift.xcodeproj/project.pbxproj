@@ -28,7 +28,6 @@
 		6A50F7FE1FE3ABE7005FB653 /* AVUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A50F7FD1FE3ABE7005FB653 /* AVUtility.swift */; };
 		6A50F8001FE3B6B2005FB653 /* RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A50F7FF1FE3B6B2005FB653 /* RxExtensions.swift */; };
 		6A857F3B1ED307B400D174E1 /* RxLeanCloudSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A857F311ED307B400D174E1 /* RxLeanCloudSwift.framework */; };
-		6A857F401ED307B400D174E1 /* RxLeanCloudSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A857F3F1ED307B400D174E1 /* RxLeanCloudSwiftTests.swift */; };
 		6A857F421ED307B400D174E1 /* RxLeanCloudSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A857F341ED307B400D174E1 /* RxLeanCloudSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AA097851ED329E100114C43 /* AVCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0977D1ED329E100114C43 /* AVCommand.swift */; };
 		6AA097861ED329E100114C43 /* AVHttpCommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0977E1ED329E100114C43 /* AVHttpCommandRunner.swift */; };
@@ -46,8 +45,11 @@
 		6AA4D2881FE27FF3007A4E32 /* AVCQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4D2871FE27FF3007A4E32 /* AVCQL.swift */; };
 		6AA4D28A1FE2800B007A4E32 /* AVSMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4D2891FE2800B007A4E32 /* AVSMS.swift */; };
 		6AA4D28D1FE2A998007A4E32 /* FileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4D28C1FE2A998007A4E32 /* FileState.swift */; };
-		6AA4D28F1FE2A9BF007A4E32 /* QiniuStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4D28E1FE2A9BF007A4E32 /* QiniuStrategy.swift */; };
+		6AA4D28F1FE2A9BF007A4E32 /* QiniuFileStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4D28E1FE2A9BF007A4E32 /* QiniuFileStrategy.swift */; };
 		6AC095991FE3F91800C7D052 /* AVWebSocketCommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC095981FE3F91800C7D052 /* AVWebSocketCommandRunner.swift */; };
+		6AC0959E1FE4CA8300C7D052 /* LeanCloudUnitTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0959D1FE4CA8300C7D052 /* LeanCloudUnitTestBase.swift */; };
+		6AC095A01FE4CB1F00C7D052 /* QueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0959F1FE4CB1F00C7D052 /* QueryTests.swift */; };
+		6AC095A21FE6C08000C7D052 /* IFileConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC095A11FE6C08000C7D052 /* IFileConroller.swift */; };
 		6AC498B91EE55022008BB978 /* KVStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC498B81EE55022008BB978 /* KVStorage.swift */; };
 		6AC498BB1EE55038008BB978 /* IKVStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC498BA1EE55038008BB978 /* IKVStorage.swift */; };
 		6AEB4A9E1ED8283500F3F06A /* QueryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB4A9D1ED8283500F3F06A /* QueryController.swift */; };
@@ -108,7 +110,6 @@
 		6A857F341ED307B400D174E1 /* RxLeanCloudSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxLeanCloudSwift.h; sourceTree = "<group>"; };
 		6A857F351ED307B400D174E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A857F3A1ED307B400D174E1 /* RxLeanCloudSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxLeanCloudSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A857F3F1ED307B400D174E1 /* RxLeanCloudSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxLeanCloudSwiftTests.swift; sourceTree = "<group>"; };
 		6A857F411ED307B400D174E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AA0977D1ED329E100114C43 /* AVCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVCommand.swift; sourceTree = "<group>"; };
 		6AA0977E1ED329E100114C43 /* AVHttpCommandRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVHttpCommandRunner.swift; sourceTree = "<group>"; };
@@ -126,8 +127,11 @@
 		6AA4D2871FE27FF3007A4E32 /* AVCQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCQL.swift; sourceTree = "<group>"; };
 		6AA4D2891FE2800B007A4E32 /* AVSMS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVSMS.swift; sourceTree = "<group>"; };
 		6AA4D28C1FE2A998007A4E32 /* FileState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileState.swift; sourceTree = "<group>"; };
-		6AA4D28E1FE2A9BF007A4E32 /* QiniuStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiniuStrategy.swift; sourceTree = "<group>"; };
+		6AA4D28E1FE2A9BF007A4E32 /* QiniuFileStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiniuFileStrategy.swift; sourceTree = "<group>"; };
 		6AC095981FE3F91800C7D052 /* AVWebSocketCommandRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVWebSocketCommandRunner.swift; sourceTree = "<group>"; };
+		6AC0959D1FE4CA8300C7D052 /* LeanCloudUnitTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeanCloudUnitTestBase.swift; sourceTree = "<group>"; };
+		6AC0959F1FE4CB1F00C7D052 /* QueryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryTests.swift; sourceTree = "<group>"; };
+		6AC095A11FE6C08000C7D052 /* IFileConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFileConroller.swift; sourceTree = "<group>"; };
 		6AC498B81EE55022008BB978 /* KVStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVStorage.swift; sourceTree = "<group>"; };
 		6AC498BA1EE55038008BB978 /* IKVStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKVStorage.swift; sourceTree = "<group>"; };
 		6AEB4A9D1ED8283500F3F06A /* QueryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryController.swift; sourceTree = "<group>"; };
@@ -236,10 +240,11 @@
 			isa = PBXGroup;
 			children = (
 				6AF08B991FA2E1F800D8BF65 /* utils */,
-				6A857F3F1ED307B400D174E1 /* RxLeanCloudSwiftTests.swift */,
 				6A857F411ED307B400D174E1 /* Info.plist */,
 				6A42ABAC1ED55976000E9D05 /* ObjectTest.swift */,
 				6AF08B971FA2E11000D8BF65 /* UserTest.swift */,
+				6AC0959D1FE4CA8300C7D052 /* LeanCloudUnitTestBase.swift */,
+				6AC0959F1FE4CB1F00C7D052 /* QueryTests.swift */,
 			);
 			path = RxLeanCloudSwiftTests;
 			sourceTree = "<group>";
@@ -301,7 +306,8 @@
 			isa = PBXGroup;
 			children = (
 				6AA4D28C1FE2A998007A4E32 /* FileState.swift */,
-				6AA4D28E1FE2A9BF007A4E32 /* QiniuStrategy.swift */,
+				6AA4D28E1FE2A9BF007A4E32 /* QiniuFileStrategy.swift */,
+				6AC095A11FE6C08000C7D052 /* IFileConroller.swift */,
 			);
 			path = File;
 			sourceTree = "<group>";
@@ -629,12 +635,13 @@
 				6A42AB991ED4FEE8000E9D05 /* AVEncoder.swift in Sources */,
 				6AA4D2861FE27F8B007A4E32 /* AVFile.swift in Sources */,
 				6AEB4AAB1ED92A6600F3F06A /* IWebScoketClient.swift in Sources */,
-				6AA4D28F1FE2A9BF007A4E32 /* QiniuStrategy.swift in Sources */,
+				6AA4D28F1FE2A9BF007A4E32 /* QiniuFileStrategy.swift in Sources */,
 				6A50F7FE1FE3ABE7005FB653 /* AVUtility.swift in Sources */,
 				6AEB4ACA1ED94F2500F3F06A /* AVClient.swift in Sources */,
 				6A2757FD1ED9BA21000D9DA3 /* AVUser.swift in Sources */,
 				6AA097851ED329E100114C43 /* AVCommand.swift in Sources */,
 				6AA4D2881FE27FF3007A4E32 /* AVCQL.swift in Sources */,
+				6AC095A21FE6C08000C7D052 /* IFileConroller.swift in Sources */,
 				6AEB4AA01ED8284D00F3F06A /* IQueryController.swift in Sources */,
 				6A42ABA71ED51AEC000E9D05 /* IAVDecoder.swift in Sources */,
 				6AA4D28A1FE2800B007A4E32 /* AVSMS.swift in Sources */,
@@ -677,10 +684,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AC0959E1FE4CA8300C7D052 /* LeanCloudUnitTestBase.swift in Sources */,
 				6A42ABAD1ED55976000E9D05 /* ObjectTest.swift in Sources */,
+				6AC095A01FE4CB1F00C7D052 /* QueryTests.swift in Sources */,
 				6AF08B9B1FA2E20100D8BF65 /* init.swift in Sources */,
 				6AF08B981FA2E11000D8BF65 /* UserTest.swift in Sources */,
-				6A857F401ED307B400D174E1 /* RxLeanCloudSwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

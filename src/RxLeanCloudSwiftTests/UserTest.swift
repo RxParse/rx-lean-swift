@@ -10,12 +10,10 @@ import XCTest
 import RxLeanCloudSwift
 import RxSwift
 
-class UserTest: XCTestCase {
+class UserTest: LeanCloudUnitTestBase {
 
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        RxLeanCloudSwiftUtils.initialize()
     }
 
     override func tearDown() {
@@ -76,6 +74,37 @@ class UserTest: XCTestCase {
             print(error.localizedDescription)
         }
     }
+    func testSaveObjectAfterSignUp() {
+        var user = AVUser()
+        user.username = self.randomString(8)
+        user.password = "leancloud"
+        //        user.mobilePhoneNumber = "18612345678"
+
+        let result = user.signUp().flatMap({ (signedUp) -> Observable<AVObject> in
+            var todo = AVObject(className: "SwiftTodo")
+            todo["tag"] = "monkey"
+            return todo.save()
+        }).toBlocking().materialize()
+
+        switch result {
+        case .completed(let elements):
+            print(elements[0])
+            //XCTFail("Expected result to complete with error, but result was successful.")
+        case .failed(_, let error):
+            print(error.localizedDescription)
+        }
+    }
+
+    func testBecome() {
+        let result = AVUser.become(sessionToken: "f14435aglcl8iogb3rbpebsg3").toBlocking().materialize()
+        switch result {
+        case .completed(let elements):
+            print(elements[0])
+        case .failed(_, let error):
+            print(error.localizedDescription)
+        }
+    }
+
 
     func randomString(_ length: Int) -> String {
 
@@ -87,12 +116,6 @@ class UserTest: XCTestCase {
             randomString.append(String(master[Int(random)]))
         }
         return randomString
-    }
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }

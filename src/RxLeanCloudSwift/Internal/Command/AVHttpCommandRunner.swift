@@ -17,10 +17,12 @@ public class AVHttpCommandRunner: IAVCommandRunner {
     }
 
     public func runRxCommand(command: AVCommand) -> Observable<AVCommandResponse> {
-        return self.httpClient.rxExecute(httpRequest: command).map { (httpResponse) -> AVCommandResponse in
+        return command.beforeExecute().flatMap({ (cmd) -> Observable<HttpResponse> in
+            return self.httpClient.rxExecute(httpRequest: cmd)
+        }).map({ (httpResponse) -> AVCommandResponse in
             let avResponse = AVCommandResponse(statusCode: httpResponse.satusCode, data: httpResponse.data)
             return avResponse
-        }
+        })
     }
 
     enum HttpError: Error {

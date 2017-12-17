@@ -11,5 +11,8 @@ import RxSwift
 
 internal protocol IUserController {
     func logIn(username: String, password: String, app: AVApp) -> Observable<IObjectState>
+    func logInWith(relativeUrl: String, logInData: [String: Any], app: AVApp) -> Observable<IObjectState>
     func create(state: IObjectState, operations: [String: IAVFieldOperation]) -> Observable<IObjectState>
+    func get(sessionToken: String) -> Observable<IObjectState>
 }
+

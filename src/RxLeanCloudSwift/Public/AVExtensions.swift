@@ -67,4 +67,33 @@ extension AVObject {
     public func unset(key: String) {
         self[key] = nil
     }
+
+    public static func saveAll(objects: Array<AVObject>) -> Observable<Array<AVObject>> {
+        let execute = objects.map { (ob) -> Observable<AVObject> in
+            return ob.save()
+        }
+        return Observable.zip(execute)
+    }
+}
+
+extension AVUser {
+    public func associateAuthData(authType: String, authData: [String: Any]?) -> Observable<Bool> {
+        if self.authData == nil {
+            self.authData = [String: Any]()
+        }
+
+        if authData == nil {
+            self.authData!.removeValue(forKey: authType)
+        } else {
+            self.authData![authType] = authData
+        }
+
+        return self.save().map({ (user) -> Bool in
+            return user._isDirty == false
+        })
+    }
+
+    public func disassociateWith(authType: String) -> Observable<Bool> {
+        return self.associateAuthData(authType: authType, authData: nil)
+    }
 }

@@ -166,7 +166,7 @@ public class AVUser: AVObject {
         let cmd = AVCommand(relativeUrl: "/users/\(String(describing: self.objectId))/updatePassword", method: "PUT", data: data, app: self.app)
         return AVClient.sharedInstance.runCommandSuccessced(cmd: cmd)
     }
-    
+
     enum AVUserError: Error {
         case userExist(error: String)
         case usernameEmpty(error: String)
@@ -190,7 +190,7 @@ public class AVUser: AVObject {
 
     static func setCurrent(serverState: IObjectState) -> Observable<AVUser> {
         let user = AVUser(serverState: serverState)
-        //user.handleLogInResult(serverState: serverState, app: user._state.app!)
+        user.handleLogInResult(serverState: serverState, app: user._state.app!)
         return user.saveToStorage().map({ (saved) -> AVUser in
             return user
         })
@@ -213,9 +213,7 @@ public class AVUser: AVObject {
     public static func logIn(username: String, password: String, app: AVApp? = nil) -> Observable<AVUser> {
         let _app = AVClient.sharedInstance.takeApp(app: app)
         return self.userController.logIn(username: username, password: password, app: _app).flatMap({ (serverState) -> Observable<AVUser> in
-            var state = serverState
-            state.app = _app
-            return AVUser.setCurrent(serverState: state)
+            return AVUser.setCurrent(serverState: serverState)
         })
     }
 
@@ -239,16 +237,18 @@ public class AVUser: AVObject {
 
     public static func become(sessionToken: String, app: AVApp? = nil) -> Observable<AVUser> {
         let _app = AVClient.sharedInstance.takeApp(app: app)
-        return AVUser.userController.get(sessionToken: sessionToken).flatMap({ (serverState) -> Observable<AVUser> in
-            var state = serverState
-            state.app = _app
-            return AVUser.setCurrent(serverState: state)
+        return AVUser.userController.get(sessionToken: sessionToken, app: _app).flatMap({ (serverState) -> Observable<AVUser> in
+            return AVUser.setCurrent(serverState: serverState)
         })
     }
 
     public static func current(app: AVApp? = nil) -> Observable<AVUser?> {
         let _app = AVClient.sharedInstance.takeApp(app: app)
         return _app.currentUser()
+    }
+
+    public static func query() -> AVQuery<AVUser> {
+        return AVQuery<AVUser>(className: "_User")
     }
 
     public func saveToStorage() -> Observable<Bool> {
@@ -258,5 +258,7 @@ public class AVUser: AVObject {
             return jsonString.count > 0
         }
     }
+
+
 }
 

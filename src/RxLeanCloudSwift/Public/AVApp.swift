@@ -28,6 +28,7 @@ public enum AVRegion {
 public class AVApp {
     var appId: String
     var appKey: String
+    var region: AVRegion
     var apiVersion: String = "/1.1"
     var schema: String = "https://"
     var api: String = GlobalConst.api_public_north_cn
@@ -43,6 +44,7 @@ public class AVApp {
     public init(appId: String, appKey: String, region: AVRegion = AVRegion.Public_North_CN, shortName: String? = "default", secure: Bool? = true) {
         self.appId = appId
         self.appKey = appKey
+        self.region = region
 
         switch region {
         case .Public_East_CN: do {
@@ -91,6 +93,13 @@ public class AVApp {
 
     public func getUserStorageKey() -> String {
         return "\(self.appId)_\(self.userCacheKey)";
+    }
+
+    public func getFileUploader() -> IFileUploader {
+        switch self.region {
+        default:
+            return QiniuFileUploader(httpClient: AVCorePlugins.sharedInstance.httpClient)
+        }
     }
 
     public func currentUser() -> Observable<AVUser?> {

@@ -26,7 +26,7 @@ public class HttpClient: IHttpClient {
         let urlEncoding = self.getAlamofireUrlEncoding(httpRequest: httpRequest)
         let escapedString = httpRequest.url.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
 
-        return manager.rx.responseData(method, escapedString!, parameters: httpRequest.data, encoding: urlEncoding, headers: httpRequest.headers).map { (response, data) -> HttpResponse in
+        return manager.rx.responseData(method, escapedString!, parameters: nil, encoding: urlEncoding, headers: httpRequest.headers).map { (response, data) -> HttpResponse in
 //            let utf8DecodedString = String(data: data, encoding: .utf8)
 //            var body = utf8DecodedString?.toDictionary()
 //            if data is [String: Any] {
@@ -49,10 +49,10 @@ public class HttpClient: IHttpClient {
         let method = self.getAlamofireMethod(httpRequest: httpRequest)
         let urlEncoding = self.getAlamofireUrlEncoding(httpRequest: httpRequest)
         let escapedString = httpRequest.url.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
-        let alamofireRequest = manager.request(escapedString!, method: method, parameters: httpRequest.data, encoding: urlEncoding, headers: httpRequest.headers)
+        let alamofireRequest = manager.request(escapedString!, method: method, parameters: nil, encoding: urlEncoding, headers: httpRequest.headers)
         alamofireRequest.responseData(queue: queue, completionHandler: { alamofireResponse in
             switch alamofireResponse.result {
-            case .success( _):
+            case .success(_):
                 if let httpResponse = alamofireResponse.response {
                     avResponse.satusCode = httpResponse.statusCode
                 } else {
@@ -61,7 +61,7 @@ public class HttpClient: IHttpClient {
                 if let data = alamofireResponse.data {
                     avResponse.data = data
                 }
-            case .failure( _):
+            case .failure(_):
                 avResponse.satusCode = -1
             }
             semaphore.signal()
@@ -88,9 +88,9 @@ public class HttpClient: IHttpClient {
         case "DELETE":
             return URLEncoding.default
         case "POST":
-            return JSONEncoding.default
+            return HttpBodyEncoding.data(data: httpRequest.data!)
         case "PUT":
-            return JSONEncoding.default
+            return HttpBodyEncoding.data(data: httpRequest.data!)
         default:
             return JSONEncoding.default
         }
@@ -112,6 +112,20 @@ public class HttpClient: IHttpClient {
             return Alamofire.HTTPMethod.delete
         default:
             return Alamofire.HTTPMethod.get
+        }
+    }
+}
+
+enum HttpBodyEncoding: ParameterEncoding {
+    case data(data: Data)
+    func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
+        switch self {
+        case .data(let data):
+            var request = try urlRequest.asURLRequest()
+            request.httpBody = data
+            return request
+//        default:
+//            return urlRequest
         }
     }
 }

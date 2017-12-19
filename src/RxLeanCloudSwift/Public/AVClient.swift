@@ -58,7 +58,7 @@ public class AVClient {
         if method == nil {
             method = "GET"
         }
-        let req = HttpRequest(method: method!, url: url, headers: headers, data: data)
+        let req = HttpRequest(method: method!, url: url, headers: headers, jsonData: data)
         return AVCorePlugins.sharedInstance.httpClient.rxExecute(httpRequest: req)
     }
 
@@ -91,7 +91,7 @@ public class AVClient {
             print("Url: ", request.url)
             print("Method: ", request.method)
             print("Headers: ", request.headers ?? ["no": "headers"])
-            print("RequestBody: ", request.data ?? ["no": "body"])
+            print("RequestBody(UTF8String): ", request.data?.stringfy(encoding: .utf8) ?? ["no": "body"])
             print("===Request-END===")
             print("===Response-START===")
             print("StatusCode: ", response.satusCode)

@@ -28,6 +28,16 @@ public class AVCommand: HttpRequest {
             }
         }
     }
+
+    var dataJsonfy: [String: Any]? {
+        get {
+            if let data = self.data {
+                return data.jsonfy()
+            }
+            return nil
+        }
+    }
+
     func takeUrl(app: AVApp) -> String {
         self.url = app.getUrl(relativeUrl: self.realtiveUrl)
         return self.url
@@ -39,7 +49,7 @@ public class AVCommand: HttpRequest {
         let url = self.app.getUrl(relativeUrl: relativeUrl)
         let headers = self.app.getHeaders()
         self.realtiveUrl = relativeUrl
-        super.init(method: method, url: url, headers: headers, data: data)
+        super.init(method: method, url: url, headers: headers, data: data?.binarization())
     }
 
     public static func create(json: [String: Any], app: AVApp) -> AVCommand {

@@ -21,7 +21,7 @@ public class ObjectController: IObjectController {
         let cmd = self.packRequest(state: state, operations: operations)
 
         return self.httpCommandRunner.runRxCommand(command: cmd).map({ (avResponse) -> IObjectState in
-            return self.unpackResponse(avResponse: avResponse)
+            return self.unpackResponse(avResponse: avResponse, app: state.app!)
         })
     }
 
@@ -34,7 +34,7 @@ public class ObjectController: IObjectController {
 
         return self.httpCommandRunner.runBatchRxCommands(commands: cmds, app: app).map({ (avResponses) -> [IObjectState] in
             return avResponses.map({ (avResponse) -> IObjectState in
-                return self.unpackResponse(avResponse: avResponse)
+                return self.unpackResponse(avResponse: avResponse, app: app)
             })
         })
     }
@@ -53,7 +53,7 @@ public class ObjectController: IObjectController {
         let cmd = AVCommand(relativeUrl: realtiveUrl, method: "GET", data: nil, app: state.app!)
 
         return self.httpCommandRunner.runRxCommand(command: cmd).map({ (avResponse) -> IObjectState in
-            return self.unpackResponse(avResponse: avResponse)
+            return self.unpackResponse(avResponse: avResponse, app: state.app!)
         })
     }
 
@@ -77,11 +77,12 @@ public class ObjectController: IObjectController {
         return AVCommand(relativeUrl: realtiveUrl, method: mutableState.objectId == nil ? "POST" : "PUT", data: mutableEncoded, app: mutableState.app!)
     }
 
-    public func unpackResponse(avResponse: AVCommandResponse) -> IObjectState {
+    public func unpackResponse(avResponse: AVCommandResponse, app: AVApp) -> IObjectState {
         var serverState = AVCorePlugins.sharedInstance.objectDecoder.decode(serverResult: avResponse.jsonBody!, decoder: AVCorePlugins.sharedInstance.avDecoder)
         serverState = serverState.mutatedClone({ (state) in
             serverState.isNew = avResponse.satusCode == 200
         })
+        serverState.app = app
         return serverState
     }
 

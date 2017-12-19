@@ -94,13 +94,13 @@ public class AVWebSocketClient: IWebSokcetClient, WebSocketDelegate, WebSocketPo
         guard (self.socket?.isConnected)! else {
             throw websocketError.connectionClosed
         }
-        self.socket?.write(string: (command.data?.JSONStringify())!)
+        self.socket?.write(string: (command.dataJsonfy?.JSONStringify())!)
         AVClient.sharedInstance.websocketLog(cmd: command)
         return self.onMessage.filter({ (avResponse) -> Bool in
             var matched = false
-            if (avResponse.jsonBody?.containsKey(key: "i"))! && (command.data?.containsKey(key: "i"))! {
+            if (avResponse.jsonBody?.containsKey(key: "i"))! && (command.dataJsonfy?.containsKey(key: "i"))! {
                 let sent = avResponse.jsonBody?["i"] as! Int
-                let received = command.data!["i"] as! Int
+                let received = command.dataJsonfy!["i"] as! Int
                 matched = sent == received
             }
             return matched

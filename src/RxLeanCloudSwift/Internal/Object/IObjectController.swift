@@ -14,6 +14,6 @@ public protocol IObjectController {
     func batchSave(states: [IObjectState], operationss: Array<[String: IAVFieldOperation]>, app: AVApp) -> Observable<[IObjectState]>
     func delete(state: IObjectState, sessionToken: String?) -> Observable<Bool>
     func packRequest(state: IObjectState, operations: [String: IAVFieldOperation]) -> AVCommand
-    func unpackResponse(avResponse: AVCommandResponse) -> IObjectState
+    func unpackResponse(avResponse: AVCommandResponse, app: AVApp) -> IObjectState
     func fetch(state: IObjectState, queryString: [String: Any]) -> Observable<IObjectState>
 }

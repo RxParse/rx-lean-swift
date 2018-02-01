@@ -1,0 +1,3001 @@
+{
+  "warnings": [
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Command/AVCommand.swift",
+      "line": 12,
+      "symbol": "AVCommand",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Command/AVCommand.swift",
+      "line": 15,
+      "symbol": "AVCommand.apiSessionToken",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Command/AVCommand.swift",
+      "line": 55,
+      "symbol": "AVCommand.create(json:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Command/AVCommand.swift",
+      "line": 59,
+      "symbol": "AVCommand.beforeExecute()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Command/AVCommandResponse.swift",
+      "line": 11,
+      "symbol": "AVCommandResponse",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Command/AVCommandResponse.swift",
+      "line": 14,
+      "symbol": "AVCommandResponse.jsonBody",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Command/AVHttpCommandRunner.swift",
+      "line": 12,
+      "symbol": "AVHttpCommandRunner",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Command/AVHttpCommandRunner.swift",
+      "line": 19,
+      "symbol": "AVHttpCommandRunner.runRxCommand(command:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Command/AVHttpCommandRunner.swift",
+      "line": 31,
+      "symbol": "AVHttpCommandRunner.runBatchRxCommands(commands:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Command/AVWebSocketCommandRunner.swift",
+      "line": 12,
+      "symbol": "AVWebSocketCommandRunner",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Command/AVWebSocketCommandRunner.swift",
+      "line": 18,
+      "symbol": "AVWebSocketCommandRunner.runRxCommand(command:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Command/AVWebSocketCommandRunner.swift",
+      "line": 22,
+      "symbol": "AVWebSocketCommandRunner.runBatchRxCommands(commands:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Command/IAVCommandRunner.swift",
+      "line": 12,
+      "symbol": "IAVCommandRunner",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Command/IAVCommandRunner.swift",
+      "line": 13,
+      "symbol": "IAVCommandRunner.runRxCommand(command:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Command/IAVCommandRunner.swift",
+      "line": 14,
+      "symbol": "IAVCommandRunner.runBatchRxCommands(commands:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/AVDecoder.swift",
+      "line": 11,
+      "symbol": "AVDecoder",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/AVDecoder.swift",
+      "line": 13,
+      "symbol": "AVDecoder.decode(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/AVDecoder.swift",
+      "line": 40,
+      "symbol": "AVDecoder.decodePotinter(className:objectId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/AVDecoder.swift",
+      "line": 44,
+      "symbol": "AVDecoder.clone(dictionary:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/AVEncoder.swift",
+      "line": 11,
+      "symbol": "AVEncoder",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/AVEncoder.swift",
+      "line": 13,
+      "symbol": "AVEncoder.encode(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/AVEncoder.swift",
+      "line": 39,
+      "symbol": "AVEncoder.encodeDate(date:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/AVEncoder.swift",
+      "line": 47,
+      "symbol": "AVEncoder.encodeAVObject(avObject:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/AVEncoder.swift",
+      "line": 55,
+      "symbol": "AVEncoder.encodeArray(list:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/AVEncoder.swift",
+      "line": 66,
+      "symbol": "AVEncoder.isValidType(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/AVEncoder.swift",
+      "line": 80,
+      "symbol": "AVEncoder.isAVObject(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/IAVDecoder.swift",
+      "line": 11,
+      "symbol": "IAVDecoder",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/IAVDecoder.swift",
+      "line": 12,
+      "symbol": "IAVDecoder.decode(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/IAVDecoder.swift",
+      "line": 13,
+      "symbol": "IAVDecoder.clone(dictionary:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/IAVEncoder.swift",
+      "line": 10,
+      "symbol": "IAVEncoder",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/IAVEncoder.swift",
+      "line": 11,
+      "symbol": "IAVEncoder.encode(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/IAVEncoder.swift",
+      "line": 12,
+      "symbol": "IAVEncoder.isValidType(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/IJSON.swift",
+      "line": 11,
+      "symbol": "IJSON",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/IJSON.swift",
+      "line": 12,
+      "symbol": "IJSON.parse(input:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Encoding/IJSON.swift",
+      "line": 13,
+      "symbol": "IJSON.encode(obj:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/AVFileController.swift",
+      "line": 31,
+      "symbol": "AVFileController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/AVFileController.swift",
+      "line": 41,
+      "symbol": "AVFileController.upload(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/AVFileController.swift",
+      "line": 48,
+      "symbol": "AVFileController.save(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/AVFileController.swift",
+      "line": 66,
+      "symbol": "AVFileController.get(objetcId:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/AVFileController.swift",
+      "line": 82,
+      "symbol": "AVFileController.delete(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/FileState.swift",
+      "line": 11,
+      "symbol": "FileState",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/FileState.swift",
+      "line": 12,
+      "symbol": "FileState.objectId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/FileState.swift",
+      "line": 13,
+      "symbol": "FileState.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/FileState.swift",
+      "line": 14,
+      "symbol": "FileState.cloudName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/FileState.swift",
+      "line": 15,
+      "symbol": "FileState.mimeType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/FileState.swift",
+      "line": 16,
+      "symbol": "FileState.url",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/FileState.swift",
+      "line": 17,
+      "symbol": "FileState.metaData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/FileState.swift",
+      "line": 18,
+      "symbol": "FileState.app",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/FileState.swift",
+      "line": 19,
+      "symbol": "FileState.data",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/FileState.swift",
+      "line": 20,
+      "symbol": "FileState.createdAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/FileState.swift",
+      "line": 21,
+      "symbol": "FileState.updatedAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/FileState.swift",
+      "line": 23,
+      "symbol": "FileState.isExternal",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/FileState.swift",
+      "line": 29,
+      "symbol": "FileState.size",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/FileState.swift",
+      "line": 60,
+      "symbol": "FileState.encode()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/IAVFileConroller.swift",
+      "line": 12,
+      "symbol": "IAVFileConroller",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/IAVFileConroller.swift",
+      "line": 13,
+      "symbol": "IAVFileConroller.upload(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/IAVFileConroller.swift",
+      "line": 14,
+      "symbol": "IAVFileConroller.save(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/IAVFileConroller.swift",
+      "line": 15,
+      "symbol": "IAVFileConroller.get(objetcId:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/IAVFileConroller.swift",
+      "line": 16,
+      "symbol": "IAVFileConroller.delete(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/IAVFileConroller.swift",
+      "line": 19,
+      "symbol": "IFileUploader",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/IAVFileConroller.swift",
+      "line": 20,
+      "symbol": "IFileUploader.upload(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/IAVFileConroller.swift",
+      "line": 21,
+      "symbol": "IFileUploader.setFileTokens(fileToken:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/IAVFileConroller.swift",
+      "line": 24,
+      "symbol": "AVUploadProgress",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/File/IAVFileConroller.swift",
+      "line": 25,
+      "symbol": "AVUploadProgress.progress",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/HttpClient/HttpClient.swift",
+      "line": 15,
+      "symbol": "HttpClient",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/HttpClient/HttpClient.swift",
+      "line": 17,
+      "symbol": "HttpClient.default",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/HttpClient/HttpClient.swift",
+      "line": 23,
+      "symbol": "HttpClient.rxExecute(httpRequest:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/HttpClient/HttpClient.swift",
+      "line": 44,
+      "symbol": "HttpClient.syncExecute(httpRequest:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/HttpClient/HttpClient.swift",
+      "line": 77,
+      "symbol": "HttpClient.callbackExecute(httpRequest:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/HttpClient/HttpRequest.swift",
+      "line": 11,
+      "symbol": "HttpRequest",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/HttpClient/HttpResponse.swift",
+      "line": 11,
+      "symbol": "HttpResponse",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/HttpClient/IHttpClient.swift",
+      "line": 12,
+      "symbol": "IHttpClient",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/HttpClient/IHttpClient.swift",
+      "line": 13,
+      "symbol": "IHttpClient.rxExecute(httpRequest:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectController.swift",
+      "line": 12,
+      "symbol": "IObjectController",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectController.swift",
+      "line": 13,
+      "symbol": "IObjectController.save(state:operations:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectController.swift",
+      "line": 14,
+      "symbol": "IObjectController.batchSave(states:operationss:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectController.swift",
+      "line": 15,
+      "symbol": "IObjectController.delete(state:sessionToken:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectController.swift",
+      "line": 16,
+      "symbol": "IObjectController.packRequest(state:operations:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectController.swift",
+      "line": 17,
+      "symbol": "IObjectController.unpackResponse(avResponse:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectController.swift",
+      "line": 18,
+      "symbol": "IObjectController.fetch(state:queryString:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectDecoder.swift",
+      "line": 11,
+      "symbol": "IObjectDecoder",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectDecoder.swift",
+      "line": 12,
+      "symbol": "IObjectDecoder.decode(serverResult:decoder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectState.swift",
+      "line": 11,
+      "symbol": "IObjectState",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectState.swift",
+      "line": 12,
+      "symbol": "IObjectState.isNew",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectState.swift",
+      "line": 13,
+      "symbol": "IObjectState.className",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectState.swift",
+      "line": 14,
+      "symbol": "IObjectState.objectId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectState.swift",
+      "line": 15,
+      "symbol": "IObjectState.updatedAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectState.swift",
+      "line": 16,
+      "symbol": "IObjectState.createdAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectState.swift",
+      "line": 17,
+      "symbol": "IObjectState.app",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectState.swift",
+      "line": 18,
+      "symbol": "IObjectState.serverData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectState.swift",
+      "line": 19,
+      "symbol": "IObjectState.containsKey(key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/IObjectState.swift",
+      "line": 20,
+      "symbol": "IObjectState.mutatedClone(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/MutableObjectState.swift",
+      "line": 11,
+      "symbol": "MutableObjectState",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/MutableObjectState.swift",
+      "line": 13,
+      "symbol": "MutableObjectState.objectId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/MutableObjectState.swift",
+      "line": 14,
+      "symbol": "MutableObjectState.isNew",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/MutableObjectState.swift",
+      "line": 15,
+      "symbol": "MutableObjectState.className",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/MutableObjectState.swift",
+      "line": 16,
+      "symbol": "MutableObjectState.updatedAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/MutableObjectState.swift",
+      "line": 17,
+      "symbol": "MutableObjectState.createdAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/MutableObjectState.swift",
+      "line": 18,
+      "symbol": "MutableObjectState.app",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/MutableObjectState.swift",
+      "line": 19,
+      "symbol": "MutableObjectState.serverData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/MutableObjectState.swift",
+      "line": 31,
+      "symbol": "MutableObjectState.apply(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/MutableObjectState.swift",
+      "line": 40,
+      "symbol": "MutableObjectState.merge(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/MutableObjectState.swift",
+      "line": 49,
+      "symbol": "MutableObjectState.containsKey(key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/MutableObjectState.swift",
+      "line": 53,
+      "symbol": "MutableObjectState.mutatedClone(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/MutableObjectState.swift",
+      "line": 59,
+      "symbol": "MutableObjectState.mutableClone()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/ObjectController.swift",
+      "line": 12,
+      "symbol": "ObjectController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/ObjectController.swift",
+      "line": 19,
+      "symbol": "ObjectController.save(state:operations:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/ObjectController.swift",
+      "line": 28,
+      "symbol": "ObjectController.batchSave(states:operationss:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/ObjectController.swift",
+      "line": 42,
+      "symbol": "ObjectController.delete(state:sessionToken:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/ObjectController.swift",
+      "line": 50,
+      "symbol": "ObjectController.fetch(state:queryString:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/ObjectController.swift",
+      "line": 60,
+      "symbol": "ObjectController.packRequest(state:operations:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/ObjectController.swift",
+      "line": 80,
+      "symbol": "ObjectController.unpackResponse(avResponse:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/ObjectController.swift",
+      "line": 89,
+      "symbol": "ObjectController.removeReadOnlyFields(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/ObjectController.swift",
+      "line": 101,
+      "symbol": "ObjectController.removeRelationFields(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/ObjectDecoder.swift",
+      "line": 11,
+      "symbol": "ObjectDecoder",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/ObjectDecoder.swift",
+      "line": 13,
+      "symbol": "ObjectDecoder.decode(serverResult:decoder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Object/ObjectDecoder.swift",
+      "line": 19,
+      "symbol": "ObjectDecoder.handlerSaveResult(state:serverResult:decoder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVDeleteOperation.swift",
+      "line": 11,
+      "symbol": "AVDeleteToken",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVDeleteOperation.swift",
+      "line": 12,
+      "symbol": "AVDeleteToken.sharedInstance",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVDeleteOperation.swift",
+      "line": 15,
+      "symbol": "AVDeleteOperation",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVDeleteOperation.swift",
+      "line": 17,
+      "symbol": "AVDeleteOperation.sharedInstance",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVDeleteOperation.swift",
+      "line": 21,
+      "symbol": "AVDeleteOperation.encode()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVDeleteOperation.swift",
+      "line": 26,
+      "symbol": "AVDeleteOperation.mergeWithPrevious(previous:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVDeleteOperation.swift",
+      "line": 30,
+      "symbol": "AVDeleteOperation.apply(oldValue:key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVIncrementOperation.swift",
+      "line": 11,
+      "symbol": "AVIncrementOperation",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVIncrementOperation.swift",
+      "line": 30,
+      "symbol": "AVIncrementOperation.amount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVIncrementOperation.swift",
+      "line": 38,
+      "symbol": "AVIncrementOperation.encode()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVIncrementOperation.swift",
+      "line": 42,
+      "symbol": "AVIncrementOperation.mergeWithPrevious(previous:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVIncrementOperation.swift",
+      "line": 75,
+      "symbol": "AVIncrementOperation.apply(oldValue:key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVRemoveOperation.swift",
+      "line": 11,
+      "symbol": "AVRemoveOperation",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVRemoveOperation.swift",
+      "line": 16,
+      "symbol": "AVRemoveOperation.encode()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVRemoveOperation.swift",
+      "line": 21,
+      "symbol": "AVRemoveOperation.mergeWithPrevious(previous:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVRemoveOperation.swift",
+      "line": 25,
+      "symbol": "AVRemoveOperation.apply(oldValue:key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVSetOperation.swift",
+      "line": 11,
+      "symbol": "AVSetOperation",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVSetOperation.swift",
+      "line": 16,
+      "symbol": "AVSetOperation.encode()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVSetOperation.swift",
+      "line": 20,
+      "symbol": "AVSetOperation.mergeWithPrevious(previous:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/AVSetOperation.swift",
+      "line": 24,
+      "symbol": "AVSetOperation.apply(oldValue:key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/IAVFieldOperation.swift",
+      "line": 11,
+      "symbol": "IAVFieldOperation",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/IAVFieldOperation.swift",
+      "line": 12,
+      "symbol": "IAVFieldOperation.encode()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/IAVFieldOperation.swift",
+      "line": 13,
+      "symbol": "IAVFieldOperation.mergeWithPrevious(previous:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Operation/IAVFieldOperation.swift",
+      "line": 14,
+      "symbol": "IAVFieldOperation.apply(oldValue:key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Query/IQueryController.swift",
+      "line": 12,
+      "symbol": "IQueryController",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Query/IQueryController.swift",
+      "line": 13,
+      "symbol": "IQueryController.find(query:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Query/IQueryController.swift",
+      "line": 14,
+      "symbol": "IQueryController.buildQueryString(parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Query/QueryController.swift",
+      "line": 12,
+      "symbol": "QueryController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Query/QueryController.swift",
+      "line": 19,
+      "symbol": "QueryController.find(query:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Query/QueryController.swift",
+      "line": 49,
+      "symbol": "QueryController.buildQueryString(parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Storage/IKVStorage.swift",
+      "line": 12,
+      "symbol": "IKVStorage",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Storage/IKVStorage.swift",
+      "line": 17,
+      "symbol": "IKVStorage.set(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Storage/IKVStorage.swift",
+      "line": 22,
+      "symbol": "IKVStorage.remove(key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Storage/IKVStorage.swift",
+      "line": 27,
+      "symbol": "IKVStorage.get(key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Storage/IKVStorage.swift",
+      "line": 32,
+      "symbol": "IKVStorage.saveJSON(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Storage/KVStorage.swift",
+      "line": 14,
+      "symbol": "AVSettings",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Storage/KVStorage.swift",
+      "line": 20,
+      "symbol": "RxKVStorage",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Storage/KVStorage.swift",
+      "line": 22,
+      "symbol": "RxKVStorage.set(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Storage/KVStorage.swift",
+      "line": 27,
+      "symbol": "RxKVStorage.get(key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Storage/KVStorage.swift",
+      "line": 32,
+      "symbol": "RxKVStorage.remove(key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/Storage/KVStorage.swift",
+      "line": 37,
+      "symbol": "RxKVStorage.saveJSON(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/User/UserController.swift",
+      "line": 12,
+      "symbol": "UserController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/User/UserController.swift",
+      "line": 19,
+      "symbol": "UserController.logIn(username:password:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/User/UserController.swift",
+      "line": 27,
+      "symbol": "UserController.logInWith(relativeUrl:logInData:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/User/UserController.swift",
+      "line": 34,
+      "symbol": "UserController.get(sessionToken:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/IWebScoketClient.swift",
+      "line": 12,
+      "symbol": "IWebSokcetClient",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/IWebScoketClient.swift",
+      "line": 14,
+      "symbol": "IWebSokcetClient.open(url:subprotocol:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/IWebScoketClient.swift",
+      "line": 16,
+      "symbol": "IWebSokcetClient.close()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/IWebScoketClient.swift",
+      "line": 18,
+      "symbol": "IWebSokcetClient.send(command:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/IWebScoketClient.swift",
+      "line": 20,
+      "symbol": "IWebSokcetClient.onMessage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/IWebScoketClient.swift",
+      "line": 22,
+      "symbol": "IWebSokcetClient.onState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/WebSocketClient.swift",
+      "line": 13,
+      "symbol": "AVWebSocketClient",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/WebSocketClient.swift",
+      "line": 15,
+      "symbol": "AVWebSocketClient.websocketDidConnect(socket:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/WebSocketClient.swift",
+      "line": 21,
+      "symbol": "AVWebSocketClient.websocketDidDisconnect(socket:error:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/WebSocketClient.swift",
+      "line": 25,
+      "symbol": "AVWebSocketClient.websocketDidReceiveMessage(socket:text:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/WebSocketClient.swift",
+      "line": 36,
+      "symbol": "AVWebSocketClient.websocketDidReceiveData(socket:data:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/WebSocketClient.swift",
+      "line": 40,
+      "symbol": "AVWebSocketClient.websocketDidReceivePong(socket:data:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/WebSocketClient.swift",
+      "line": 50,
+      "symbol": "AVWebSocketClient.onMessage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/WebSocketClient.swift",
+      "line": 51,
+      "symbol": "AVWebSocketClient.onState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/WebSocketClient.swift",
+      "line": 67,
+      "symbol": "AVWebSocketClient.open(url:subprotocol:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/WebSocketClient.swift",
+      "line": 81,
+      "symbol": "AVWebSocketClient.close()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/WebSocketClient.swift",
+      "line": 89,
+      "symbol": "AVWebSocketClient.websocketError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/WebSocketClient.swift",
+      "line": 90,
+      "symbol": "AVWebSocketClient.websocketError.connectionClosed",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Internal/WebSocket/WebSocketClient.swift",
+      "line": 93,
+      "symbol": "AVWebSocketClient.send(command:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVACL.swift",
+      "line": 21,
+      "symbol": "AVACL",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVApp.swift",
+      "line": 21,
+      "symbol": "AVRegion",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVApp.swift",
+      "line": 22,
+      "symbol": "AVRegion.Public_North_CN",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVApp.swift",
+      "line": 23,
+      "symbol": "AVRegion.Public_East_CN",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVApp.swift",
+      "line": 24,
+      "symbol": "AVRegion.Public_North_US",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVApp.swift",
+      "line": 25,
+      "symbol": "AVRegion.Private_Custom",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVApp.swift",
+      "line": 28,
+      "symbol": "AVApp",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVApp.swift",
+      "line": 44,
+      "symbol": "AVApp.init(appId:appKey:region:shortName:secure:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVApp.swift",
+      "line": 75,
+      "symbol": "AVApp.getHeaders()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVApp.swift",
+      "line": 83,
+      "symbol": "AVApp.getUrl(relativeUrl:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVApp.swift",
+      "line": 90,
+      "symbol": "AVApp.getPushRouterUrl()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVApp.swift",
+      "line": 94,
+      "symbol": "AVApp.getUserStorageKey()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVApp.swift",
+      "line": 98,
+      "symbol": "AVApp.getFileUploader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVApp.swift",
+      "line": 105,
+      "symbol": "AVApp.currentUser()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVCQL.swift",
+      "line": 12,
+      "symbol": "AVCQL",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVCQL.swift",
+      "line": 13,
+      "symbol": "AVCQL.cql",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVCQL.swift",
+      "line": 14,
+      "symbol": "AVCQL.placeholders",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVCQL.swift",
+      "line": 16,
+      "symbol": "AVCQL.init(cql:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVCQL.swift",
+      "line": 20,
+      "symbol": "AVCQL.execute()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVClient.swift",
+      "line": 12,
+      "symbol": "AVClient",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVClient.swift",
+      "line": 14,
+      "symbol": "AVClient.sharedInstance",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVClient.swift",
+      "line": 16,
+      "symbol": "AVClient.initialize(app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVClient.swift",
+      "line": 22,
+      "symbol": "AVClient.add(app:replace:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVClient.swift",
+      "line": 32,
+      "symbol": "AVClient.getCurrentApp()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVClient.swift",
+      "line": 36,
+      "symbol": "AVClient.takeApp(app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVClient.swift",
+      "line": 45,
+      "symbol": "AVClient.toggleLog(enable:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVClient.swift",
+      "line": 51,
+      "symbol": "AVClient.toggleWssAsHttp(enable:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVClient.swift",
+      "line": 56,
+      "symbol": "AVClient.httpRequest(url:method:headers:data:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVClient.swift",
+      "line": 65,
+      "symbol": "AVClient.runCommand(cmd:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVClient.swift",
+      "line": 75,
+      "symbol": "AVClient.websocketLog(cmd:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVClient.swift",
+      "line": 87,
+      "symbol": "AVClient.httpLog(request:response:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVClient.swift",
+      "line": 104,
+      "symbol": "AVClient.getSDKVersion()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVCloud.swift",
+      "line": 15,
+      "symbol": "AVCloud",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVCloud.swift",
+      "line": 16,
+      "symbol": "AVCloud.callCloudFuntion(functionName:payload:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVCloud.swift",
+      "line": 24,
+      "symbol": "AVCloudFunction",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVCloud.swift",
+      "line": 28,
+      "symbol": "AVCloudFunction.init(functionName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVCloud.swift",
+      "line": 32,
+      "symbol": "AVCloudFunction.call()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVCloud.swift",
+      "line": 40,
+      "symbol": "AVCloudFunction.rpc()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVCorePlugins.swift",
+      "line": 11,
+      "symbol": "AVCorePlugins",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVExtensions.swift",
+      "line": 86,
+      "symbol": "AVObject.fetch(keys:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVExtensions.swift",
+      "line": 97,
+      "symbol": "AVObject.unset(key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVExtensions.swift",
+      "line": 101,
+      "symbol": "AVObject.saveAll(objects:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVExtensions.swift",
+      "line": 110,
+      "symbol": "AVUser.associateAuthData(authType:authData:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVExtensions.swift",
+      "line": 126,
+      "symbol": "AVUser.disassociateWith(authType:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVFile.swift",
+      "line": 12,
+      "symbol": "AVFile",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVFile.swift",
+      "line": 13,
+      "symbol": "AVFile.defaultClassName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVFile.swift",
+      "line": 16,
+      "symbol": "AVFile.init(serverState:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVFile.swift",
+      "line": 21,
+      "symbol": "AVFile.retore(serverState:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVFile.swift",
+      "line": 41,
+      "symbol": "AVFile.metaData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVFile.swift",
+      "line": 50,
+      "symbol": "AVFile.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVFile.swift",
+      "line": 59,
+      "symbol": "AVFile.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVFile.swift",
+      "line": 64,
+      "symbol": "AVFile.init(name:data:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVFile.swift",
+      "line": 75,
+      "symbol": "AVFile.init(name:data:metaData:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVFile.swift",
+      "line": 80,
+      "symbol": "AVFile.init(name:externalUrl:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVFile.swift",
+      "line": 85,
+      "symbol": "AVFile.text(name:content:encoding:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVFile.swift",
+      "line": 91,
+      "symbol": "AVFile.query()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVFile.swift",
+      "line": 95,
+      "symbol": "AVFile.save()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": null,
+      "symbol": "AVObject",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 12,
+      "symbol": "IAVObject",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 13,
+      "symbol": "IAVObject.objectId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 14,
+      "symbol": "IAVObject.className",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 16,
+      "symbol": "IAVObject.createdAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 17,
+      "symbol": "IAVObject.updatedAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 20,
+      "symbol": "AVObject",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 22,
+      "symbol": "AVObject.init(serverState:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 25,
+      "symbol": "AVObject.retore(serverState:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 32,
+      "symbol": "AVObject.init(className:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 38,
+      "symbol": "AVObject.init(className:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 43,
+      "symbol": "AVObject.init(className:objectId:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 62,
+      "symbol": "AVObject.className",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 71,
+      "symbol": "AVObject.objectId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 90,
+      "symbol": "AVObject.get(key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 99,
+      "symbol": "AVObject.get(defaultValue:key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 111,
+      "symbol": "AVObject.set(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 122,
+      "symbol": "AVObject.increase(key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 126,
+      "symbol": "AVObject.increase(key:amount:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 130,
+      "symbol": "AVObject.increase(key:amount:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 152,
+      "symbol": "AVObject.createdAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 158,
+      "symbol": "AVObject.updatedAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 164,
+      "symbol": "AVObject.save()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 188,
+      "symbol": "AVObject.delete()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVObject.swift",
+      "line": 192,
+      "symbol": "AVObject.createWithoutData(classnName:objectId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 12,
+      "symbol": "IAVQuery",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 13,
+      "symbol": "IAVQuery.condition",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 14,
+      "symbol": "IAVQuery.className",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 15,
+      "symbol": "IAVQuery.relativeUrl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 16,
+      "symbol": "IAVQuery.skip",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 17,
+      "symbol": "IAVQuery.limit",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 18,
+      "symbol": "IAVQuery.include",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 19,
+      "symbol": "IAVQuery.order",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 20,
+      "symbol": "IAVQuery.select",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 21,
+      "symbol": "IAVQuery.app",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 24,
+      "symbol": "IAVQueryable",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 26,
+      "symbol": "IAVQueryable.init(serverState:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 27,
+      "symbol": "IAVQueryable.retore(serverState:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 30,
+      "symbol": "QueryableConvertible",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 32,
+      "symbol": "QueryableConvertible.find()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 35,
+      "symbol": "AVQuery",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 37,
+      "symbol": "AVQuery.find()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 47,
+      "symbol": "AVQuery.condition",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 53,
+      "symbol": "AVQuery.className",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 54,
+      "symbol": "AVQuery.relativeUrl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 55,
+      "symbol": "AVQuery.skip",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 56,
+      "symbol": "AVQuery.limit",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 57,
+      "symbol": "AVQuery.include",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 58,
+      "symbol": "AVQuery.select",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 59,
+      "symbol": "AVQuery.order",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 60,
+      "symbol": "AVQuery.app",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 63,
+      "symbol": "AVQuery.init(className:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 68,
+      "symbol": "AVQuery.equalTo(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 73,
+      "symbol": "AVQuery.notEqualTo(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 77,
+      "symbol": "AVQuery.lessThan(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 81,
+      "symbol": "AVQuery.lessThanOrEqualTo(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 85,
+      "symbol": "AVQuery.greaterThan(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 89,
+      "symbol": "AVQuery.greaterThanOrEqualTo(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 93,
+      "symbol": "AVQuery.containedIn(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 97,
+      "symbol": "AVQuery.notContainedIn(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 101,
+      "symbol": "AVQuery.containsAll(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 105,
+      "symbol": "AVQuery.exists(key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 109,
+      "symbol": "AVQuery.doesNotExist(key:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 113,
+      "symbol": "AVQuery.contains(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 117,
+      "symbol": "AVQuery.startsWith(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 121,
+      "symbol": "AVQuery.endsWith(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 125,
+      "symbol": "AVQuery.ascending(keys:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 130,
+      "symbol": "AVQuery.addAscending(keys:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 140,
+      "symbol": "AVQuery.descending(keys:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 145,
+      "symbol": "AVQuery.addDescending(keys:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 155,
+      "symbol": "AVQuery.include(keys:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVQuery.swift",
+      "line": 165,
+      "symbol": "AVQuery.select(keys:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 12,
+      "symbol": "AVSMS",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 13,
+      "symbol": "AVSMS.app",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 14,
+      "symbol": "AVSMS.mobilePhoneNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 16,
+      "symbol": "AVSMS.init(mobilePhoneNumber:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 22,
+      "symbol": "AVUserAuthSMS",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 23,
+      "symbol": "AVUserAuthSMS.send()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 31,
+      "symbol": "AVUserAuthSMS.shortCode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 32,
+      "symbol": "AVUserAuthSMS.setShortCode(receivedShortCode:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 37,
+      "symbol": "AVValidationSMS",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 38,
+      "symbol": "AVValidationSMS.send(mobilePhoneNumber:ttl:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 41,
+      "symbol": "AVValidationSMS.send(mobilePhoneNumber:appName:operationName:ttl:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 46,
+      "symbol": "AVValidationSMS.operationName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 47,
+      "symbol": "AVValidationSMS.ttl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 48,
+      "symbol": "AVValidationSMS.appName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 52,
+      "symbol": "AVValidationSMS.init(mobilePhoneNumber:appName:operationName:ttl:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 61,
+      "symbol": "AVValidationSMS.send()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 79,
+      "symbol": "AVValidationSMS.setShortCode(receivedShortCode:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 83,
+      "symbol": "AVValidationSMS.verify()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 94,
+      "symbol": "AVNoticeSMS",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 96,
+      "symbol": "AVNoticeSMS.init(mobilePhoneNumber:templateId:signatureId:contentParameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 102,
+      "symbol": "AVNoticeSMS.templateId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 103,
+      "symbol": "AVNoticeSMS.signatureId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 104,
+      "symbol": "AVNoticeSMS.contentParameters",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVSMS.swift",
+      "line": 105,
+      "symbol": "AVNoticeSMS.send()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": null,
+      "symbol": "AVUser",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 16,
+      "symbol": "AVUser",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 21,
+      "symbol": "AVUser.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 25,
+      "symbol": "AVUser.init(serverState:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 41,
+      "symbol": "AVUser.username",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 52,
+      "symbol": "AVUser.password",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 63,
+      "symbol": "AVUser.sessionToken",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 69,
+      "symbol": "AVUser.mobilePhoneNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 80,
+      "symbol": "AVUser.mobilePhoneVerified",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 87,
+      "symbol": "AVUser.email",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 96,
+      "symbol": "AVUser.authData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 106,
+      "symbol": "AVUser.signUp()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 114,
+      "symbol": "AVUser.logIn()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 134,
+      "symbol": "AVUser.resetPasswordMode",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 135,
+      "symbol": "AVUser.resetPasswordMode.mobilePhoneNumber",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 136,
+      "symbol": "AVUser.resetPasswordMode.email",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 139,
+      "symbol": "AVUser.requestResetPassword(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 155,
+      "symbol": "AVUser.resetPassword(newPassword:shortCode:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 162,
+      "symbol": "AVUser.updatePassword(newPassword:oldPassword:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 213,
+      "symbol": "AVUser.logIn(username:password:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 220,
+      "symbol": "AVUser.logIn(sms:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 229,
+      "symbol": "AVUser.signUpOrLogIn(sms:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 238,
+      "symbol": "AVUser.become(sessionToken:app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 245,
+      "symbol": "AVUser.current(app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 250,
+      "symbol": "AVUser.query()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/AVUser.swift",
+      "line": 254,
+      "symbol": "AVUser.saveToStorage()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/LeanCloud.swift",
+      "line": 11,
+      "symbol": "LeanCloud",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/LeanCloud.swift",
+      "line": 12,
+      "symbol": "LeanCloud.initialize(applicationID:applicationKey:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 12,
+      "symbol": "IAVIMMessage",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 13,
+      "symbol": "IAVIMMessage.conversationId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 14,
+      "symbol": "IAVIMMessage.raw",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 15,
+      "symbol": "IAVIMMessage.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 16,
+      "symbol": "IAVIMMessage.timestamp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 17,
+      "symbol": "IAVIMMessage.from",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 18,
+      "symbol": "IAVIMMessage.deserialize(data:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 19,
+      "symbol": "IAVIMMessage.serialize()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 20,
+      "symbol": "IAVIMMessage.validate(raw:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 23,
+      "symbol": "AVIMMessage",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 25,
+      "symbol": "AVIMMessage.validate(raw:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 29,
+      "symbol": "AVIMMessage.serialize()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 33,
+      "symbol": "AVIMMessage.deserialize(data:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 41,
+      "symbol": "AVIMMessage.from",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 43,
+      "symbol": "AVIMMessage.timestamp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 45,
+      "symbol": "AVIMMessage.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 47,
+      "symbol": "AVIMMessage.raw",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 49,
+      "symbol": "AVIMMessage.conversationId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 52,
+      "symbol": "AVIMMessageSendOptions",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 59,
+      "symbol": "AVIMSignature",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 65,
+      "symbol": "IAVIMConversation",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 66,
+      "symbol": "IAVIMConversation.conversationId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 67,
+      "symbol": "IAVIMConversation.creator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 68,
+      "symbol": "IAVIMConversation.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 69,
+      "symbol": "IAVIMConversation.members",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 70,
+      "symbol": "IAVIMConversation.transient",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 71,
+      "symbol": "IAVIMConversation.unique",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 72,
+      "symbol": "IAVIMConversation.attributes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 75,
+      "symbol": "AVIMConversation",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 77,
+      "symbol": "AVIMConversation.init(conversationId:name:members:creator:attributes:unique:transient:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 88,
+      "symbol": "AVIMConversation.attributes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 90,
+      "symbol": "AVIMConversation.unique",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 92,
+      "symbol": "AVIMConversation.members",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 94,
+      "symbol": "AVIMConversation.transient",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 96,
+      "symbol": "AVIMConversation.creator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 98,
+      "symbol": "AVIMConversation.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 100,
+      "symbol": "AVIMConversation.conversationId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 103,
+      "symbol": "AVIMConversationCreateOptions",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 104,
+      "symbol": "AVIMConversationCreateOptions.init(conversation:signature:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 112,
+      "symbol": "AVIMConnectOptions",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 121,
+      "symbol": "AVRealtime",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 122,
+      "symbol": "AVRealtime.sharedInstance",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 125,
+      "symbol": "AVRealtime.rxAVWebSocket",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 136,
+      "symbol": "AVRealtime.onMessage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 137,
+      "symbol": "AVRealtime.clientId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 147,
+      "symbol": "AVRealtime.init(app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 154,
+      "symbol": "AVRealtime.connect(clientId:signature:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 158,
+      "symbol": "AVRealtime.create(options:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 162,
+      "symbol": "AVRealtime.send(conversationId:jsonData:options:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 166,
+      "symbol": "AVRealtime.connect(clientId:signature:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 173,
+      "symbol": "AVRealtime.connectWithOptions(options:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 194,
+      "symbol": "AVRealtime.connectWithUser(user:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 198,
+      "symbol": "AVRealtime.create(options:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVRealtime.swift",
+      "line": 223,
+      "symbol": "AVRealtime.send(conversationId:jsonData:options:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVWebSocket.swift",
+      "line": 12,
+      "symbol": "AVWebSocket",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVWebSocket.swift",
+      "line": 14,
+      "symbol": "AVWebSocket.sharedInstance",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVWebSocket.swift",
+      "line": 16,
+      "symbol": "AVWebSocket.AVWebSocketClient",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVWebSocket.swift",
+      "line": 24,
+      "symbol": "AVWebSocket.init(app:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVWebSocket.swift",
+      "line": 28,
+      "symbol": "AVWebSocket.open()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/Realtime/AVWebSocket.swift",
+      "line": 44,
+      "symbol": "AVWebSocket.send(json:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/RxExtensions.swift",
+      "line": 13,
+      "symbol": "AVRxCallbackConvertible",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/RxExtensions.swift",
+      "line": 15,
+      "symbol": "AVRxCallbackConvertible.onExecuted(completion:error:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/RxExtensions.swift",
+      "line": 18,
+      "symbol": "AVRxEventConvertible",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/RxExtensions.swift",
+      "line": 20,
+      "symbol": "AVRxEventConvertible.onEventInvoked(received:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/RxExtensions.swift",
+      "line": 26,
+      "symbol": "Observable.onExecuted(completion:error:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Code/rx-lean-swift/src/RxLeanCloudSwift/Public/RxExtensions.swift",
+      "line": 41,
+      "symbol": "Observable.onEventInvoked(received:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Code/rx-lean-swift/src"
+}

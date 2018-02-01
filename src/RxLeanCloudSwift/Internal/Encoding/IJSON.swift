@@ -8,7 +8,6 @@
 
 import Foundation
 
-public protocol IJSON {
-    func parse(input: String) -> Any
-    func encode(obj: Any) -> String
+public protocol IJsonConvertible {
+    func ToJSON() -> [String: Any]
 }

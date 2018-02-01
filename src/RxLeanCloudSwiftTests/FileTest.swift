@@ -22,7 +22,7 @@ class FileTest: LeanCloudUnitTestBase {
     }
 
     func testSaveStringAsTextFile() {
-        let textFile = AVFile.text(name: "test.txt", content: "I love LeanCloud", encoding: .utf8)
+        let textFile = RxAVFile.text(name: "test.txt", content: "I love LeanCloud", encoding: .utf8)
         let result = textFile.save().toBlocking().materialize()
 
         switch result {
@@ -35,7 +35,7 @@ class FileTest: LeanCloudUnitTestBase {
     }
 
     func testSaveStringAsTextFileWithMetaData() {
-        let textFile = AVFile.text(name: "test.txt", content: "I love LeanCloud", encoding: .utf8)
+        let textFile = RxAVFile.text(name: "test.txt", content: "I love LeanCloud", encoding: .utf8)
         textFile.metaData!["author"] = "WuJun"
         let result = textFile.save().toBlocking().materialize()
 
@@ -49,7 +49,7 @@ class FileTest: LeanCloudUnitTestBase {
     }
 
     func testSaveExternalFile() {
-        let Satomi_Ishihara = AVFile(name: "Satomi_Ishihara.gif", externalUrl: "http://ww3.sinaimg.cn/bmiddle/596b0666gw1ed70eavm5tg20bq06m7wi.gif")
+        let Satomi_Ishihara = RxAVFile(name: "Satomi_Ishihara.gif", externalUrl: "http://ww3.sinaimg.cn/bmiddle/596b0666gw1ed70eavm5tg20bq06m7wi.gif")
         Satomi_Ishihara.metaData!["boyfriend"] = "WuJun"
         let result = Satomi_Ishihara.save().toBlocking().materialize()
         switch result {
@@ -62,7 +62,7 @@ class FileTest: LeanCloudUnitTestBase {
     }
 
     func testQueryFiles() {
-        let query = AVFile.query()
+        let query = RxAVFile.query()
         query.equalTo(key: "metaData.author", value: "WuJun")
         let result = query.find().toBlocking().materialize()
 

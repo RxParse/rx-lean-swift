@@ -25,9 +25,9 @@ public class ObjectController: IObjectController {
         })
     }
 
-    public func batchSave(states: [IObjectState], operationss: Array<[String: IAVFieldOperation]>, app: AVApp) -> Observable<[IObjectState]> {
+    public func batchSave(states: [IObjectState], operations: Array<[String: IAVFieldOperation]>, app: LeanCloudApp) -> Observable<[IObjectState]> {
 
-        let pair = zip(states, operationss)
+        let pair = zip(states, operations)
         let cmds = pair.map { (seKV) -> AVCommand in
             return packRequest(state: seKV.0, operations: seKV.1)
         }
@@ -77,7 +77,7 @@ public class ObjectController: IObjectController {
         return AVCommand(relativeUrl: realtiveUrl, method: mutableState.objectId == nil ? "POST" : "PUT", data: mutableEncoded, app: mutableState.app!)
     }
 
-    public func unpackResponse(avResponse: AVCommandResponse, app: AVApp) -> IObjectState {
+    public func unpackResponse(avResponse: AVCommandResponse, app: LeanCloudApp) -> IObjectState {
         var serverState = AVCorePlugins.sharedInstance.objectDecoder.decode(serverResult: avResponse.jsonBody!, decoder: AVCorePlugins.sharedInstance.avDecoder)
         serverState = serverState.mutatedClone({ (state) in
             serverState.isNew = avResponse.satusCode == 200

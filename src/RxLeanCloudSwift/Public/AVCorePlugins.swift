@@ -11,7 +11,7 @@ import Foundation
 public class AVCorePlugins {
     static let sharedInstance = AVCorePlugins()
 
-    private var _httpClient: IHttpClient = HttpClient.default as IHttpClient
+    private var _httpClient: IHttpClient = AlamofireHttpClient.default as IHttpClient
     var httpClient: IHttpClient {
         get {
             return self._httpClient

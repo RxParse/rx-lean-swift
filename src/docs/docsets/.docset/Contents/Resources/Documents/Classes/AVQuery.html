@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AVQuery Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/AVQuery" class="dashAnchor"></a>
+    <a title="AVQuery Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (0% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        AVQuery Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:16RxLeanCloudSwift5AVACLC">AVACL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVApp.html">AVApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVCQL.html">AVCQL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVClient.html">AVClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVCloud.html">AVCloud</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVCloudFunction.html">AVCloudFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVCommand.html">AVCommand</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVCommandResponse.html">AVCommandResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:16RxLeanCloudSwift13AVCorePluginsC">AVCorePlugins</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVDecoder.html">AVDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVDeleteOperation.html">AVDeleteOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVDeleteToken.html">AVDeleteToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVEncoder.html">AVEncoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVFile.html">AVFile</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVFileController.html">AVFileController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVHttpCommandRunner.html">AVHttpCommandRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVIncrementOperation.html">AVIncrementOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVNoticeSMS.html">AVNoticeSMS</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVObject.html">AVObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVQuery.html">AVQuery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVRealtime.html">AVRealtime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVRemoveOperation.html">AVRemoveOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVSMS.html">AVSMS</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVSetOperation.html">AVSetOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:16RxLeanCloudSwift10AVSettingsC">AVSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVUser.html">AVUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVUser/resetPasswordMode.html">– resetPasswordMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVUserAuthSMS.html">AVUserAuthSMS</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVValidationSMS.html">AVValidationSMS</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVWebSocket.html">AVWebSocket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVWebSocketClient.html">AVWebSocketClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVWebSocketClient/websocketError.html">– websocketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVWebSocketCommandRunner.html">AVWebSocketCommandRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FileState.html">FileState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HttpClient.html">HttpClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:16RxLeanCloudSwift11HttpRequestC">HttpRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:16RxLeanCloudSwift12HttpResponseC">HttpResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LeanCloud.html">LeanCloud</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MutableObjectState.html">MutableObjectState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ObjectController.html">ObjectController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ObjectDecoder.html">ObjectDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/QueryController.html">QueryController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RxKVStorage.html">RxKVStorage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserController.html">UserController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AVRegion.html">AVRegion</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Observable.html">Observable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AVRxCallbackConvertible.html">AVRxCallbackConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AVRxEventConvertible.html">AVRxEventConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVCommandRunner.html">IAVCommandRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVDecoder.html">IAVDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVEncoder.html">IAVEncoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVFieldOperation.html">IAVFieldOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVFileConroller.html">IAVFileConroller</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVIMConversation.html">IAVIMConversation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVIMMessage.html">IAVIMMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVObject.html">IAVObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVQuery.html">IAVQuery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVQueryable.html">IAVQueryable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IFileUploader.html">IFileUploader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IHttpClient.html">IHttpClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IJSON.html">IJSON</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IKVStorage.html">IKVStorage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IObjectController.html">IObjectController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IObjectDecoder.html">IObjectDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IObjectState.html">IObjectState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IQueryController.html">IQueryController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IWebSokcetClient.html">IWebSokcetClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/QueryableConvertible.html">QueryableConvertible</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:16RxLeanCloudSwift18AVIMConnectOptionsV">AVIMConnectOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AVIMConversation.html">AVIMConversation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AVIMConversationCreateOptions.html">AVIMConversationCreateOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AVIMMessage.html">AVIMMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:16RxLeanCloudSwift22AVIMMessageSendOptionsV">AVIMMessageSendOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:16RxLeanCloudSwift13AVIMSignatureV">AVIMSignature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AVUploadProgress.html">AVUploadProgress</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>AVQuery</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">AVQuery</span><span class="o">&lt;</span><span class="kt">TEntity</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Protocols/IAVQuery.html">IAVQuery</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/QueryableConvertible.html">QueryableConvertible</a></span> <span class="k">where</span> <span class="kt">TEntity</span><span class="p">:</span> <span class="kt"><a href="../Protocols/IAVQueryable.html">IAVQueryable</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC4findXeXeF"></a>
+                    <a name="//apple_ref/swift/Method/find()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC4findXeXeF">find()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">find</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Observable</span><span class="o">&lt;</span><span class="kt">Array</span><span class="o">&lt;</span><span class="kt">TEntity</span><span class="o">&gt;&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC9conditions10DictionaryVySSypGv"></a>
+                    <a name="//apple_ref/swift/Property/condition" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC9conditions10DictionaryVySSypGv">condition</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">condition</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC9classNameSSSgv"></a>
+                    <a name="//apple_ref/swift/Property/className" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC9classNameSSSgv">className</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">className</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC11relativeUrlSSSgv"></a>
+                    <a name="//apple_ref/swift/Property/relativeUrl" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC11relativeUrlSSSgv">relativeUrl</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">relativeUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC4skipSiv"></a>
+                    <a name="//apple_ref/swift/Property/skip" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC4skipSiv">skip</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">skip</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC5limitSiv"></a>
+                    <a name="//apple_ref/swift/Property/limit" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC5limitSiv">limit</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">20</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC7includeSaySSGSgv"></a>
+                    <a name="//apple_ref/swift/Property/include" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC7includeSaySSGSgv">include</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">include</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC6selectSaySSGSgv"></a>
+                    <a name="//apple_ref/swift/Property/select" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC6selectSaySSGSgv">select</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">select</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC5orderSaySSGSgv"></a>
+                    <a name="//apple_ref/swift/Property/order" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC5orderSaySSGSgv">order</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">order</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC3appAA5AVAppCSgv"></a>
+                    <a name="//apple_ref/swift/Property/app" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC3appAA5AVAppCSgv">app</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">app</span><span class="p">:</span> <span class="kt"><a href="../Classes/AVApp.html">AVApp</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryCACyxGSS9className_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(className:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryCACyxGSS9className_tcfc">init(className:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">className</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC7equalToACyxGSS3key_yp5valuetF"></a>
+                    <a name="//apple_ref/swift/Method/equalTo(key:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC7equalToACyxGSS3key_yp5valuetF">equalTo(key:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">equalTo</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC10notEqualToACyxGSS3key_yp5valuetF"></a>
+                    <a name="//apple_ref/swift/Method/notEqualTo(key:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC10notEqualToACyxGSS3key_yp5valuetF">notEqualTo(key:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">notEqualTo</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC8lessThanACyxGSS3key_yp5valuetF"></a>
+                    <a name="//apple_ref/swift/Method/lessThan(key:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC8lessThanACyxGSS3key_yp5valuetF">lessThan(key:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">lessThan</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC17lessThanOrEqualToACyxGSS3key_yp5valuetF"></a>
+                    <a name="//apple_ref/swift/Method/lessThanOrEqualTo(key:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC17lessThanOrEqualToACyxGSS3key_yp5valuetF">lessThanOrEqualTo(key:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">lessThanOrEqualTo</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC11greaterThanACyxGSS3key_yp5valuetF"></a>
+                    <a name="//apple_ref/swift/Method/greaterThan(key:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC11greaterThanACyxGSS3key_yp5valuetF">greaterThan(key:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">greaterThan</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC20greaterThanOrEqualToACyxGSS3key_yp5valuetF"></a>
+                    <a name="//apple_ref/swift/Method/greaterThanOrEqualTo(key:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC20greaterThanOrEqualToACyxGSS3key_yp5valuetF">greaterThanOrEqualTo(key:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">greaterThanOrEqualTo</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC11containedInACyxGSS3key_yp5valuetF"></a>
+                    <a name="//apple_ref/swift/Method/containedIn(key:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC11containedInACyxGSS3key_yp5valuetF">containedIn(key:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">containedIn</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC14notContainedInACyxGSS3key_yp5valuetF"></a>
+                    <a name="//apple_ref/swift/Method/notContainedIn(key:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC14notContainedInACyxGSS3key_yp5valuetF">notContainedIn(key:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">notContainedIn</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC11containsAllACyxGSS3key_yp5valuetF"></a>
+                    <a name="//apple_ref/swift/Method/containsAll(key:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC11containsAllACyxGSS3key_yp5valuetF">containsAll(key:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">containsAll</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC6existsACyxGSS3key_tF"></a>
+                    <a name="//apple_ref/swift/Method/exists(key:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC6existsACyxGSS3key_tF">exists(key:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">exists</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC12doesNotExistACyxGSS3key_tF"></a>
+                    <a name="//apple_ref/swift/Method/doesNotExist(key:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC12doesNotExistACyxGSS3key_tF">doesNotExist(key:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">doesNotExist</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC8containsACyxGSS3key_SS5valuetF"></a>
+                    <a name="//apple_ref/swift/Method/contains(key:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC8containsACyxGSS3key_SS5valuetF">contains(key:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">contains</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC10startsWithACyxGSS3key_SS5valuetF"></a>
+                    <a name="//apple_ref/swift/Method/startsWith(key:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC10startsWithACyxGSS3key_SS5valuetF">startsWith(key:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">startsWith</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC8endsWithACyxGSS3key_SS5valuetF"></a>
+                    <a name="//apple_ref/swift/Method/endsWith(key:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC8endsWithACyxGSS3key_SS5valuetF">endsWith(key:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">endsWith</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC9ascendingACyxGSaySSG4keys_tF"></a>
+                    <a name="//apple_ref/swift/Method/ascending(keys:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC9ascendingACyxGSaySSG4keys_tF">ascending(keys:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">ascending</span><span class="p">(</span><span class="nv">keys</span><span class="p">:</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC12addAscendingACyxGSaySSG4keys_tF"></a>
+                    <a name="//apple_ref/swift/Method/addAscending(keys:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC12addAscendingACyxGSaySSG4keys_tF">addAscending(keys:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addAscending</span><span class="p">(</span><span class="nv">keys</span><span class="p">:</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC10descendingACyxGSaySSG4keys_tF"></a>
+                    <a name="//apple_ref/swift/Method/descending(keys:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC10descendingACyxGSaySSG4keys_tF">descending(keys:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">descending</span><span class="p">(</span><span class="nv">keys</span><span class="p">:</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC13addDescendingACyxGSaySSG4keys_tF"></a>
+                    <a name="//apple_ref/swift/Method/addDescending(keys:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC13addDescendingACyxGSaySSG4keys_tF">addDescending(keys:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addDescending</span><span class="p">(</span><span class="nv">keys</span><span class="p">:</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC7includeACyxGSaySSG4keys_tF"></a>
+                    <a name="//apple_ref/swift/Method/include(keys:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC7includeACyxGSaySSG4keys_tF">include(keys:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">include</span><span class="p">(</span><span class="nv">keys</span><span class="p">:</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift7AVQueryC6selectACyxGSaySSG4keys_tF"></a>
+                    <a name="//apple_ref/swift/Method/select(keys:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift7AVQueryC6selectACyxGSaySSG4keys_tF">select(keys:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">select</span><span class="p">(</span><span class="nv">keys</span><span class="p">:</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVQuery</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-12-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

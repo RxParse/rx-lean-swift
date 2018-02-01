@@ -100,15 +100,17 @@ class QiniuFileUploader: IFileUploader {
 
         self.uploadState = QiniuShardUploadState(data: state.data!)
         if let size = self.uploadState?.totalSize {
-            if size < directUploadDataCriticalSize {
+            if size <= directUploadDataCriticalSize {
                 return self.directUpload(state: state)
             }
         }
         return self.shardUpload(state: state)
     }
+    
     enum UploadError: Error {
         case directUploadFailed(error: String)
     }
+    
     func directUpload(state: FileState) -> Observable<AVUploadProgress> {
         return self.httpDirectUploadToQiniu(fileData: state.data!, fileName: state.name!, mimeType: state.mimeType!, key: state.cloudName!, token: (self.uploadToken?.token)!, uploadHost: (self.uploadToken?.uploadUrl)!).map({ (response) -> AVUploadProgress in
             if response.satusCode == 200 {

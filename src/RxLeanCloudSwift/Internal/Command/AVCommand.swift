@@ -10,8 +10,8 @@ import Foundation
 import RxSwift
 
 public class AVCommand: HttpRequest {
-    var realtiveUrl: String = ""
-    var app: AVApp
+    var relativeUrl: String = ""
+    var app: LeanCloudApp
     public var apiSessionToken: String? {
         get {
             if self.headers != nil {
@@ -38,21 +38,21 @@ public class AVCommand: HttpRequest {
         }
     }
 
-    func takeUrl(app: AVApp) -> String {
-        self.url = app.getUrl(relativeUrl: self.realtiveUrl)
+    func takeUrl(app: LeanCloudApp) -> String {
+        self.url = app.getUrl(relativeUrl: self.relativeUrl)
         return self.url
     }
 
-    init(relativeUrl: String, method: String, data: Dictionary<String, Any>?, app: AVApp?) {
-        let _app = AVClient.sharedInstance.takeApp(app: app)
+    init(relativeUrl: String, method: String, data: Dictionary<String, Any>?, app: LeanCloudApp?) {
+        let _app = RxAVClient.sharedInstance.takeApp(app: app)
         self.app = _app
         let url = self.app.getUrl(relativeUrl: relativeUrl)
         let headers = self.app.getHeaders()
-        self.realtiveUrl = relativeUrl
+        self.relativeUrl = relativeUrl
         super.init(method: method, url: url, headers: headers, data: data?.binarization())
     }
 
-    public static func create(json: [String: Any], app: AVApp) -> AVCommand {
+    public static func create(json: [String: Any], app: LeanCloudApp) -> AVCommand {
         return AVCommand(relativeUrl: "", method: "POST", data: json, app: app)
     }
 

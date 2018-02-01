@@ -19,19 +19,19 @@ public class AVWebSocket {
         }
     }
     
-    var app: AVApp? = nil
+    var app: LeanCloudApp? = nil
     var pushRouterState: [String: Any]?
-    public init(app: AVApp? = nil) {
-        self.app = AVClient.sharedInstance.getCurrentApp()
+    public init(app: LeanCloudApp? = nil) {
+        self.app = RxAVClient.sharedInstance.getCurrentApp()
     }
 
     public func open() -> Observable<Bool> {
         if self.app?.wss != nil {
             return self.AVWebSocketClient.open(url: (app?.wss)!, subprotocol: nil)
         }
-        let pushRouter = self.app?.getPushRouterUrl()
+        let pushRouter = self.app?.getRTMRouterUrl()
 
-        return AVClient.sharedInstance.httpRequest(url: pushRouter!, method: nil, headers: nil, data: nil).flatMap({ (response) -> Observable<Bool> in
+        return RxAVClient.sharedInstance.httpRequest(url: pushRouter!, method: nil, headers: nil, data: nil).flatMap({ (response) -> Observable<Bool> in
             self.pushRouterState = response.jsonBody
             if (self.pushRouterState?.containsKey(key: "server"))! {
                 let wss = self.pushRouterState?["server"] as! String

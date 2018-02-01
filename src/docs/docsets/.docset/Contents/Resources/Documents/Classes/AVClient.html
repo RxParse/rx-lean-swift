@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AVClient Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/AVClient" class="dashAnchor"></a>
+    <a title="AVClient Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (0% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        AVClient Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:16RxLeanCloudSwift5AVACLC">AVACL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVApp.html">AVApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVCQL.html">AVCQL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVClient.html">AVClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVCloud.html">AVCloud</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVCloudFunction.html">AVCloudFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVCommand.html">AVCommand</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVCommandResponse.html">AVCommandResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:16RxLeanCloudSwift13AVCorePluginsC">AVCorePlugins</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVDecoder.html">AVDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVDeleteOperation.html">AVDeleteOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVDeleteToken.html">AVDeleteToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVEncoder.html">AVEncoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVFile.html">AVFile</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVFileController.html">AVFileController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVHttpCommandRunner.html">AVHttpCommandRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVIncrementOperation.html">AVIncrementOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVNoticeSMS.html">AVNoticeSMS</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVObject.html">AVObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVQuery.html">AVQuery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVRealtime.html">AVRealtime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVRemoveOperation.html">AVRemoveOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVSMS.html">AVSMS</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVSetOperation.html">AVSetOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:16RxLeanCloudSwift10AVSettingsC">AVSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVUser.html">AVUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVUser/resetPasswordMode.html">– resetPasswordMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVUserAuthSMS.html">AVUserAuthSMS</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVValidationSMS.html">AVValidationSMS</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVWebSocket.html">AVWebSocket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVWebSocketClient.html">AVWebSocketClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVWebSocketClient/websocketError.html">– websocketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVWebSocketCommandRunner.html">AVWebSocketCommandRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FileState.html">FileState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HttpClient.html">HttpClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:16RxLeanCloudSwift11HttpRequestC">HttpRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:16RxLeanCloudSwift12HttpResponseC">HttpResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LeanCloud.html">LeanCloud</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MutableObjectState.html">MutableObjectState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ObjectController.html">ObjectController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ObjectDecoder.html">ObjectDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/QueryController.html">QueryController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RxKVStorage.html">RxKVStorage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserController.html">UserController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AVRegion.html">AVRegion</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Observable.html">Observable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AVRxCallbackConvertible.html">AVRxCallbackConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AVRxEventConvertible.html">AVRxEventConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVCommandRunner.html">IAVCommandRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVDecoder.html">IAVDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVEncoder.html">IAVEncoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVFieldOperation.html">IAVFieldOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVFileConroller.html">IAVFileConroller</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVIMConversation.html">IAVIMConversation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVIMMessage.html">IAVIMMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVObject.html">IAVObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVQuery.html">IAVQuery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVQueryable.html">IAVQueryable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IFileUploader.html">IFileUploader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IHttpClient.html">IHttpClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IJSON.html">IJSON</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IKVStorage.html">IKVStorage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IObjectController.html">IObjectController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IObjectDecoder.html">IObjectDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IObjectState.html">IObjectState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IQueryController.html">IQueryController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IWebSokcetClient.html">IWebSokcetClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/QueryableConvertible.html">QueryableConvertible</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:16RxLeanCloudSwift18AVIMConnectOptionsV">AVIMConnectOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AVIMConversation.html">AVIMConversation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AVIMConversationCreateOptions.html">AVIMConversationCreateOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AVIMMessage.html">AVIMMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:16RxLeanCloudSwift22AVIMMessageSendOptionsV">AVIMMessageSendOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:16RxLeanCloudSwift13AVIMSignatureV">AVIMSignature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AVUploadProgress.html">AVUploadProgress</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>AVClient</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">AVClient</span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift8AVClientC14sharedInstanceACvZ"></a>
+                    <a name="//apple_ref/swift/Variable/sharedInstance" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift8AVClientC14sharedInstanceACvZ">sharedInstance</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">sharedInstance</span> <span class="o">=</span> <span class="kt">AVClient</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift8AVClientC10initializeAcA5AVAppC3app_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/initialize(app:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift8AVClientC10initializeAcA5AVAppC3app_tFZ">initialize(app:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">initialize</span><span class="p">(</span><span class="nv">app</span><span class="p">:</span> <span class="kt"><a href="../Classes/AVApp.html">AVApp</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVClient</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift8AVClientC3addAcA5AVAppC3app_Sb7replacetF"></a>
+                    <a name="//apple_ref/swift/Method/add(app:replace:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift8AVClientC3addAcA5AVAppC3app_Sb7replacetF">add(app:replace:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">app</span><span class="p">:</span> <span class="kt"><a href="../Classes/AVApp.html">AVApp</a></span><span class="p">,</span> <span class="nv">replace</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVClient</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift8AVClientC13getCurrentAppAA5AVAppCyF"></a>
+                    <a name="//apple_ref/swift/Method/getCurrentApp()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift8AVClientC13getCurrentAppAA5AVAppCyF">getCurrentApp()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getCurrentApp</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/AVApp.html">AVApp</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift8AVClientC7takeAppAA5AVAppCAFSg3app_tF"></a>
+                    <a name="//apple_ref/swift/Method/takeApp(app:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift8AVClientC7takeAppAA5AVAppCAFSg3app_tF">takeApp(app:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">takeApp</span><span class="p">(</span><span class="nv">app</span><span class="p">:</span> <span class="kt"><a href="../Classes/AVApp.html">AVApp</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/AVApp.html">AVApp</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift8AVClientC9toggleLogACSb6enable_tF"></a>
+                    <a name="//apple_ref/swift/Method/toggleLog(enable:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift8AVClientC9toggleLogACSb6enable_tF">toggleLog(enable:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">toggleLog</span><span class="p">(</span><span class="nv">enable</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVClient</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift8AVClientC15toggleWssAsHttpACSb6enable_tF"></a>
+                    <a name="//apple_ref/swift/Method/toggleWssAsHttp(enable:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift8AVClientC15toggleWssAsHttpACSb6enable_tF">toggleWssAsHttp(enable:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">toggleWssAsHttp</span><span class="p">(</span><span class="nv">enable</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVClient</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift8AVClientC11httpRequestXeXeF"></a>
+                    <a name="//apple_ref/swift/Method/httpRequest(url:method:headers:data:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift8AVClientC11httpRequestXeXeF">httpRequest(url:method:headers:data:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">httpRequest</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">method</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]?,</span> <span class="nv">data</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Observable</span><span class="o">&lt;</span><span class="kt"><a href="../Classes.html#/s:16RxLeanCloudSwift12HttpResponseC">HttpResponse</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift8AVClientC10runCommandXeXeF"></a>
+                    <a name="//apple_ref/swift/Method/runCommand(cmd:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift8AVClientC10runCommandXeXeF">runCommand(cmd:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">runCommand</span><span class="p">(</span><span class="nv">cmd</span><span class="p">:</span> <span class="kt"><a href="../Classes/AVCommand.html">AVCommand</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Observable</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/AVCommandResponse.html">AVCommandResponse</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift8AVClientC12websocketLogyAA9AVCommandC3cmd_tF"></a>
+                    <a name="//apple_ref/swift/Method/websocketLog(cmd:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift8AVClientC12websocketLogyAA9AVCommandC3cmd_tF">websocketLog(cmd:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">websocketLog</span><span class="p">(</span><span class="nv">cmd</span><span class="p">:</span> <span class="kt"><a href="../Classes/AVCommand.html">AVCommand</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift8AVClientC7httpLogyAA11HttpRequestC7request_AA0H8ResponseC8responsetF"></a>
+                    <a name="//apple_ref/swift/Method/httpLog(request:response:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift8AVClientC7httpLogyAA11HttpRequestC7request_AA0H8ResponseC8responsetF">httpLog(request:response:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">httpLog</span><span class="p">(</span><span class="nv">request</span><span class="p">:</span> <span class="kt"><a href="../Classes.html#/s:16RxLeanCloudSwift11HttpRequestC">HttpRequest</a></span><span class="p">,</span> <span class="nv">response</span><span class="p">:</span> <span class="kt"><a href="../Classes.html#/s:16RxLeanCloudSwift12HttpResponseC">HttpResponse</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift8AVClientC13getSDKVersionSSyF"></a>
+                    <a name="//apple_ref/swift/Method/getSDKVersion()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift8AVClientC13getSDKVersionSSyF">getSDKVersion()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getSDKVersion</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-12-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

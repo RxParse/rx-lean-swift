@@ -24,7 +24,7 @@ class QueryTests: LeanCloudUnitTestBase {
     }
 
     func testFind() {
-        let query = AVQuery<AVObject>(className: "SwiftTodo")
+        let query = RxAVQuery<RxAVObject>(className: "SwiftTodo")
         let result = query.find().toBlocking().materialize()
 
         switch result {
@@ -37,7 +37,7 @@ class QueryTests: LeanCloudUnitTestBase {
     }
 
     func testCQL() {
-        let cql = AVCQL<AVObject>(cql: "select * from SwiftTodo where foo=?")
+        let cql = RxAVCQL<RxAVObject>(cql: "select * from SwiftTodo where foo=?")
         cql.placeholders = ["xx"];
         let result = cql.execute().toBlocking().materialize()
 

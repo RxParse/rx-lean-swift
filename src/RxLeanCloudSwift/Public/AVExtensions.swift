@@ -82,14 +82,14 @@ extension String {
     }
 }
 
-extension AVObject {
-    public func fetch(keys: [String]? = nil) -> Observable<AVObject> {
+extension RxAVObject {
+    public func fetch(keys: [String]? = nil) -> Observable<RxAVObject> {
         var queryString = [String: Any]()
         if keys != nil {
             let encode = keys!.joined(separator: ",")
             queryString["include"] = encode
         }
-        return AVObject.objectController.fetch(state: self._state, queryString: queryString).map({ (severState) -> AVObject in
+        return RxAVObject.objectController.fetch(state: self._state, queryString: queryString).map({ (severState) -> RxAVObject in
             self.handleFetchResult(serverState: severState)
             return self
         })
@@ -98,15 +98,15 @@ extension AVObject {
         self[key] = nil
     }
 
-    public static func saveAll(objects: Array<AVObject>) -> Observable<Array<AVObject>> {
-        let execute = objects.map { (ob) -> Observable<AVObject> in
+    public static func saveAll(objects: Array<RxAVObject>) -> Observable<Array<RxAVObject>> {
+        let execute = objects.map { (ob) -> Observable<RxAVObject> in
             return ob.save()
         }
         return Observable.zip(execute)
     }
 }
 
-extension AVUser {
+extension RxAVUser {
     public func associateAuthData(authType: String, authData: [String: Any]?) -> Observable<Bool> {
         if self.authData == nil {
             self.authData = [String: Any]()

@@ -28,12 +28,12 @@ public class AVHttpCommandRunner: IAVCommandRunner {
     enum HttpError: Error {
         case batchRequestNotCompleted(result: String)
     }
-    public func runBatchRxCommands(commands: [AVCommand], app: AVApp) -> Observable<[AVCommandResponse]> {
+    public func runBatchRxCommands(commands: [AVCommand], app: LeanCloudApp) -> Observable<[AVCommandResponse]> {
 
         let batchSize = commands.count
 
         let encodedRequests = commands.map { (cmd) -> [String: Any] in
-            var reqBody: [String: Any] = ["method": cmd.method, "path": "\(app.apiVersion)\(cmd.realtiveUrl)"]
+            var reqBody: [String: Any] = ["method": cmd.method, "path": "\(app.apiVersion)\(cmd.relativeUrl)"]
             if cmd.data != nil {
                 reqBody["body"] = cmd.data
             }

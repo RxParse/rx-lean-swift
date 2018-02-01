@@ -1,5 +1,5 @@
 //
-//  HttpClient.swift
+//  AlamofireHttpClient.swift
 //  RxLeanCloudSwift
 //
 //  Created by WuJun on 23/05/2017.
@@ -12,13 +12,13 @@ import RxSwift
 import RxAlamofire
 import RxCocoa
 
-public class HttpClient: IHttpClient {
+public class AlamofireHttpClient: IHttpClient {
 
-    open static let `default`: HttpClient = {
-        return HttpClient()
+    open static let `default`: AlamofireHttpClient = {
+        return AlamofireHttpClient()
     }()
 
-    static let backgroundQueue = DispatchQueue(label: "LeanCloud.HttpClient", attributes: .concurrent)
+    static let backgroundQueue = DispatchQueue(label: "LeanCloud.AlamofireHttpClient", attributes: .concurrent)
 
     public func rxExecute(httpRequest: HttpRequest) -> Observable<HttpResponse> {
         let manager = self.getAlamofireManager()
@@ -27,16 +27,8 @@ public class HttpClient: IHttpClient {
         let escapedString = httpRequest.url.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
 
         return manager.rx.responseData(method, escapedString!, parameters: nil, encoding: urlEncoding, headers: httpRequest.headers).map { (response, data) -> HttpResponse in
-//            let utf8DecodedString = String(data: data, encoding: .utf8)
-//            var body = utf8DecodedString?.toDictionary()
-//            if data is [String: Any] {
-//                body = (data as? [String: Any])!
-//            } else if data is Array<[String: Any]> {
-//                let dataArray = data as! Array<[String: Any]>
-//                body = ["results": dataArray]
-//            }
             let httpResponse = HttpResponse(statusCode: response.statusCode, data: data)
-            AVClient.sharedInstance.httpLog(request: httpRequest, response: httpResponse)
+            RxAVClient.sharedInstance.httpLog(request: httpRequest, response: httpResponse)
             return httpResponse
         }
     }
@@ -71,7 +63,7 @@ public class HttpClient: IHttpClient {
     }
 
     func asynchronize<Result>(_ task: @escaping () -> Result, completion: @escaping (Result) -> Void) {
-        AVUtility.asynchronize(task, HttpClient.backgroundQueue, completion)
+        AVUtility.asynchronize(task, AlamofireHttpClient.backgroundQueue, completion)
     }
 
     public func callbackExecute(httpRequest: HttpRequest, _ completion: @escaping (HttpResponse) -> Void) {

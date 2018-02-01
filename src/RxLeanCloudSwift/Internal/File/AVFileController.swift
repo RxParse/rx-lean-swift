@@ -63,7 +63,7 @@ public class AVFileController: IAVFileConroller {
         }
     }
 
-    public func get(objetcId: String, app: AVApp) -> Observable<FileState> {
+    public func get(objetcId: String, app: LeanCloudApp) -> Observable<FileState> {
         let cmd = AVCommand(relativeUrl: "/files", method: "GET", data: nil, app: app)
         return self.httpCommandRunner.runRxCommand(command: cmd).map({ (avResponse) -> FileState in
             let fileState = FileState()

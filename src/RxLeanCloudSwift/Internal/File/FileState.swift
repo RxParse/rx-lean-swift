@@ -15,7 +15,7 @@ public class FileState {
     public var mimeType: String?
     public var url: String?
     public var metaData: [String: Any]?
-    public var app: AVApp?
+    public var app: LeanCloudApp?
     public var data: Data?
     public var createdAt: Date?
     public var updatedAt: Date?

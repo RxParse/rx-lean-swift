@@ -18,7 +18,7 @@ public class AVEncoder: IAVEncoder {
             let bytesMap: [String: String] = ["__type": "Bytes", "base64": string!]
             return bytesMap
         } else if self.isAVObject(value: value) {
-            return encodeAVObject(avObject: value as! AVObject)
+            return encodeAVObject(avObject: value as! RxAVObject)
         } else if value is [String: Any] {
             let dic = value as! [String: Any]
             var json = [String: Any]()
@@ -44,7 +44,7 @@ public class AVEncoder: IAVEncoder {
         return encoded
     }
 
-    public func encodeAVObject(avObject: AVObject) -> [String: Any] {
+    public func encodeAVObject(avObject: RxAVObject) -> [String: Any] {
         var encoded = [String: Any]()
         encoded["__type"] = "Pointer"
         encoded["className"] = avObject.className
@@ -70,7 +70,7 @@ public class AVEncoder: IAVEncoder {
             || value is Int16
             || value is Int32
             || value is Int64
-            || value is AVObject
+            || value is RxAVObject
             || value is Date
             || value is Data
             || value is Dictionary<String, Any>
@@ -78,6 +78,6 @@ public class AVEncoder: IAVEncoder {
     }
 
     public func isAVObject(value: Any) -> Bool {
-        return value is AVObject
+        return value is RxAVObject
     }
 }

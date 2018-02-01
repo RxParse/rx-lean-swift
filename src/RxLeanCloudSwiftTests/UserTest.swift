@@ -25,7 +25,7 @@ class UserTest: LeanCloudUnitTestBase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 
-        let result = AVUser.logIn(username: "junwu", password: "leancloud")
+        let result = RxAVUser.logIn(username: "junwu", password: "leancloud")
             .toBlocking()
             .materialize()
 
@@ -39,11 +39,11 @@ class UserTest: LeanCloudUnitTestBase {
     }
 
     func testLogInGetCurrentUser() {
-        let result = AVUser.logIn(username: "junwu", password: "leancloud").flatMap { (user) -> Observable<Bool> in
+        let result = RxAVUser.logIn(username: "junwu", password: "leancloud").flatMap { (user) -> Observable<Bool> in
             return user.saveToStorage()
-        }.flatMap({ (success) -> Observable<AVUser?> in
+        }.flatMap({ (success) -> Observable<RxAVUser?> in
             if success {
-                return AVUser.current()
+                return RxAVUser.current()
             }
             return Observable.from(nil)
 
@@ -59,7 +59,7 @@ class UserTest: LeanCloudUnitTestBase {
         }
     }
     func testSignUp() {
-        var user = AVUser()
+        var user = RxAVUser()
         user.username = self.randomString(8)
         user.password = "leancloud"
 //        user.mobilePhoneNumber = "18612345678"
@@ -75,13 +75,13 @@ class UserTest: LeanCloudUnitTestBase {
         }
     }
     func testSaveObjectAfterSignUp() {
-        var user = AVUser()
+        var user = RxAVUser()
         user.username = self.randomString(8)
         user.password = "leancloud"
         //        user.mobilePhoneNumber = "18612345678"
 
-        let result = user.signUp().flatMap({ (signedUp) -> Observable<AVObject> in
-            var todo = AVObject(className: "SwiftTodo")
+        let result = user.signUp().flatMap({ (signedUp) -> Observable<RxAVObject> in
+            var todo = RxAVObject(className: "SwiftTodo")
             todo["tag"] = "monkey"
             return todo.save()
         }).toBlocking().materialize()
@@ -96,7 +96,7 @@ class UserTest: LeanCloudUnitTestBase {
     }
 
     func testBecome() {
-        let result = AVUser.become(sessionToken: "f14435aglcl8iogb3rbpebsg3").toBlocking().materialize()
+        let result = RxAVUser.become(sessionToken: "f14435aglcl8iogb3rbpebsg3").toBlocking().materialize()
         switch result {
         case .completed(let elements):
             print(elements[0])

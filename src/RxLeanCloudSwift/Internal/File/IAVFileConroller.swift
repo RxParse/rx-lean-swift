@@ -12,7 +12,7 @@ import RxSwift
 public protocol IAVFileConroller {
     func upload(state: FileState) -> Observable<AVUploadProgress>
     func save(state: FileState) -> Observable<AVUploadProgress>
-    func get(objetcId: String, app: AVApp) -> Observable<FileState>
+    func get(objetcId: String, app: LeanCloudApp) -> Observable<FileState>
     func delete(state: FileState) -> Observable<Bool>
 }
 

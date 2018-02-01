@@ -15,7 +15,7 @@ public class MutableObjectState: IObjectState {
     public var className: String = "DefaultAVObject"
     public var updatedAt: Date? = nil
     public var createdAt: Date? = nil
-    public var app: AVApp? = nil
+    public var app: LeanCloudApp? = nil
     public var serverData: [String: Any] = [String: Any]()
 
 //    init(objectId: String?, isNew: Bool?, className: String?, updatedAt: Date?, createdAt: Date?, app: AVApp?, serverData: [String: Any]?) {

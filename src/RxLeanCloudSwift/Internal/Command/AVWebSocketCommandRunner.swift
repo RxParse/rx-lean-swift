@@ -19,7 +19,7 @@ public class AVWebSocketCommandRunner: IAVCommandRunner {
         return try! self.websocketClient.send(command: command)
     }
 
-    public func runBatchRxCommands(commands: [AVCommand], app: AVApp) -> Observable<[AVCommandResponse]> {
+    public func runBatchRxCommands(commands: [AVCommand], app: LeanCloudApp) -> Observable<[AVCommandResponse]> {
         let rxBatchResponse = commands.map { (cmd) -> Observable<AVCommandResponse> in
             return self.runRxCommand(command: cmd)
         }

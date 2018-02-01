@@ -27,7 +27,7 @@ class ObjectTest: LeanCloudUnitTestBase {
     }
 
     func testCreareNewAVObject() {
-        let todo = AVObject(className: "RxSwiftTodo")
+        let todo = RxAVObject(className: "RxSwiftTodo")
         todo["foo"] = "bar"
 
         todo["num"] = 1
@@ -51,7 +51,11 @@ class ObjectTest: LeanCloudUnitTestBase {
     }
 
     func testFetchObject() {
-        let todo = AVObject.createWithoutData(classnName: "RxSwiftTodo", objectId: "59fc0fd52f301e0069c76a67")
+        let todo = RxAVObject.createWithoutData(classnName: "RxSwiftTodo", objectId: "59fc0fd52f301e0069c76a67")
+        todo.fetch().subscribe(onNext: { (element) in
+            let title = element.get(key: "title")
+            print(title)
+        })
         let result = todo.fetch()
             .toBlocking()
             .materialize()
@@ -70,8 +74,11 @@ class ObjectTest: LeanCloudUnitTestBase {
     }
 
     func testRemoveProperty() {
-        let todo = AVObject(className: "RxSwiftTodo")
+        let todo = RxAVObject(className: "RxSwiftTodo")
         todo["foo"] = "bar"
+        todo.save().subscribe { (event) in
+            print(event.element?.objectId)
+        }
         let result = todo.save()
             .toBlocking()
             .materialize()
@@ -88,7 +95,7 @@ class ObjectTest: LeanCloudUnitTestBase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let scheduler = TestScheduler(initialClock: 0)
 
-        let todo = AVObject(className: "SwiftTodo")
+        let todo = RxAVObject(className: "SwiftTodo")
         todo["foo"] = "bar"
         let observable = todo.save()
 
@@ -99,7 +106,7 @@ class ObjectTest: LeanCloudUnitTestBase {
         }.subscribe({ print($0) })
 
 
-        let results = scheduler.createObserver(AVObject.self)
+        let results = scheduler.createObserver(RxAVObject.self)
         var subscription: Disposable! = nil
         scheduler.scheduleAt(50) { subscription = observable.subscribe(results) }
         scheduler.scheduleAt(600) { subscription.dispose() }
@@ -113,7 +120,7 @@ class ObjectTest: LeanCloudUnitTestBase {
 
         let scheduler = TestScheduler(initialClock: 0)
         let stringURL = "https://uay57kig.api.lncld.net/1.1/classes/SwiftTodo"
-        let app: AVApp = AVApp(appId: "uay57kigwe0b6f5n0e1d4z4xhydsml3dor24bzwvzr57wdap", appKey: "kfgz7jjfsk55r5a8a3y4ttd3je1ko11bkibcikonk32oozww")
+        let app: LeanCloudApp = LeanCloudApp(appId: "uay57kigwe0b6f5n0e1d4z4xhydsml3dor24bzwvzr57wdap", appKey: "kfgz7jjfsk55r5a8a3y4ttd3je1ko11bkibcikonk32oozww")
         let headers = app.getHeaders()
         var objData: [String: Any] = [String: Any]()
         objData["foo"] = "bar"
@@ -157,7 +164,7 @@ class ObjectTest: LeanCloudUnitTestBase {
 
     func testCallback() {
         let expert = expectation(description: "Example")
-        let todo = AVObject(className: "SwiftTodo")
+        let todo = RxAVObject(className: "SwiftTodo")
         todo["foo"] = "bar"
         todo.save().onExecuted(completion: { (object) in
             expert.fulfill()

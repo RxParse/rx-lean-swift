@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>IKVStorage Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/IKVStorage" class="dashAnchor"></a>
+    <a title="IKVStorage Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (0% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        IKVStorage Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:16RxLeanCloudSwift5AVACLC">AVACL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVApp.html">AVApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVCQL.html">AVCQL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVClient.html">AVClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVCloud.html">AVCloud</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVCloudFunction.html">AVCloudFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVCommand.html">AVCommand</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVCommandResponse.html">AVCommandResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:16RxLeanCloudSwift13AVCorePluginsC">AVCorePlugins</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVDecoder.html">AVDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVDeleteOperation.html">AVDeleteOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVDeleteToken.html">AVDeleteToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVEncoder.html">AVEncoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVFile.html">AVFile</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVFileController.html">AVFileController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVHttpCommandRunner.html">AVHttpCommandRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVIncrementOperation.html">AVIncrementOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVNoticeSMS.html">AVNoticeSMS</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVObject.html">AVObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVQuery.html">AVQuery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVRealtime.html">AVRealtime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVRemoveOperation.html">AVRemoveOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVSMS.html">AVSMS</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVSetOperation.html">AVSetOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:16RxLeanCloudSwift10AVSettingsC">AVSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVUser.html">AVUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVUser/resetPasswordMode.html">– resetPasswordMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVUserAuthSMS.html">AVUserAuthSMS</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVValidationSMS.html">AVValidationSMS</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVWebSocket.html">AVWebSocket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVWebSocketClient.html">AVWebSocketClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVWebSocketClient/websocketError.html">– websocketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AVWebSocketCommandRunner.html">AVWebSocketCommandRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FileState.html">FileState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HttpClient.html">HttpClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:16RxLeanCloudSwift11HttpRequestC">HttpRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:16RxLeanCloudSwift12HttpResponseC">HttpResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LeanCloud.html">LeanCloud</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MutableObjectState.html">MutableObjectState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ObjectController.html">ObjectController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ObjectDecoder.html">ObjectDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/QueryController.html">QueryController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RxKVStorage.html">RxKVStorage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserController.html">UserController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AVRegion.html">AVRegion</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Observable.html">Observable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AVRxCallbackConvertible.html">AVRxCallbackConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AVRxEventConvertible.html">AVRxEventConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVCommandRunner.html">IAVCommandRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVDecoder.html">IAVDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVEncoder.html">IAVEncoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVFieldOperation.html">IAVFieldOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVFileConroller.html">IAVFileConroller</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVIMConversation.html">IAVIMConversation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVIMMessage.html">IAVIMMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVObject.html">IAVObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVQuery.html">IAVQuery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IAVQueryable.html">IAVQueryable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IFileUploader.html">IFileUploader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IHttpClient.html">IHttpClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IJSON.html">IJSON</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IKVStorage.html">IKVStorage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IObjectController.html">IObjectController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IObjectDecoder.html">IObjectDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IObjectState.html">IObjectState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IQueryController.html">IQueryController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IWebSokcetClient.html">IWebSokcetClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/QueryableConvertible.html">QueryableConvertible</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:16RxLeanCloudSwift18AVIMConnectOptionsV">AVIMConnectOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AVIMConversation.html">AVIMConversation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AVIMConversationCreateOptions.html">AVIMConversationCreateOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AVIMMessage.html">AVIMMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:16RxLeanCloudSwift22AVIMMessageSendOptionsV">AVIMMessageSendOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:16RxLeanCloudSwift13AVIMSignatureV">AVIMSignature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AVUploadProgress.html">AVUploadProgress</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>IKVStorage</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">IKVStorage</span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift10IKVStorageP3setXeXeF"></a>
+                    <a name="//apple_ref/swift/Method/set(key:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift10IKVStorageP3setXeXeF">set(key:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Observable</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift10IKVStorageP6removeXeXeF"></a>
+                    <a name="//apple_ref/swift/Method/remove(key:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift10IKVStorageP6removeXeXeF">remove(key:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Observable</span><span class="o">&lt;</span><span class="kt">Bool</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift10IKVStorageP3getXeXeF"></a>
+                    <a name="//apple_ref/swift/Method/get(key:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift10IKVStorageP3getXeXeF">get(key:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">get</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Observable</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">?</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16RxLeanCloudSwift10IKVStorageP8saveJSONXeXeF"></a>
+                    <a name="//apple_ref/swift/Method/saveJSON(key:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16RxLeanCloudSwift10IKVStorageP8saveJSONXeXeF">saveJSON(key:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">saveJSON</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Observable</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-12-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
